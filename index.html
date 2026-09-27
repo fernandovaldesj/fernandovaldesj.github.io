@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VAF, Fernando Valdés</title>
+<meta name="description" content="VAF. Portfolio de Fernando Valdés, director de arte en Barcelona: campañas 360, branding, digital y televisión.">
+
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Cinzel:wght@700&family=DM+Serif+Display&family=MedievalSharp&family=Playfair+Display:ital,wght@1,900&family=Rubik+Mono+One&family=Space+Mono:wght@700&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=Unbounded:wght@800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#000000; --muted:#595959; --line:#000000;
+  --reel:#111111; --ph1:#E4E4E1; --ph2:#D3D3CF; --ph3:#DCDCD8; --ph4:#C9C9C5; --ph5:#BEBEBA; --ph6:#D8D8D4;
+  --accent:#00E5FF; --on-accent:#000000;
+  --pad:clamp(20px,2.8vw,40px);
+  --ease:cubic-bezier(.2,.7,0,1);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF;
+    --reel:#1C1C1C; --ph1:#1E1E1E; --ph2:#2C2C2C; --ph3:#242424; --ph4:#333333; --ph5:#3A3A3A; --ph6:#282828;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF;
+  --reel:#1C1C1C; --ph1:#1E1E1E; --ph2:#2C2C2C; --ph3:#242424; --ph4:#333333; --ph5:#3A3A3A; --ph6:#282828;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html.locked,html.locked body{overflow:hidden}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk','Helvetica Neue',Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+p,h1,h2{margin:0}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 26px) var(--pad) 16px;display:flex;justify-content:space-between;align-items:baseline;color:#FFFFFF;mix-blend-mode:difference;transition:transform .6s var(--ease)}
+.site-header.hide{transform:translateY(-120%)}
+.logo{font-size:26px;font-weight:700;line-height:1;letter-spacing:-0.02em}
+.nav-wrap{display:flex;align-items:baseline;gap:clamp(24px,6vw,96px);font-size:17px;font-weight:500}
+.nav{display:flex;gap:clamp(18px,2.8vw,40px)}
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.lang span{opacity:.5}
+
+/* Hero: VAF grande + cita */
+.hero{position:relative;height:100vh;height:100svh;min-height:520px;display:flex;align-items:center;padding:96px var(--pad) 48px}
+.hero-row{width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:4vw}
+.vaf{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(120px,30vw,520px);line-height:.78;letter-spacing:-0.05em;white-space:nowrap;will-change:transform}
+.quote{width:min(32vw,460px);padding-bottom:1.2vw;font-size:clamp(20px,2.3vw,36px);line-height:1.15;letter-spacing:-0.02em}
+.js .quote{visibility:hidden}
+.mark{background:var(--accent);color:var(--on-accent);padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.scroll-cue{position:absolute;right:var(--pad);bottom:24px;font-size:14px;color:var(--muted)}
+/* Tipografías de la intro */
+.f1{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;letter-spacing:-0.02em}
+.f3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0}
+.f4{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-0.02em}
+.f6{font-family:'Unbounded',sans-serif;font-weight:800;letter-spacing:-0.04em}
+.f7{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:-0.04em}
+.f9{font-family:'Abril Fatface',serif;font-weight:400;letter-spacing:-0.02em}
+.f10{font-family:'Rubik Mono One',sans-serif;font-weight:400;letter-spacing:-0.06em}
+.f12{font-family:'Uncial Antiqua',serif;font-style:normal;font-weight:400;letter-spacing:0}
+.f13{font-family:'UnifrakturMaguntia',serif;font-style:normal;font-weight:400;letter-spacing:0}
+.f14{font-family:'Cinzel',serif;font-style:normal;font-weight:700;letter-spacing:0}
+.f15{font-family:'MedievalSharp',serif;font-style:normal;font-weight:400;letter-spacing:0}
+
+/* Common */
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.big{font-size:clamp(72px,11.7vw,168px);font-weight:500;line-height:.85;letter-spacing:-0.04em}
+.label{display:inline-block;padding:4px 6px 2px;background:var(--accent);color:var(--on-accent);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0}
+.js [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity 1s ease,transform 1.2s var(--ease)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Showreel */
+.reel{padding:clamp(56px,6vw,96px) var(--pad) 0;align-items:end}
+.reel-title{grid-column:1/span 3;padding-bottom:4px;font-size:clamp(22px,2.1vw,30px);line-height:1.12;letter-spacing:-0.02em}
+.reel-box{grid-column:4/span 9;aspect-ratio:16/9;background:var(--reel);position:relative;overflow:hidden;transform-origin:100% 100%}
+.play{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;background:var(--accent);border:0;border-radius:0;font:inherit;font-size:17px;font-weight:500;color:var(--on-accent);cursor:pointer}
+
+/* Work */
+.work{padding:clamp(96px,10vw,150px) var(--pad) 0}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(40px,5vw,72px)}
+.work-sub{font-size:clamp(17px,1.5vw,21px);line-height:1.3;text-align:right;padding-bottom:10px}
+.work-sub span{color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;align-items:start}
+.col{display:flex;flex-direction:column;gap:clamp(56px,7vw,100px)}
+.col.offset{margin-top:clamp(96px,14vw,200px)}
+.tile{display:flex;flex-direction:column;gap:18px}
+.ph{position:relative;overflow:hidden}
+.ph.tall{aspect-ratio:4/5}
+.ph.wide{aspect-ratio:3/2}
+.ph-in{position:absolute;left:0;right:0;top:-7%;height:114%;transition:opacity .5s ease}
+.tile:hover .ph-in{opacity:.75}
+.js .ph{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--ease)}
+.js .ph.in{clip-path:inset(0 0 0 0)}
+.ph .tag{position:absolute;left:20px;bottom:18px;font-size:14px;font-weight:500;text-transform:uppercase;color:var(--ink);z-index:1}
+.caption{display:flex;align-items:baseline;gap:12px;font-size:18px;line-height:1.1;letter-spacing:-0.01em}
+.tile:hover .caption span:last-child{text-decoration:underline;text-underline-offset:3px}
+
+/* About */
+.about{padding:clamp(96px,10vw,150px) var(--pad) 0;row-gap:40px}
+.about .big{grid-column:1/span 4}
+.about-body{grid-column:5/span 8;display:flex;flex-direction:column;gap:44px;padding-top:12px}
+.about-text{font-size:clamp(24px,2.8vw,40px);line-height:1.2;letter-spacing:-0.02em}
+.brands-label{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:14px}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+.track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track span{font-size:clamp(22px,2.2vw,32px);letter-spacing:-0.02em;white-space:nowrap;padding-right:.6em}
+.track .sep{color:var(--muted)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Footer */
+.site-footer{margin:clamp(96px,10vw,150px) var(--pad) 0;border-top:1px solid var(--line);padding-top:36px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 28px)}
+.say{font-size:clamp(40px,3.9vw,56px);line-height:1.08;letter-spacing:-0.02em}
+.invite{margin-top:16px;max-width:760px;font-size:clamp(19px,1.7vw,24px);line-height:1.35}
+.email{display:inline-block;margin-top:40px;padding:0 .08em;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 100%/100% 0%,var(--accent);color:var(--on-accent);font-size:clamp(28px,6.7vw,96px);font-weight:500;line-height:1.05;letter-spacing:-0.03em;overflow-wrap:anywhere;transition:background-size .6s var(--ease),color .4s ease}
+.email:hover{background-size:100% 100%,auto;color:var(--bg)}
+.links{margin-top:32px;display:flex;gap:40px;font-size:18px;font-weight:500}
+.links a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.legal{margin-top:clamp(64px,7vw,110px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+
+/* Cursor */
+.cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;transition:opacity .25s ease}
+.cursor.on{opacity:1}
+.c-dot{position:absolute;width:12px;height:12px;background:var(--accent);transform:translate(-50%,-50%) scale(1);transition:transform .35s var(--ease)}
+.cursor.label .c-dot{transform:translate(-50%,-50%) scale(0)}
+.c-label{position:absolute;left:18px;top:18px;display:flex;align-items:baseline;gap:10px;white-space:nowrap;background:var(--accent);color:var(--on-accent);padding:8px 12px 6px;font-size:16px;font-weight:500;transform:scale(.6);transform-origin:0 0;opacity:0;transition:transform .4s var(--ease),opacity .2s ease}
+.cursor.label .c-label{transform:scale(1);opacity:1}
+.c-pre{font-size:13px;text-transform:uppercase}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero{height:auto;min-height:0;padding-top:120px;padding-bottom:40px}
+  .hero-row{flex-direction:column;align-items:flex-start;gap:28px}
+  .vaf{font-size:38vw}
+  .quote{width:100%;max-width:520px;padding-bottom:0;font-size:clamp(22px,5.4vw,30px)}
+  .scroll-cue{display:none}
+  .reel-title,.reel-box{grid-column:1/-1}
+  .reel-title{margin-bottom:16px}
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .col.offset{margin-top:clamp(56px,7vw,100px)}
+  .about .big,.about-body{grid-column:1/-1}
+  .work-head{flex-direction:column;align-items:flex-start}
+  .work-sub{text-align:left}
+}
+@media (max-width: 600px){
+  .nav-wrap{gap:18px;font-size:15px}
+  .lang{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .js [data-reveal],.js .ph{transform:none!important;opacity:1!important;clip-path:none!important;transition:none!important}
+  .js .quote{visibility:visible}
+  .track{animation:none;flex-wrap:wrap;width:auto}
+  .track [aria-hidden="true"]{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a class="logo" href="#top" aria-label="VAF, inicio">VAF</a>
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Principal">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="mailto:fenavaldesj@gmail.com">Say hi</a>
+    </nav>
+    <p class="lang">ES <span>/ EN</span></p>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Inicio">
+    <div class="hero-row">
+      <h1 class="vaf" id="vaf" aria-label="VAF, Fernando Valdés">VAF</h1>
+      <p class="quote" id="quote">“Nunca hubo tantas imágenes. Nunca hicieron tanta falta <span class="mark">las ideas</span>.”</p>
+    </div>
+    <p class="scroll-cue" id="cue" aria-hidden="true">Scroll</p>
+  </section>
+
+  <section class="reel grid" aria-label="Showreel">
+    <p class="reel-title" data-reveal>Showreel 2026</p>
+    <div class="reel-box" data-cursor="Play">
+      <button class="play" type="button">
+        <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>
+        Play
+      </button>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="work-head">
+      <h2 class="big" data-drift>Work</h2>
+      <p class="work-sub" data-reveal><span>(06)</span><br>Algunos proyectos en los que he trabajado</p>
+    </div>
+    <div class="tiles">
+      <div class="col">
+        <a class="tile" href="#work" data-cursor="Patrocinio IRONMAN" data-cursor-pre="1">
+          <div class="ph tall"><div class="ph-in" style="background:var(--ph1)"></div></div>
+          <p class="caption"><span class="label">Ver</span><span>Patrocinio IRONMAN / Geely</span></p>
+        </a>
+        <a class="tile" href="#work" data-cursor="Festive 2026" data-cursor-pre="1">
+          <div class="ph wide"><div class="ph-in" style="background:var(--ph2)"></div></div>
+          <p class="caption"><span class="label">Ver</span><span>Festive 2026 / Nespresso</span></p>
+        </a>
+        <a class="tile" href="proyectos/omoda.html" data-cursor="Infinitamente nuevo" data-cursor-pre="1">
+          <div class="ph tall"><div class="ph-in" style="background:var(--ph3)"></div></div>
+          <p class="caption"><span class="label">Ver</span><span>Infinitamente nuevo / Omoda</span></p>
+        </a>
+      </div>
+      <div class="col offset">
+        <a class="tile" href="#work" data-cursor="Spot salsas de tomate" data-cursor-pre="1">
+          <div class="ph wide"><div class="ph-in" style="background:var(--ph4)"></div><span class="tag">Play</span></div>
+          <p class="caption"><span class="label">Ver</span><span>Spot salsas de tomate / Ferrer</span></p>
+        </a>
+        <a class="tile" href="#work" data-cursor="Tous" data-cursor-pre="1">
+          <div class="ph tall"><div class="ph-in" style="background:var(--ph5)"></div></div>
+          <p class="caption"><span class="label">Ver</span><span>[Nombre del proyecto] / Tous</span></p>
+        </a>
+        <a class="tile" href="#work" data-cursor="Vuelve fresh con MP" data-cursor-pre="1">
+          <div class="ph wide"><div class="ph-in" style="background:var(--ph6)"></div><span class="tag">Play</span></div>
+          <p class="caption"><span class="label">Ver</span><span>Vuelve fresh con MP / Proyecto propio</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about grid" id="about">
+    <h2 class="big" data-drift>About</h2>
+    <div class="about-body">
+      <p class="about-text" id="about-text">Hola, soy Fernando Valdés, Head of Art en Actimundi, donde dirijo un equipo multidisciplinar. Llevo 16 años ayudando a marcas a contar cosas, con el oficio de siempre y las herramientas de ahora. Antes pasé por Wunderman Thompson, y por el camino he tenido la suerte de trabajar para marcas como BMW, Danone, Nespresso, Tous o Estrella Damm. Uso la IA cada día y la he llevado al día a día de la agencia, pero mi regla sigue siendo la misma: la herramienta al servicio de la idea, nunca al revés.</p>
+      <div data-reveal>
+        <p class="brands-label">Marcas con las que he trabajado</p>
+        <div class="marquee">
+          <div class="track">
+            <div style="display:flex"><span>BMW</span><span class="sep">/</span><span>Danone</span><span class="sep">/</span><span>Nespresso</span><span class="sep">/</span><span>Tous</span><span class="sep">/</span><span>Omoda</span><span class="sep">/</span><span>Geely</span><span class="sep">/</span><span>Perrier</span><span class="sep">/</span><span>Estrella Damm</span><span class="sep">/</span><span>FC Barcelona</span><span class="sep">/</span><span>La Caixa</span><span class="sep">/</span><span>Ferrer</span><span class="sep">/</span><span>General Óptica</span><span class="sep">/</span></div>
+            <div style="display:flex" aria-hidden="true"><span>BMW</span><span class="sep">/</span><span>Danone</span><span class="sep">/</span><span>Nespresso</span><span class="sep">/</span><span>Tous</span><span class="sep">/</span><span>Omoda</span><span class="sep">/</span><span>Geely</span><span class="sep">/</span><span>Perrier</span><span class="sep">/</span><span>Estrella Damm</span><span class="sep">/</span><span>FC Barcelona</span><span class="sep">/</span><span>La Caixa</span><span class="sep">/</span><span>Ferrer</span><span class="sep">/</span><span>General Óptica</span><span class="sep">/</span></div>
+          </div>
+        </div>
+      </div>
+      <a class="label" href="#about" style="align-self:flex-start" data-reveal>Descargar CV</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p class="say" data-reveal>Say hi.</p>
+  <p class="invite" data-reveal>Si tienes un proyecto, una idea o simplemente quieres saludar, escríbeme.</p>
+  <a class="email" href="mailto:fenavaldesj@gmail.com" data-reveal>fenavaldesj@gmail.com</a>
+  <div class="links">
+    <a href="https://www.linkedin.com/in/fernandovaldesj" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#about">CV (PDF)</a>
+  </div>
+  <div class="legal">
+    <span>© 2026 VAF, Fernando Valdés Jara</span>
+    <span>Dirección de arte para lo que viene.</span>
+  </div>
+</footer>
+
+<div class="cursor" aria-hidden="true" hidden>
+  <span class="c-dot"></span>
+  <span class="c-label"><span class="c-pre">Ver</span><span class="c-text"></span></span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var desktop = window.matchMedia('(min-width: 901px)').matches;
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+  var root = document.documentElement;
+  var vaf = document.getElementById('vaf');
+  var quote = document.getElementById('quote');
+  var cue = document.getElementById('cue');
+  var row = document.querySelector('.hero-row');
+
+  function centerX(){ return desktop ? (row.clientWidth - vaf.offsetWidth) / 2 : 0; }
+  function place(){ if (hasGsap) gsap.set(vaf, { x: centerX() }); else vaf.style.transform = 'translateX(' + centerX() + 'px)'; }
+  function showQuote(){ quote.style.visibility = 'visible'; }
+
+  // 1. Intro: VAF cambia entera de tipografía, rápido
+  // Moderno, medieval, serif y sans, hasta asentarse en Space Grotesk
+  var sequence = ['f3','f13','f4','f6','f12','f14','f10','f15','f1','f7','f9'];
+  var loads = [
+    '400 100px "Bebas Neue"', '400 100px "UnifrakturMaguntia"', '400 100px "DM Serif Display"',
+    '800 100px "Unbounded"', '400 100px "Uncial Antiqua"', '700 100px "Cinzel"',
+    '400 100px "Rubik Mono One"', '400 100px "MedievalSharp"', 'italic 900 100px "Playfair Display"',
+    '700 100px "Space Mono"', '400 100px "Abril Fatface"', '700 100px "Space Grotesk"'
+  ];
+
+  function runIntro(done){
+    if (reduce){ done(); return; }
+    root.classList.add('locked');
+    var i = 0;
+    var cur = '';
+    (function step(){
+      if (cur) vaf.classList.remove(cur);
+      if (i >= sequence.length){
+        place();
+        if (hasGsap) gsap.fromTo(vaf, { scale: 0.96 }, { scale: 1, duration: 0.45, ease: 'power3.out' });
+        setTimeout(function(){ root.classList.remove('locked'); done(); }, 200);
+        return;
+      }
+      cur = sequence[i];
+      vaf.classList.add(cur);
+      place();
+      i++;
+      var left = sequence.length - i;
+      setTimeout(step, left < 3 ? 120 + (3 - left) * 40 : 75);
+    })();
+  }
+
+  function startWhenFontsReady(){
+    var timeout = new Promise(function(res){ setTimeout(res, 2200); });
+    var ready = (document.fonts && document.fonts.load)
+      ? Promise.all(loads.map(function(f){ return document.fonts.load(f, 'VAF').catch(function(){}); }))
+      : Promise.resolve();
+    Promise.race([ready, timeout]).then(function(){ runIntro(afterIntro); });
+  }
+
+  // 2. Al bajar: VAF se queda a la izquierda y aparece la cita
+  function afterIntro(){
+    if (reduce || !hasGsap){
+      vaf.style.transform = '';
+      if (hasGsap) gsap.set(vaf, { x: 0 });
+      showQuote();
+      return;
+    }
+    gsap.registerPlugin(ScrollTrigger);
+    if (desktop){
+      var tl = gsap.timeline({
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=70%', scrub: true, pin: true, invalidateOnRefresh: true }
+      });
+      tl.fromTo(vaf, { x: function(){ return centerX(); } }, { x: 0, ease: 'none', duration: 1 }, 0)
+        .fromTo(quote, { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, ease: 'none', duration: 0.6 }, 0.4)
+        .to(cue, { autoAlpha: 0, ease: 'none', duration: 0.3 }, 0);
+    } else {
+      gsap.fromTo(quote, { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', delay: 0.1 });
+    }
+    scrollEffects();
+    ScrollTrigger.refresh();
+  }
+
+  // 3. Efectos ligados al scroll
+  function splitWords(el){
+    var words = [];
+    (function walk(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(child){
+        if (child.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(function(part){
+            if (!part) return;
+            if (/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            var s = document.createElement('span');
+            s.textContent = part;
+            frag.appendChild(s);
+            words.push(s);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1){ walk(child); }
+      });
+    })(el);
+    return words;
+  }
+
+  function scrollEffects(){
+    gsap.fromTo('.reel-box', { scale: 0.88 }, {
+      scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.reel', start: 'top 95%', end: 'top 30%', scrub: true }
+    });
+    gsap.utils.toArray('.ph-in').forEach(function(el){
+      gsap.fromTo(el, { yPercent: -6 }, {
+        yPercent: 6, ease: 'none',
+        scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    gsap.utils.toArray('[data-drift]').forEach(function(el){
+      gsap.fromTo(el, { xPercent: -8 }, {
+        xPercent: 0, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'top 45%', scrub: true }
+      });
+    });
+    var aw = splitWords(document.getElementById('about-text'));
+    gsap.fromTo(aw, { opacity: 0.16 }, {
+      opacity: 1, ease: 'none', stagger: 0.06,
+      scrollTrigger: { trigger: '#about-text', start: 'top 80%', end: 'bottom 50%', scrub: true }
+    });
+  }
+
+  // 4. Revelados al entrar en pantalla
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // 5. Cabecera que se esconde al bajar
+  var header = document.querySelector('.site-header');
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    header.classList.toggle('hide', y > lastY && y > 160);
+    lastY = y;
+  }, { passive: true });
+
+  // 6. Cursor VAF
+  if (!reduce && window.matchMedia('(pointer: fine)').matches){
+    var c = document.querySelector('.cursor');
+    var cText = c.querySelector('.c-text');
+    var cPre = c.querySelector('.c-pre');
+    c.hidden = false;
+    var x = 0, y = 0, cx = 0, cy = 0, shown = false;
+    window.addEventListener('mousemove', function(e){
+      x = e.clientX; y = e.clientY;
+      if (!shown){ cx = x; cy = y; c.classList.add('on'); shown = true; }
+    });
+    document.addEventListener('mouseleave', function(){ c.classList.remove('on'); shown = false; });
+    (function tick(){
+      cx += (x - cx) * 0.2;
+      cy += (y - cy) * 0.2;
+      c.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('[data-cursor]').forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        cText.textContent = el.getAttribute('data-cursor');
+        cPre.hidden = !el.hasAttribute('data-cursor-pre');
+        c.classList.add('label');
+      });
+      el.addEventListener('mouseleave', function(){ c.classList.remove('label'); });
+    });
+  }
+
+  // Arranque
+  place();
+  startWhenFontsReady();
+})();
+</script>
+</body>
+</html>
