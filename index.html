@@ -7,7 +7,7 @@
 <meta name="description" content="VAF. Portfolio de Fernando Valdés, director de arte en Barcelona: campañas 360, branding, digital y televisión.">
 
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Cinzel:wght@700&family=DM+Serif+Display&family=MedievalSharp&family=Playfair+Display:ital,wght@1,900&family=Rubik+Mono+One&family=Space+Mono:wght@700&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=Unbounded:wght@800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js');</script><!--pt-head--><script>(function(){try{history.scrollRestoration='manual';if(sessionStorage.getItem('vaf-pt')){document.documentElement.classList.add('pt-in');}}catch(e){}})();</script><!--/pt-head-->
 <style>
 :root{
   --bg:#FFFFFF; --ink:#000000; --muted:#595959; --line:#000000;
@@ -29,7 +29,7 @@
   --bg:#000000; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF;
   --reel:#1C1C1C; --ph1:#1E1E1E; --ph2:#2C2C2C; --ph3:#242424; --ph4:#333333; --ph5:#3A3A3A; --ph6:#282828;
 }
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 html.locked,html.locked body{overflow:hidden}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk','Helvetica Neue',Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -58,16 +58,21 @@ p,h1,h2{margin:0}
 .scroll-cue{position:absolute;right:var(--pad);bottom:24px;font-size:14px;color:var(--muted)}
 /* Tipografías de la intro */
 .f1{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;letter-spacing:-0.02em}
+.f2{font-family:'Caveat',cursive;font-weight:700;letter-spacing:0}
 .f3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0}
 .f4{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-0.02em}
+.f5{font-family:'Pacifico',cursive;font-weight:400;letter-spacing:0}
 .f6{font-family:'Unbounded',sans-serif;font-weight:800;letter-spacing:-0.04em}
 .f7{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:-0.04em}
+.f8{font-family:'Permanent Marker',cursive;font-weight:400;letter-spacing:0}
 .f9{font-family:'Abril Fatface',serif;font-weight:400;letter-spacing:-0.02em}
 .f10{font-family:'Rubik Mono One',sans-serif;font-weight:400;letter-spacing:-0.06em}
+.f11{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-0.03em}
 .f12{font-family:'Uncial Antiqua',serif;font-style:normal;font-weight:400;letter-spacing:0}
 .f13{font-family:'UnifrakturMaguntia',serif;font-style:normal;font-weight:400;letter-spacing:0}
 .f14{font-family:'Cinzel',serif;font-style:normal;font-weight:700;letter-spacing:0}
 .f15{font-family:'MedievalSharp',serif;font-style:normal;font-weight:400;letter-spacing:0}
+.vaf .l{display:inline-block}
 
 /* Common */
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
@@ -94,8 +99,15 @@ p,h1,h2{margin:0}
 .ph{position:relative;overflow:hidden}
 .ph.tall{aspect-ratio:4/5}
 .ph.wide{aspect-ratio:3/2}
+.ph.square{aspect-ratio:1/1}
 .ph-in{position:absolute;left:0;right:0;top:-7%;height:114%;transition:opacity .5s ease}
 .tile:hover .ph-in{opacity:.75}
+img.ph-in,video.ph-in{display:block;width:100%;object-fit:cover}
+video.ph-in{background:#0b0b0c}
+.tile:hover video.ph-in{opacity:1}
+.ph-poster{pointer-events:none;transition:opacity .35s ease}
+.tile:hover img.ph-poster{opacity:1}
+.tile.is-playing img.ph-poster{opacity:0}
 .js .ph{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--ease)}
 .js .ph.in{clip-path:inset(0 0 0 0)}
 .ph .tag{position:absolute;left:20px;bottom:18px;font-size:14px;font-weight:500;text-transform:uppercase;color:var(--ink);z-index:1}
@@ -159,9 +171,28 @@ p,h1,h2{margin:0}
   .track{animation:none;flex-wrap:wrap;width:auto}
   .track [aria-hidden="true"]{display:none}
 }
+/*pt*/
+.pt{position:fixed;inset:0;z-index:300;background:var(--bg);color:var(--ink);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility 0s linear .3s}
+.pt.on,.pt-in .pt{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .18s ease}
+.pt-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-0.04em}
+.pt .f1{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;letter-spacing:-0.02em}
+.pt .f3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0}
+.pt .f4{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-0.02em}
+.pt .f6{font-family:'Unbounded',sans-serif;font-weight:800;letter-spacing:-0.04em}
+.pt .f7{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:-0.04em}
+.pt .f9{font-family:'Abril Fatface',serif;font-weight:400;letter-spacing:-0.02em}
+.pt .f10{font-family:'Rubik Mono One',sans-serif;font-weight:400;letter-spacing:-0.06em}
+.pt .f12{font-family:'Uncial Antiqua',serif;font-weight:400;letter-spacing:0}
+.pt .f13{font-family:'UnifrakturMaguntia',serif;font-weight:400;letter-spacing:0}
+.pt .f14{font-family:'Cinzel',serif;font-weight:700;letter-spacing:0}
+.pt .f15{font-family:'MedievalSharp',serif;font-weight:400;letter-spacing:0}
+/*/pt*/
 </style>
 </head>
 <body>
+<!--pt--><div class="pt" aria-hidden="true"><span class="pt-logo">VAF</span></div><!--/pt-->
+
+
 
 <header class="site-header" id="top">
   <a class="logo" href="#top" aria-label="VAF, inicio">VAF</a>
@@ -169,7 +200,7 @@ p,h1,h2{margin:0}
     <nav class="nav" aria-label="Principal">
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="mailto:fenavaldesj@gmail.com">Say hi</a>
+      <a href="#contact">Say hi</a>
     </nav>
     <p class="lang">ES <span>/ EN</span></p>
   </div>
@@ -201,31 +232,31 @@ p,h1,h2{margin:0}
     </div>
     <div class="tiles">
       <div class="col">
-        <a class="tile" href="#work" data-cursor="Patrocinio IRONMAN" data-cursor-pre="1">
-          <div class="ph tall"><div class="ph-in" style="background:var(--ph1)"></div></div>
-          <p class="caption"><span class="label">Ver</span><span>Patrocinio IRONMAN / Geely</span></p>
-        </a>
-        <a class="tile" href="#work" data-cursor="Festive 2026" data-cursor-pre="1">
-          <div class="ph wide"><div class="ph-in" style="background:var(--ph2)"></div></div>
-          <p class="caption"><span class="label">Ver</span><span>Festive 2026 / Nespresso</span></p>
-        </a>
         <a class="tile" href="proyectos/omoda.html" data-cursor="Infinitamente nuevo" data-cursor-pre="1">
-          <div class="ph tall"><div class="ph-in" style="background:var(--ph3)"></div></div>
+          <div class="ph wide"><video class="ph-in" data-autoplay src="assets/omoda/hero.mp4" poster="assets/omoda/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Resumen de la campaña Omoda 5, Infinitamente nuevo"></video><img class="ph-in ph-poster" src="assets/omoda/hero-poster.webp" alt="" aria-hidden="true"></div>
           <p class="caption"><span class="label">Ver</span><span>Infinitamente nuevo / Omoda</span></p>
+        </a>
+        <a class="tile" href="proyectos/madcool.html" data-cursor="Mad Cool Festival" data-cursor-pre="1">
+          <div class="ph tall"><video class="ph-in" data-autoplay src="assets/madcool/hero.mp4" poster="assets/madcool/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Resumen del espacio de Omoda | Jaecoo en el Mad Cool Festival"></video><img class="ph-in ph-poster" src="assets/madcool/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <p class="caption"><span class="label">Ver</span><span>Mad Cool Festival / Omoda | Jaecoo</span></p>
+        </a>
+        <a class="tile" href="proyectos/frit-ravich.html" data-cursor="Top Corn Zombie Edition" data-cursor-pre="1">
+          <div class="ph square"><video class="ph-in" data-autoplay src="assets/frit/hero.mp4" poster="assets/frit/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Fragmento del vídeo de Top Corn Zombie Edition"></video><img class="ph-in ph-poster" src="assets/frit/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <p class="caption"><span class="label">Ver</span><span>Top Corn Zombie Edition / Frit Ravich</span></p>
         </a>
       </div>
       <div class="col offset">
-        <a class="tile" href="#work" data-cursor="Spot salsas de tomate" data-cursor-pre="1">
-          <div class="ph wide"><div class="ph-in" style="background:var(--ph4)"></div><span class="tag">Play</span></div>
-          <p class="caption"><span class="label">Ver</span><span>Spot salsas de tomate / Ferrer</span></p>
+        <a class="tile" href="proyectos/tous.html" data-cursor="Alma by Tous" data-cursor-pre="1">
+          <div class="ph tall"><video class="ph-in" data-autoplay src="assets/tous/hero.mp4" poster="assets/tous/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Recorrido por los renders de la pop up store Alma by Tous"></video><img class="ph-in ph-poster" src="assets/tous/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <p class="caption"><span class="label">Ver</span><span>Alma by Tous / Tous</span></p>
         </a>
-        <a class="tile" href="#work" data-cursor="Tous" data-cursor-pre="1">
-          <div class="ph tall"><div class="ph-in" style="background:var(--ph5)"></div></div>
-          <p class="caption"><span class="label">Ver</span><span>[Nombre del proyecto] / Tous</span></p>
+        <a class="tile" href="proyectos/danone.html" data-cursor="Una gran familia" data-cursor-pre="1">
+          <div class="ph wide"><video class="ph-in" data-autoplay src="assets/danone/hero.mp4" poster="assets/danone/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Fragmento del spot de Danone, Una gran familia"></video><img class="ph-in ph-poster" src="assets/danone/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <p class="caption"><span class="label">Ver</span><span>Una gran familia / Danone</span></p>
         </a>
-        <a class="tile" href="#work" data-cursor="Vuelve fresh con MP" data-cursor-pre="1">
-          <div class="ph wide"><div class="ph-in" style="background:var(--ph6)"></div><span class="tag">Play</span></div>
-          <p class="caption"><span class="label">Ver</span><span>Vuelve fresh con MP / Proyecto propio</span></p>
+        <a class="tile" href="proyectos/triangirl.html" data-cursor="Triangirl" data-cursor-pre="1">
+          <div class="ph tall"><video class="ph-in" data-autoplay src="assets/triangirl/hero.mp4" poster="assets/triangirl/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Fotografías de la marca Triangirl: packs y chicas sobre fondos de color"></video><img class="ph-in ph-poster" src="assets/triangirl/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <p class="caption"><span class="label">Ver</span><span>Triangirl / Laboratorios Ordesa</span></p>
         </a>
       </div>
     </div>
@@ -234,7 +265,7 @@ p,h1,h2{margin:0}
   <section class="about grid" id="about">
     <h2 class="big" data-drift>About</h2>
     <div class="about-body">
-      <p class="about-text" id="about-text">Hola, soy Fernando Valdés, Head of Art en Actimundi, donde dirijo un equipo multidisciplinar. Llevo 16 años ayudando a marcas a contar cosas, con el oficio de siempre y las herramientas de ahora. Antes pasé por Wunderman Thompson, y por el camino he tenido la suerte de trabajar para marcas como BMW, Danone, Nespresso, Tous o Estrella Damm. Uso la IA cada día y la he llevado al día a día de la agencia, pero mi regla sigue siendo la misma: la herramienta al servicio de la idea, nunca al revés.</p>
+      <p class="about-text" id="about-text">Hola, soy Fernando Valdés y lidero el equipo creativo de Actimundi como Head of Art. Llevo 16 años en publicidad convirtiendo briefings en ideas, y las ideas en campañas. Antes pasé por Wunderman Thompson y, por el camino, he trabajado para marcas como BMW, FC Barcelona, Nespresso, Danone, Estrella Damm, Tous, Geely y Omoda. Uso la IA a diario y la he integrado en la agencia. Ha cambiado cómo trabajo, no cómo pienso.</p>
       <div data-reveal>
         <p class="brands-label">Marcas con las que he trabajado</p>
         <div class="marquee">
@@ -249,7 +280,7 @@ p,h1,h2{margin:0}
   </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="contact">
   <p class="say" data-reveal>Say hi.</p>
   <p class="invite" data-reveal>Si tienes un proyecto, una idea o simplemente quieres saludar, escríbeme.</p>
   <a class="email" href="mailto:fenavaldesj@gmail.com" data-reveal>fenavaldesj@gmail.com</a>
@@ -273,6 +304,8 @@ p,h1,h2{margin:0}
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Si llegamos desde un proyecto (transición VAF), no repetimos la intro
+  var skipIntro = document.documentElement.classList.contains('pt-in');
   var desktop = window.matchMedia('(min-width: 901px)').matches;
   var hasGsap = !!(window.gsap && window.ScrollTrigger);
   var root = document.documentElement;
@@ -285,7 +318,7 @@ p,h1,h2{margin:0}
   function place(){ if (hasGsap) gsap.set(vaf, { x: centerX() }); else vaf.style.transform = 'translateX(' + centerX() + 'px)'; }
   function showQuote(){ quote.style.visibility = 'visible'; }
 
-  // 1. Intro: VAF cambia entera de tipografía, rápido
+  // ---------- 1. Intro: VAF cambia entera de tipografía, rápido ----------
   // Moderno, medieval, serif y sans, hasta asentarse en Space Grotesk
   var sequence = ['f3','f13','f4','f6','f12','f14','f10','f15','f1','f7','f9'];
   var loads = [
@@ -296,7 +329,7 @@ p,h1,h2{margin:0}
   ];
 
   function runIntro(done){
-    if (reduce){ done(); return; }
+    if (reduce || skipIntro){ place(); done(); return; }
     root.classList.add('locked');
     var i = 0;
     var cur = '';
@@ -318,6 +351,7 @@ p,h1,h2{margin:0}
   }
 
   function startWhenFontsReady(){
+    if (skipIntro){ runIntro(afterIntro); return; }
     var timeout = new Promise(function(res){ setTimeout(res, 2200); });
     var ready = (document.fonts && document.fonts.load)
       ? Promise.all(loads.map(function(f){ return document.fonts.load(f, 'VAF').catch(function(){}); }))
@@ -325,12 +359,20 @@ p,h1,h2{margin:0}
     Promise.race([ready, timeout]).then(function(){ runIntro(afterIntro); });
   }
 
-  // 2. Al bajar: VAF se queda a la izquierda y aparece la cita
+  // Si se llega con un ancla (#contact, #work…), se baja hasta ella cuando la página ya está montada
+  function goHash(){
+    if (!location.hash) return;
+    var t = document.querySelector(location.hash);
+    if (t) setTimeout(function(){ t.scrollIntoView({ behavior: 'auto' }); }, 60);
+  }
+
+  // ---------- 2. Al bajar: VAF se queda a la izquierda y aparece la cita ----------
   function afterIntro(){
     if (reduce || !hasGsap){
       vaf.style.transform = '';
       if (hasGsap) gsap.set(vaf, { x: 0 });
       showQuote();
+      goHash();
       return;
     }
     gsap.registerPlugin(ScrollTrigger);
@@ -346,9 +388,10 @@ p,h1,h2{margin:0}
     }
     scrollEffects();
     ScrollTrigger.refresh();
+    goHash();
   }
 
-  // 3. Efectos ligados al scroll
+  // ---------- 3. Efectos ligados al scroll ----------
   function splitWords(el){
     var words = [];
     (function walk(node){
@@ -394,7 +437,7 @@ p,h1,h2{margin:0}
     });
   }
 
-  // 4. Revelados al entrar en pantalla
+  // ---------- 4. Revelados al entrar en pantalla ----------
   if (!reduce && 'IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -406,7 +449,37 @@ p,h1,h2{margin:0}
     document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // 5. Cabecera que se esconde al bajar
+  // ---------- 4b. Vídeos de portada: con ratón, solo se mueven al pasar por encima.
+  // En pantallas táctiles (sin hover) se reproducen al verlos.
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  document.querySelectorAll('video[data-autoplay]').forEach(function(v){
+    var inView = false, hover = false;
+    var tile = v.closest('.tile') || v.parentNode;
+    v.muted = true;
+    // El póster (img.ph-poster) tapa el vídeo hasta que de verdad está reproduciéndose
+    v.addEventListener('playing', function(){ if (hover || (!canHover && inView)) tile.classList.add('is-playing'); });
+    function sync(){
+      if (hover || (!canHover && inView && !reduce)){
+        var p = v.play();
+        if (p && p.catch) p.catch(function(){});
+      } else {
+        // Al salir: vuelve al fotograma inicial (el póster)
+        tile.classList.remove('is-playing');
+        v.pause();
+        try { v.currentTime = 0; } catch(e){}
+      }
+    }
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ inView = e.intersectionRatio >= 0.5; sync(); });
+      }, { threshold: [0, 0.5, 1] }).observe(v);
+    }
+    tile.addEventListener('mouseenter', function(){ hover = true; sync(); });
+    tile.addEventListener('mouseleave', function(){ hover = false; sync(); });
+    document.addEventListener('visibilitychange', function(){ if (document.hidden){ hover = false; sync(); } });
+  });
+
+  // ---------- 5. Cabecera que se esconde al bajar ----------
   var header = document.querySelector('.site-header');
   var lastY = window.scrollY;
   window.addEventListener('scroll', function(){
@@ -415,7 +488,7 @@ p,h1,h2{margin:0}
     lastY = y;
   }, { passive: true });
 
-  // 6. Cursor VAF
+  // ---------- 6. Cursor VAF ----------
   if (!reduce && window.matchMedia('(pointer: fine)').matches){
     var c = document.querySelector('.cursor');
     var cText = c.querySelector('.c-text');
@@ -448,5 +521,68 @@ p,h1,h2{margin:0}
   startWhenFontsReady();
 })();
 </script>
+
+
+<!--pt-js--><script>
+// Transición entre páginas: VAF cambia de tipografía mientras carga la siguiente
+(function(){
+  var html = document.documentElement;
+  var pt = document.querySelector('.pt'), logo = pt && pt.querySelector('.pt-logo');
+  if (!pt) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seq = ['f3','f13','f4','f6','f12','f14','f10','f15','f1','f7','f9'];
+  var timer = null, k = 0;
+  function spin(){
+    if (reduce || timer) return;
+    timer = setInterval(function(){ logo.className = 'pt-logo ' + seq[k++ % seq.length]; }, 80);
+  }
+  function stop(){ clearInterval(timer); timer = null; logo.className = 'pt-logo'; }
+  // Cada página empieza arriba (salvo que el enlace lleve ancla o la persona ya haya hecho scroll)
+  var touched = false;
+  ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){ window.addEventListener(ev, function(){ touched = true; }, { once: true, passive: true }); });
+  function toTop(){ if (!location.hash && !touched) window.scrollTo(0, 0); }
+  toTop();
+  // Llegada: si venimos de una transición, se destapa en cuanto la página está lista
+  if (html.classList.contains('pt-in')){
+    spin();
+    try { sessionStorage.removeItem('vaf-pt'); } catch(e){}
+    var t0 = Date.now(), done = false;
+    var reveal = function(){
+      if (done) return; done = true;
+      var wait = Math.max(0, 350 - (Date.now() - t0));
+      setTimeout(function(){ toTop(); stop(); html.classList.remove('pt-in'); }, wait);
+    };
+    var first = document.querySelector('.film-poster, .ph-in[src], video[poster]');
+    if (first && first.tagName === 'IMG' && !first.complete){
+      first.addEventListener('load', reveal); first.addEventListener('error', reveal);
+      setTimeout(reveal, 1500);
+    } else if (document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', reveal);
+    } else { reveal(); }
+  }
+  window.addEventListener('load', toTop);
+  // Salida: al pinchar un enlace interno, se tapa y cambia de página
+  document.addEventListener('click', function(e){
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(mailto|tel):/i.test(href)) return;
+    var url;
+    try { url = new URL(href, location.href); } catch(err){ return; }
+    var internal = url.origin === location.origin || /\/artifact\//.test(url.pathname);
+    if (!internal) return;
+    if (url.origin === location.origin && url.pathname === location.pathname && url.hash) return;
+    e.preventDefault();
+    try { sessionStorage.setItem('vaf-pt', '1'); } catch(err){}
+    pt.classList.add('on'); spin();
+    setTimeout(function(){ location.href = url.href; }, reduce ? 150 : 320);
+  });
+  // Al volver con el botón "atrás", que no se quede tapado
+  window.addEventListener('pageshow', function(ev){
+    if (ev.persisted){ stop(); pt.classList.remove('on'); html.classList.remove('pt-in'); }
+  });
+})();
+</script><!--/pt-js-->
 </body>
 </html>

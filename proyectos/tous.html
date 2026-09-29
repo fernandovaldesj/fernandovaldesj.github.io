@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Infinitamente nuevo, Omoda. VAF</title>
-<meta name="description" content="Campaña de lanzamiento 360 del Omoda 5 en España. Portfolio de Fernando Valdés (VAF).">
+<title>Alma by Tous. VAF</title>
+<meta name="description" content="Alma by Tous, propuesta: concepto transversal para la Convención Internacional, la cena y la pop up store de Tous en Sevilla. Portfolio de Fernando Valdés (VAF).">
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Cinzel:wght@700&family=DM+Serif+Display&family=MedievalSharp&family=Playfair+Display:ital,wght@1,900&family=Rubik+Mono+One&family=Space+Mono:wght@700&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=Unbounded:wght@800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script><!--pt-head--><script>(function(){try{history.scrollRestoration='manual';if(sessionStorage.getItem('vaf-pt')){document.documentElement.classList.add('pt-in');}}catch(e){}})();</script><!--/pt-head-->
 <style>
@@ -78,6 +78,10 @@ p,h1,h2,h3,dl,dd{margin:0}
 .film-box{aspect-ratio:16/9;background:var(--reel);position:relative;overflow:hidden;transform-origin:50% 100%}
 .play{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;background:var(--accent);border:0;border-radius:0;font:inherit;font-size:17px;font-weight:500;color:var(--on-accent);cursor:pointer}
 .film-box{display:block;color:#FFFFFF}
+.film-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:3;display:none}
+.film-box.playing .film-video{display:block}
+.sound{display:none;position:absolute;right:calc(var(--ix,0px) + 24px);top:calc(var(--iy,0px) + 22px);z-index:4;min-height:40px;padding:0 16px;align-items:center;background:var(--accent);color:var(--on-accent);border:0;border-radius:0;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.film-box.playing.is-muted .sound{display:flex}
 .film-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;background:#000}
 .film-box.playing .play,.film-box.playing .dur,.film-box.playing .film-title{display:none}
 .film-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s ease}
@@ -136,7 +140,53 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .frames .small{margin-bottom:clamp(16px,2vw,24px)}
 .frame-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .r-cine{aspect-ratio:2.2/1}
-.r-opi{aspect-ratio:1636/975}
+.r-169{aspect-ratio:16/9}
+.r-32{aspect-ratio:3/2}
+.r-23{aspect-ratio:2/3}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.g-tall5{grid-column:1/span 5}
+.hero-img{padding:clamp(40px,5vw,72px) var(--pad) 0}
+.pillars{margin-top:clamp(28px,3vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:28px;border-top:1px solid var(--line);padding-top:16px}
+.pillars dt{font-size:15px;font-weight:500;margin-bottom:8px}
+.pillars dd{font-size:clamp(19px,1.7vw,24px);line-height:1.3;letter-spacing:-0.01em}
+.pillars-sec{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.spaces-sec{padding:clamp(56px,6vw,96px) var(--pad) 0;display:flex;flex-direction:column;gap:12px}
+.spaces-sec .small{margin-bottom:clamp(16px,2vw,24px)}
+.sp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);align-items:start;margin-top:clamp(24px,4vw,64px)}
+.sp-panel{aspect-ratio:1/1.05;padding:clamp(16px,1.8vw,26px);display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.sp-n{font-size:14px;font-weight:500;opacity:.8}
+.sp-panel h3{margin:auto 0 0;font-size:clamp(26px,3.2vw,48px);font-weight:700;line-height:.92;letter-spacing:-0.035em;text-transform:uppercase}
+.sp-panel p{font-size:clamp(14px,1.2vw,17px);line-height:1.35;max-width:22em}
+.sp-i{margin:0;overflow:hidden}
+.sp-i img{display:block;width:100%;height:118%;object-fit:cover;margin-top:-9%;will-change:transform}
+.sp-i1{aspect-ratio:3/4}.sp-i2{aspect-ratio:4/5}.sp-i3{aspect-ratio:2/3}
+.sp-a .sp-panel{grid-column:1/span 4;grid-row:1}
+.sp-a .sp-i1{grid-column:5/span 3;grid-row:1;margin-top:22%}
+.sp-a .sp-i2{grid-column:8/span 3;grid-row:1;margin-top:4%}
+.sp-a .sp-i3{grid-column:11/span 2;grid-row:1;margin-top:38%}
+.sp-b .sp-panel{grid-column:9/span 4;grid-row:1;margin-top:10%}
+.sp-b .sp-i1{grid-column:1/span 2;grid-row:1;margin-top:30%}
+.sp-b .sp-i2{grid-column:3/span 3;grid-row:1}
+.sp-b .sp-i3{grid-column:6/span 3;grid-row:1;margin-top:18%}
+.sp .sp-i[data-reveal]:nth-of-type(2){transition-delay:.08s}.sp .sp-i[data-reveal]:nth-of-type(3){transition-delay:.16s}.sp .sp-i[data-reveal]:nth-of-type(4){transition-delay:.24s}
+.r-logo{aspect-ratio:1930/1262}
+.alma-logo{margin-bottom:clamp(40px,5vw,72px)}
+.ipad{max-width:900px;width:100%;margin:0 auto;border:1.5px solid var(--ink);border-radius:clamp(22px,3vw,40px);padding:clamp(14px,2.2vw,26px);position:relative}
+.ipad::before{content:"";position:absolute;left:50%;top:clamp(5px,1vw,11px);width:6px;height:6px;border:1px solid var(--ink);border-radius:50%;transform:translateX(-50%)}
+.ipad-screen{aspect-ratio:4/3;border:1px solid var(--ink);border-radius:clamp(6px,.8vw,10px);overflow-y:auto;overscroll-behavior:contain;background:#fff;scrollbar-width:thin}
+.ipad-screen img{display:block;width:100%;height:auto}
+.ipad-cap{margin-top:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.spaces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:36px;border-top:1px solid var(--line);padding-top:16px}
+.spaces dt{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;margin-bottom:8px}
+.chip{width:12px;height:12px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.spaces dd{font-size:17px;line-height:1.4;color:var(--ink)}
+.g-land{grid-column:2/span 3}
+.g-land-side{grid-column:6/span 6;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);align-self:center}
+.g-side6{grid-column:7/span 6;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);padding-bottom:36px}
+.pack-lead{grid-column:1/span 7}
+.pack-lead .copy{max-width:14em}
+.quote{grid-column:1/span 9;font-size:clamp(24px,2.4vw,36px);line-height:1.2;letter-spacing:-0.02em;text-wrap:balance}
+.quote-by{grid-column:1/span 9;margin-top:18px;font-size:15px;color:var(--muted)}
 .g-wide8{grid-column:1/span 8}
 .g-side4{grid-column:10/span 3;display:flex;flex-direction:column;gap:14px;padding-bottom:8px}
 .g-side4 .cap{margin-top:0}
@@ -177,7 +227,17 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 @media (max-width: 900px){
   .facts,.credits{grid-template-columns:repeat(2,minmax(0,1fr))}
   .story-block{grid-column:1/-1;padding-right:0}
-  .g-tall,.g-side,.laptop,.g-wide8,.g-side4{grid-column:1/-1}
+  .g-tall,.g-side,.laptop,.g-wide8,.g-side4,.pack-lead,.quote,.quote-by,.g-tall5,.g-side6,.g-land-side{grid-column:1/-1}
+  .g-land{grid-column:1/-1;max-width:380px;width:100%;margin:0 auto}
+  .g-land-side{margin-top:32px}
+  .sp{column-gap:10px;row-gap:10px}
+  .sp .sp-panel{grid-column:1/-1;grid-row:1;aspect-ratio:auto;min-height:190px;margin-top:0}
+  .sp .sp-i1,.sp .sp-i2,.sp .sp-i3{grid-row:2}
+  .sp .sp-i1{grid-column:1/span 4;margin-top:14%}
+  .sp .sp-i2{grid-column:5/span 4;margin-top:0}
+  .sp .sp-i3{grid-column:9/span 4;margin-top:22%}
+  .pillars,.spaces{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g-side6{margin-top:32px;padding-bottom:0}
   .g-side4{margin-top:16px}
   .frame-row{grid-template-columns:minmax(0,1fr)}
   .g-side{margin-top:32px;padding-bottom:0}
@@ -187,6 +247,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   .nav-wrap{gap:18px;font-size:15px}
   .lang{display:none}
   .phones{column-gap:8px}
+  .spaces{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion: reduce){
   .js [data-reveal],.js .ph,.js .p-title .wi{transform:none!important;opacity:1!important;clip-path:none!important;transition:none!important}
@@ -229,117 +290,170 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 
 <main>
   <section class="p-hero">
-    <p class="meta"><span>Omoda</span><span>Campaña de lanzamiento 360</span><span>2024</span></p>
-    <h1 class="p-title" id="ptitle">Infinitamente <span class="mark">nuevo</span>.</h1>
+    <p class="meta"><span>Tous</span><span>Propuesta · Convención internacional y pop up store</span><span>2024</span></p>
+    <h1 class="p-title" id="ptitle"><span class="mark">Alma</span> by Tous.</h1>
   </section>
 
-  <section class="film" aria-label="Spot">
-    <a class="film-box" href="https://vimeo.com/942124197" target="_blank" rel="noopener" data-cursor="Play" aria-label="Reproducir el spot Omoda 5, Infinitamente nuevo">
-      <img class="film-poster" alt="" src="../assets/omoda/spot.webp">
-      <p class="film-title">Omoda 5. Infinitamente nuevo. <span>Spot TV</span></p>
+  <section class="film" aria-label="Videoconcept">
+    <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el videoconcept de Alma by Tous">
+      <img class="film-poster" alt="" src="../assets/tous/video-poster.webp">
+      <video class="film-video" src="../assets/tous/videoconcept.mp4" playsinline preload="none" title="Videoconcept Alma by Tous"></video>
+      <p class="film-title">Alma by Tous. <span>Videoconcept</span></p>
       <span class="play">
         <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>
         Play
       </span>
-      <span class="dur">0:20</span>
-    </a>
+      <span class="dur">1:22</span>
+      <button class="sound" type="button">Activar sonido</button>
+    </div>
   </section>
 
   <dl class="facts" data-reveal>
-    <div><dt>Cliente</dt><dd>Omoda | Jaecoo</dd></div>
+    <div><dt>Cliente</dt><dd>Tous</dd></div>
     <div><dt>Agencia</dt><dd>Actimundi</dd></div>
-    <div><dt>Mi rol</dt><dd>Director de arte senior</dd></div>
-    <div><dt>Soportes</dt><dd>Spot TV, exterior, digital y redes sociales</dd></div>
+    <div><dt>Mi rol</dt><dd>Dirección de arte</dd></div>
+    <div><dt>Soportes</dt><dd>Concepto, videoconcept, interiorismo, landing y cartelería</dd></div>
   </dl>
 
   <section class="story grid">
     <div class="story-block" data-reveal>
-      <h2 class="small">El reto</h2>
-      <p>Presentar en España el Omoda 5, el SUV con el que una marca recién llegada quería conquistar a urbanitas de 30 a 35 años: independientes, inconformistas y siempre un paso por delante de las tendencias.</p>
+      <h2 class="small">El punto de partida</h2>
+      <p>Tous tenía por delante un 2024 apasionante: su Convención Internacional y una pop up store en Sevilla. ¿Y si aprovechábamos esos planes para crear algo muy grande, que transmitiera la creatividad, la pasión y el detalle que Tous pone en todo lo que hace?</p>
     </div>
     <div class="story-block" data-reveal>
       <h2 class="small">La idea</h2>
-      <p>Si todo en el coche era nuevo, había que decirlo sin miedo a repetirse. "Infinitamente nuevo" convierte una sola palabra en todo un sistema de campaña.</p>
+      <p>Alma by Tous: una idea transversal para la convención, la cena y la pop up store. Una forma de enseñar algo de la marca que nadie había visto antes, y de sorprender a empleados y consumidores por igual. Se quedó en propuesta.</p>
     </div>
   </section>
 
-  <section class="spot" aria-label="El spot">
-    <h2 class="small">El spot</h2>
+  <section class="pillars-sec" aria-label="Los cuatro pilares">
+    <figure class="alma-logo">
+      <div class="ph r-logo"><img class="ph-in" src="../assets/tous/alma-logo.webp" alt="Logotipo Alma by Tous en blanco sobre negro, con ornamentos en línea roja." loading="lazy"></div>
+    </figure>
+    <p class="ooh-intro" data-reveal>Alma es una palabra muy arraigada en la cultura andaluza, por la pasión con la que se vive todo. Y atraviesa los cuatro pilares de la compañía.</p>
+    <dl class="pillars" data-reveal>
+      <div><dt>People</dt><dd>Son el alma de la marca, quienes lo hacen todo posible.</dd></div>
+      <div><dt>Brand</dt><dd>Todo lo que hace la marca le sale del alma.</dd></div>
+      <div><dt>Product</dt><dd>Colecciones y campañas que llegan al alma.</dd></div>
+      <div><dt>Business</dt><dd>Se deja el alma para seguir creciendo.</dd></div>
+    </dl>
+  </section>
+
+  <section class="story grid" aria-label="La convención">
+    <div class="story-block" data-reveal>
+      <h2 class="small">La convención</h2>
+      <p>Una convención convertida en espectáculo.</p>
+    </div>
+    <div class="story-block" data-reveal>
+      <h2 class="small">&nbsp;</h2>
+      <p>Propusimos plantear el evento de principio a fin como una gran función teatral, con el alma como hilo conductor y música, danza y performances por el camino. Y lo presentamos con un videoconcept que lo dejaba claro desde el primer segundo: “This is not another convention”.</p>
+    </div>
+  </section>
+
+
+  <section class="spaces-sec" aria-label="Los espacios">
+    <h2 class="small">Los espacios</h2>
+    <div class="sp sp-a">
+      <div class="sp-panel" data-reveal style="background:#1225E4;color:#FFFFFF"><span class="sp-n">01</span><h3>Showroom / Store</h3><p>Las colecciones de la marca, para verlas y comprarlas.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-showroom-1.webp" alt="Moodboard Showroom / Store" loading="lazy" data-speed="-8"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-showroom-2.webp" alt="Moodboard Showroom / Store" loading="lazy" data-speed="14"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-showroom-3.webp" alt="Moodboard Showroom / Store" loading="lazy" data-speed="-4"></figure>
+    </div>
+    <div class="sp sp-b">
+      <div class="sp-panel" data-reveal style="background:#CC2BF5;color:#FFFFFF"><span class="sp-n">02</span><h3>Catwalk</h3><p>Lanzamientos de nuevas colecciones y concursos de moda con talento local.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-catwalk-1.webp" alt="Moodboard Catwalk" loading="lazy" data-speed="10"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-catwalk-2.webp" alt="Moodboard Catwalk" loading="lazy" data-speed="-6"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-catwalk-3.webp" alt="Moodboard Catwalk" loading="lazy" data-speed="16"></figure>
+    </div>
+    <div class="sp sp-a">
+      <div class="sp-panel" data-reveal style="background:#75FB4F;color:#000000"><span class="sp-n">03</span><h3>Gallery</h3><p>Arte urbano, pintura, fotografía, interiorismo y arquitectura, de firmas consagradas y talento emergente.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-gallery-1.webp" alt="Moodboard Gallery" loading="lazy" data-speed="-12"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-gallery-2.webp" alt="Moodboard Gallery" loading="lazy" data-speed="8"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-gallery-3.webp" alt="Moodboard Gallery" loading="lazy" data-speed="-2"></figure>
+    </div>
+  </section>
+
+  <section class="spot" aria-label="La pop up store">
+    <h2 class="small">La pop up store</h2>
     <div class="lines" id="lines">
-      <p>Nuevos sistemas de ayuda al conductor.</p>
-      <p>Nuevo olor a coche nuevo.</p>
-      <p>Nuevo sistema inteligente.</p>
-      <p>Nuevos 7 años de garantía.</p>
-      <p>Nuevo futuro.</p>
-      <p class="last">Omoda 5. <span class="mark">Infinitamente nuevo.</span></p>
+      <p>Mira, pinta, baila, toca, prueba,</p>
+      <p>compra, come, escucha, aprende.</p>
+      <p class="last">Pero, sobre todo, hazlo con el <span class="mark">alma</span>.</p>
     </div>
-    <p class="spot-note" data-reveal>Rodaje real de conducción fusionado con escenas digitales, al ritmo de una música disruptiva. Filmado íntegramente en Barcelona.</p>
+    <p class="spot-note" data-reveal>Con la pop up se podía abrir mucho más que una tienda: enseñar qué le gusta a Tous, qué le mueve, e invitar a la gente a formar parte. Propusimos seis espacios bajo un mismo techo.</p>
   </section>
 
-  <section class="frames" aria-label="Fotogramas del spot">
-    <h2 class="small">Fotogramas</h2>
+  <section class="spaces-sec" aria-label="Los espacios, continuación">
+    <div class="sp sp-b">
+      <div class="sp-panel" data-reveal style="background:#000000;color:#FFFFFF"><span class="sp-n">04</span><h3>Tous Stage</h3><p>Música en directo, DJ sets, teatro, poesía y podcasts.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-stage-1.webp" alt="Moodboard Tous Stage" loading="lazy" data-speed="-8"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-stage-2.webp" alt="Moodboard Tous Stage" loading="lazy" data-speed="14"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-stage-3.webp" alt="Moodboard Tous Stage" loading="lazy" data-speed="-4"></figure>
+    </div>
+    <div class="sp sp-a">
+      <div class="sp-panel" data-reveal style="background:#1225E4;color:#FFFFFF"><span class="sp-n">05</span><h3>Alma Club</h3><p>Una propuesta gastronómica original, un café o un cóctel sorprendente.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-club-1.webp" alt="Moodboard Alma Club" loading="lazy" data-speed="10"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-club-2.webp" alt="Moodboard Alma Club" loading="lazy" data-speed="-6"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-club-3.webp" alt="Moodboard Alma Club" loading="lazy" data-speed="16"></figure>
+    </div>
+    <div class="sp sp-b">
+      <div class="sp-panel" data-reveal style="background:#CC2BF5;color:#FFFFFF"><span class="sp-n">06</span><h3>Coworking</h3><p>Un lugar distinto para trabajar o reunirse.</p></div>
+      <figure class="sp-i sp-i1" data-reveal><img src="../assets/tous/mood-coworking-1.webp" alt="Moodboard Coworking" loading="lazy" data-speed="-12"></figure>
+      <figure class="sp-i sp-i2" data-reveal><img src="../assets/tous/mood-coworking-2.webp" alt="Moodboard Coworking" loading="lazy" data-speed="8"></figure>
+      <figure class="sp-i sp-i3" data-reveal><img src="../assets/tous/mood-coworking-3.webp" alt="Moodboard Coworking" loading="lazy" data-speed="-2"></figure>
+    </div>
+  </section>
+
+  <section class="frames" aria-label="Interiorismo">
+    <h2 class="small">Interiorismo</h2>
     <figure>
-      <div class="ph r-cine"><img class="ph-in" src="../assets/omoda/frame-flotando.webp" alt="Fotograma del spot: una mujer flota entre edificios de oficinas." loading="lazy"></div>
+      <div class="ph r-169"><img class="ph-in" src="../assets/tous/recepcion.webp" alt="Render de la recepción de la pop up store: logo Alma by Tous en la pared, peanas de colores y el manifiesto Mira, pinta, baila… hazlo con el alma." loading="lazy"></div>
+      <figcaption class="cap">Recepción</figcaption>
+    </figure>
+    <figure>
+      <div class="ph r-169"><img class="ph-in" src="../assets/tous/club.webp" alt="Render del Alma Club: barra azul ondulada, mesas de colores y sillas negras bajo una lámpara de araña." loading="lazy"></div>
+      <figcaption class="cap">Alma Club</figcaption>
     </figure>
     <div class="frame-row">
-      <figure><div class="ph r-cine"><img class="ph-in" src="../assets/omoda/frame-emojis.webp" alt="Fotograma del spot: un chico mira el móvil junto a una ventana con lluvia mientras flotan reacciones de redes sociales." loading="lazy"></div></figure>
-      <figure><div class="ph r-cine"><img class="ph-in" src="../assets/omoda/frame-interior.webp" alt="Fotograma del spot: manos al volante y pantalla dual del Omoda 5 de noche." loading="lazy"></div></figure>
+      <figure><div class="ph r-169"><img class="ph-in" src="../assets/tous/showroom.webp" alt="Render del showroom: peanas metálicas con collares y pared con el logo de Tous en diagonal." loading="lazy"></div></figure>
+      <figure><div class="ph r-169"><img class="ph-in" src="../assets/tous/showroom-pasillo.webp" alt="Render del pasillo del showroom con bustos y peanas iluminadas." loading="lazy"></div></figure>
     </div>
+    <p class="cap">Showroom / Store</p>
+    <figure>
+      <div class="ph r-169"><img class="ph-in" src="../assets/tous/coworking-pantalla.webp" alt="Render del coworking: moqueta azul con el logo de Tous, taburetes verdes y pantalla con imagen de campaña." loading="lazy"></div>
+    </figure>
     <div class="frame-row">
-      <figure><div class="ph r-cine"><img class="ph-in" src="../assets/omoda/frame-calle.webp" alt="Fotograma del spot: el Omoda 5 circula de noche por Madrid bajo el logotipo de Omoda." loading="lazy"></div></figure>
-      <figure><div class="ph r-cine"><img class="ph-in" src="../assets/omoda/frame-voxel.webp" alt="Fotograma del spot: caballos de vóxeles de colores cruzan una calle digital." loading="lazy"></div></figure>
+      <figure><div class="ph r-169"><img class="ph-in" src="../assets/tous/coworking-verde.webp" alt="Render del coworking con lámparas verdes sobre mesas metálicas orgánicas." loading="lazy"></div></figure>
+      <figure><div class="ph r-169"><img class="ph-in" src="../assets/tous/coworking.webp" alt="Render del coworking con lámparas azules y dos mesas metálicas." loading="lazy"></div></figure>
     </div>
+    <p class="cap">Coworking</p>
+    <figure>
+      <div class="ph r-169"><img class="ph-in" src="../assets/tous/gallery.webp" alt="Render de la galería: sillas escultóricas de colores, una escultura cromada y el neón de Tous al fondo." loading="lazy"></div>
+      <figcaption class="cap">Gallery</figcaption>
+    </figure>
   </section>
 
-  <section class="ooh" aria-label="Exterior">
-    <h2 class="small">Exterior</h2>
-    <p class="ooh-intro" data-reveal>En Madrid, la campaña habló como Madrid: dos lonas gigantes con un copy pensado para cada lugar.</p>
-    <div class="grid g-row">
-      <figure class="g-tall">
-        <div class="ph r-34"><img class="ph-in" src="../assets/omoda/ooh-sol.webp" alt="Lona del Omoda 5 en la Puerta del Sol: Un Omoda 5 desde 22.990 euros sí es dar la campanada." loading="lazy"></div>
-        <figcaption class="cap">Puerta del Sol, Madrid</figcaption>
-      </figure>
-      <div class="g-side" data-reveal>
-        <p class="copy">“Un Omoda 5 desde 22.990€* sí es dar la campanada.”</p>
-        <div>
-          <p class="num"><span id="count">900</span><small> m²</small></p>
-          <p class="num-cap">de lonas entre la Puerta del Sol y la Avenida de América.</p>
+  <section class="ooh" aria-label="Comunicación">
+    <h2 class="small">Comunicación</h2>
+    <figure data-reveal>
+      <div class="ipad">
+        <div class="ipad-screen" tabindex="0" data-cursor="Scroll" aria-label="Landing de Alma by Tous, desplázate para verla entera">
+          <img src="../assets/tous/landing.webp" alt="Landing de Alma by Tous con el menú de espacios, la agenda de actuaciones, la colección Manifesto, exposiciones y actividades." loading="lazy">
         </div>
       </div>
-    </div>
+      <figcaption class="ipad-cap"><span class="copy-s">Una landing pensada para vivir la pop up antes de entrar: agenda, exposiciones, talleres y la última colección.</span><span class="cap">Haz scroll dentro de la pantalla</span></figcaption>
+    </figure>
     <figure>
-      <div class="ph r-wide"><img class="ph-in" src="../assets/omoda/ooh-casavo.webp" alt="Lona del Omoda 5 en un edificio de Madrid al atardecer: Omoda mazo. Perdón, estando en Madrid, teníamos que decirlo." loading="lazy"></div>
-      <figcaption class="cap-row"><span class="copy-s">“‘Omoda’ mazo. (Perdón, estando en Madrid, teníamos que decirlo)”</span><span class="cap">Avenida de América, Madrid</span></figcaption>
+      <img class="mock" src="../assets/tous/cartel.webp" alt="Carteles de Alma by Tous pegados en una pared: showroom, música live, moda, arte, teatro, poesía y mucho más." loading="lazy" data-reveal>
+      <figcaption class="cap">Cartelería</figcaption>
     </figure>
-    <div class="grid g-row">
-      <figure class="g-wide8">
-        <img class="mock" src="../assets/omoda/opi.webp" alt="Mupi del Omoda 5 en una parada de noche: desde 149 euros al mes." loading="lazy" data-reveal>
-      </figure>
-      <div class="g-side4" data-reveal>
-        <p class="copy-s">Mupis con la oferta de lanzamiento, para llevar la campaña a pie de calle.</p>
-        <p class="cap">Mupi, Madrid</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="digital" aria-label="Digital y redes sociales">
-    <h2 class="small">Digital y redes</h2>
-    <figure class="grid">
-      <img class="mock laptop" src="../assets/omoda/web-xataka.webp" alt="Skin publicitaria del Omoda 5 en la web de Xataka, vista en un portátil." loading="lazy" data-reveal>
-      <figcaption class="cap laptop">Skin publicitaria en Xataka</figcaption>
-    </figure>
-    <div class="phones">
-      <figure class="ph-l"><img class="mock" src="../assets/omoda/story-185cv.webp" alt="Story del Omoda 5: Nuevos 185 CV." loading="lazy" data-reveal></figure>
-      <figure class="ph-c"><img class="mock" src="../assets/omoda/landing-movil.webp" alt="Landing móvil del Omoda 5: Infinitamente nuevo, desde 22.990 euros." loading="lazy" data-reveal></figure>
-      <figure class="ph-r"><img class="mock" src="../assets/omoda/story-pantalla.webp" alt="Story del Omoda 5: Nueva pantalla dual de 52 cm y 20,5 pulgadas." loading="lazy" data-reveal></figure>
-    </div>
   </section>
 
   <section class="next">
     <p class="small">Siguiente proyecto</p>
-    <a class="next-link" href="madcool.html" data-cursor="Drive cool" data-cursor-pre="1">
-      <span class="next-title">Drive cool</span>
-      <span class="next-client">/ Omoda | Jaecoo en Mad Cool</span>
+    <a class="next-link" href="triangirl.html" data-cursor="Triangirl" data-cursor-pre="1">
+      <span class="next-title">Triangirl</span>
+      <span class="next-client">/ Laboratorios Ordesa</span>
     </a>
   </section>
 </main>
@@ -370,30 +484,47 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   var film = document.querySelector('.film-box');
   var canEmbed = film && film.getAttribute('data-embed') !== 'off';
   var iframe = null, autoPaused = false;
+  var vid = film ? film.querySelector('video') : null;
   function vimeo(method){
-    if (iframe && iframe.contentWindow) iframe.contentWindow.postMessage(JSON.stringify({ method: method }), 'https://player.vimeo.com');
+    if (!iframe) return;
+    if (method === 'play'){ var p = vid.play(); if (p && p.catch) p.catch(function(){}); }
+    else vid.pause();
   }
-  function startVideo(muted){
+  function updSound(){ if (vid) film.classList.toggle('is-muted', vid.muted); }
+  function startVideo(auto){
     // Los vídeos solo arrancan con un clic, para que suenen con la música
-    if (muted) return false;
-    if (!canEmbed) return false;
-    if (iframe){ vimeo('play'); return true; }
-    iframe = document.createElement('iframe');
-    iframe.src = 'https://player.vimeo.com/video/942124197?autoplay=1&title=0&byline=0&portrait=0&dnt=1' + (muted ? '&muted=1' : '');
-    iframe.title = 'Spot Omoda 5, Infinitamente nuevo';
-    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-    iframe.setAttribute('allowfullscreen', '');
-    film.appendChild(iframe);
+    if (auto) return false;
+    if (!vid) return false;
+    if (iframe){ if (!auto){ vid.muted = false; updSound(); } vimeo('play'); return true; }
+    iframe = vid;
+    vid.controls = true;
     film.classList.add('playing');
     film.removeAttribute('data-cursor');
     var cur = document.querySelector('.cursor');
     if (cur) cur.classList.remove('label');
+    // Intenta con música; si el navegador no deja sonar sin un clic, arranca en silencio y enseña "Activar sonido"
+    vid.muted = false;
+    var p = vid.play();
+    if (p && p.catch) p.catch(function(err){
+      if (!err || err.name !== 'NotAllowedError') return;
+      vid.muted = true; updSound();
+      var q = vid.play(); if (q && q.catch) q.catch(function(){});
+    });
+    updSound();
     return true;
+  }
+  if (vid){
+    vid.addEventListener('volumechange', updSound);
+    var sb = film.querySelector('.sound');
+    if (sb) sb.addEventListener('click', function(e){ e.stopPropagation(); vid.muted = false; vid.volume = 1; updSound(); });
   }
   if (film){
     film.addEventListener('click', function(e){
       if (film.classList.contains('playing')) return;
       if (startVideo(false)) e.preventDefault();
+    });
+    film.addEventListener('keydown', function(e){
+      if ((e.key === 'Enter' || e.key === ' ') && !film.classList.contains('playing')){ e.preventDefault(); startVideo(false); }
     });
   }
   var immersive = !!(film && !reduce && hasGsap && window.matchMedia('(min-width: 901px)').matches);
@@ -446,23 +577,6 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // 3. Contador de metros cuadrados
-  var count = document.getElementById('count');
-  if (!reduce && 'IntersectionObserver' in window){
-    var target = 900, started = false;
-    new IntersectionObserver(function(entries, obs){
-      if (!entries[0].isIntersecting || started) return;
-      started = true; obs.disconnect();
-      var t0 = performance.now(), dur = 1400;
-      (function tick(now){
-        var p = Math.min((now - t0) / dur, 1);
-        var e = 1 - Math.pow(1 - p, 3);
-        count.textContent = Math.round(target * e);
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
-    }, { threshold: 0.6 }).observe(count);
-  }
-
   // 4. Cabecera que se esconde al bajar
   var header = document.querySelector('.site-header');
   var lastY = window.scrollY;
@@ -495,7 +609,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
         { '--ix': function(){ return insets().ix + 'px'; }, '--iy': function(){ return insets().iy + 'px'; } },
         { '--ix': '0px', '--iy': '0px', ease: 'none', duration: 0.5 })
         .to({}, { duration: 0.5 });
-    } else {
+    } else if (film) {
       gsap.fromTo('.film-box', { scale: 0.9 }, {
         scale: 1, ease: 'none',
         scrollTrigger: { trigger: '.film', start: 'top 85%', end: 'top 15%', scrub: true }
@@ -504,6 +618,14 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     gsap.utils.toArray('.ph-in').forEach(function(el){
       gsap.fromTo(el, { yPercent: -6 }, {
         yPercent: 6, ease: 'none',
+        scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    // Moodboard de espacios: cada imagen se mueve a su propio ritmo
+    gsap.utils.toArray('[data-speed]').forEach(function(el){
+      var sp = parseFloat(el.getAttribute('data-speed')) || 0;
+      gsap.fromTo(el, { yPercent: sp }, {
+        yPercent: -sp, ease: 'none',
         scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
       });
     });
