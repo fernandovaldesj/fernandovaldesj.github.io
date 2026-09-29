@@ -45,6 +45,7 @@ p,h1,h2,h3,dl,dd{margin:0}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .nav a:hover::after{transform:scaleX(1);transform-origin:left}
 .lang span{opacity:.5}
+.lang a{opacity:.5;transition:opacity .3s ease}.lang a:hover{opacity:1}.lang b{font-weight:inherit}
 
 /* Common */
 .wrap{padding-left:var(--pad);padding-right:var(--pad)}
@@ -195,7 +196,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 }
 @media (max-width: 600px){
   .nav-wrap{gap:18px;font-size:15px}
-  .lang{display:none}
+  .lang{font-size:14px}
   .phones{column-gap:8px}
 }
 @media (prefers-reduced-motion: reduce){
@@ -233,7 +234,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <a href="../#about">About</a>
       <a href="../#contact">Say hi</a>
     </nav>
-    <p class="lang">ES <span>/ EN</span></p>
+    <p class="lang"><b>ES</b> <a href="../en/proyectos/madcool.html" hreflang="en" lang="en">/ EN</a></p>
   </div>
 </header>
 
