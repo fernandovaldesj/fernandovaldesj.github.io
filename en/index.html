@@ -108,6 +108,7 @@ p,h1,h2{margin:0}
 img.ph-in,video.ph-in{display:block;width:100%;object-fit:cover}
 video.ph-in{background:#0b0b0c}
 .tile:hover video.ph-in{opacity:1}
+.ph-in.noplx{top:0;height:100%}
 .ph-poster{pointer-events:none;transition:opacity .35s ease}
 .tile:hover img.ph-poster{opacity:1}
 .tile.is-playing img.ph-poster{opacity:0}
@@ -245,7 +246,7 @@ video.ph-in{background:#0b0b0c}
           <p class="caption"><span class="label">View</span><span>Mad Cool Festival / Omoda | Jaecoo</span></p>
         </a>
         <a class="tile" href="proyectos/frit-ravich.html" data-cursor="Top Corn Zombie Edition" data-cursor-pre="1">
-          <div class="ph wide"><video class="ph-in" data-autoplay src="../assets/frit/hero.mp4" poster="../assets/frit/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Clip from the Top Corn Zombie Edition video"></video><img class="ph-in ph-poster" src="../assets/frit/hero-poster.webp" alt="" aria-hidden="true"></div>
+          <div class="ph wide"><video class="ph-in noplx" data-autoplay src="../assets/frit/hero.mp4" poster="../assets/frit/hero-poster.webp" muted loop playsinline preload="metadata" aria-label="Clip from the Top Corn Zombie Edition video"></video><img class="ph-in ph-poster noplx" src="../assets/frit/hero-poster.webp" alt="" aria-hidden="true"></div>
           <p class="caption"><span class="label">View</span><span>Top Corn Zombie Edition / Frit Ravich</span></p>
         </a>
       </div>
@@ -422,7 +423,7 @@ video.ph-in{background:#0b0b0c}
       scale: 1, ease: 'none',
       scrollTrigger: { trigger: '.reel', start: 'top 95%', end: 'top 30%', scrub: true }
     });
-    gsap.utils.toArray('.ph-in').forEach(function(el){
+    gsap.utils.toArray('.ph-in:not(.noplx)').forEach(function(el){
       gsap.fromTo(el, { yPercent: -6 }, {
         yPercent: 6, ease: 'none',
         scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
