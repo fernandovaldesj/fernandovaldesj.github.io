@@ -142,6 +142,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .frame-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .r-cine{aspect-ratio:2.2/1}
 .r-169{aspect-ratio:16/9}
+.loop-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b0f14}
 .r-32{aspect-ratio:3/2}
 .r-23{aspect-ratio:2/3}
 .duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
@@ -452,6 +453,13 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     <div><dt>Packaging</dt><dd>Adobe Illustrator y Photoshop</dd></div>
   </dl>
 
+  <section class="frames" aria-label="El pack">
+    <figure data-reveal>
+      <video class="loop-video" data-loop src="../assets/frit/pack-loop.mp4" poster="../assets/frit/pack-loop-poster.webp" muted loop playsinline preload="metadata" aria-label="El paquete de Top Corn Zombie Edition gira en el aire sobre un cementerio de noche, bajo la luna."></video>
+      <figcaption class="cap-row"><span class="copy-s">El pack, protagonista hasta el final.</span><span class="cap">Packaging diseñado por mí · Animación con IA</span></figcaption>
+    </figure>
+  </section>
+
   <section class="next">
     <p class="small">Siguiente proyecto</p>
     <a class="next-link" href="omoda.html" data-cursor="Infinitamente nuevo" data-cursor-pre="1">
@@ -588,6 +596,17 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     window.addEventListener('pointermove', function(e){ if (!down) return; var dx = e.clientX - sx; moved = Math.abs(dx); bbEl.scrollLeft = sl - dx; });
     window.addEventListener('pointerup', function(){ if (!down) return; down = false; bbEl.classList.remove('drag'); });
   }
+
+  // Vídeos en bucle: se reproducen solos (en silencio) mientras se ven
+  document.querySelectorAll('video[data-loop]').forEach(function(v){
+    v.muted = true;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.intersectionRatio >= 0.35){ var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause();
+      });
+    }, { threshold: [0, 0.35] }).observe(v);
+  });
 
   // 4. Cabecera que se esconde al bajar
   var header = document.querySelector('.site-header');
