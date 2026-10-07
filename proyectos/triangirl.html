@@ -341,7 +341,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 /* Triangirl: hero + pack 3D */
 .tg-hero{position:relative;min-height:100vh;min-height:100svh;padding:clamp(110px,11vw,150px) var(--pad) clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
 .tg-hero-txt{grid-column:1/span 7;position:relative;z-index:2}
-.tg-title{font-size:clamp(84px,15vw,250px);line-height:.84;letter-spacing:-0.055em;margin-top:clamp(12px,2vw,28px)}
+.tg-title{font-size:clamp(60px,10.6vw,184px);line-height:.9;letter-spacing:-0.055em;margin-top:clamp(12px,2vw,28px);white-space:nowrap}
 .tg-lead{margin-top:clamp(28px,3vw,44px);max-width:30em;font-size:clamp(19px,1.7vw,24px);line-height:1.3;letter-spacing:-0.01em}
 .tg-facts{margin:clamp(32px,4vw,56px) 0 0;grid-template-columns:repeat(2,minmax(0,1fr))}
 .pack-slot{position:relative;aspect-ratio:1024/2000}
@@ -352,16 +352,18 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 main{position:relative;z-index:1}
 #pack3d{position:fixed;inset:0;width:100vw;height:100vh;z-index:2;pointer-events:none;display:block}
 .tg-travel{padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
-.tv-block{grid-column:1/span 6;min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:8vh 0}
+.tv-block{grid-column:1/span 6;min-height:62vh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:6vh 0}
+.tg-travel,.tg-land{--ink:#000000;--muted:rgba(0,0,0,.6);--line:rgba(0,0,0,.85);color:var(--ink)}
 .tv-p{font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-0.01em}
 .tv-claim .lines{font-size:clamp(30px,4.2vw,64px)}
 .tv-claim .spot-note{margin-top:8px}
 .tv-block .wp{font-size:clamp(48px,6.5vw,104px)}
-.tg-land{padding:clamp(40px,6vw,96px) var(--pad) 0}
+.tg-land{padding:clamp(24px,4vw,64px) var(--pad) clamp(72px,8vw,120px)}
 .tg-land-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:16px}
 .tg-land-head .small{grid-column:1/-1}
 .tg-land-head .copy-s{grid-column:1/span 6}
-.stage{--cx:0;--cy:120;--cw:2576;--ch:1210;position:relative;overflow:hidden;aspect-ratio:var(--cw)/var(--ch);margin:max(22vh,96px) calc(var(--pad) * -1) 0;background:#FBD6A4}
+.stage{--cx:0;--cy:120;--cw:2576;--ch:1210;position:relative;overflow:hidden;aspect-ratio:var(--cw)/var(--ch);margin:0 calc(var(--pad) * -1);background:#FBD4A0;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 91%,transparent)}
+.tg-land-head{margin-top:clamp(28px,4vw,56px)}
 .stage-in{position:absolute;width:calc(2576 / var(--cw) * 100%);left:calc(var(--cx) / var(--cw) * -100%);top:calc(var(--cy) / var(--ch) * -100%);aspect-ratio:2576/1449}
 .stage-img{display:block;width:100%;height:100%;object-fit:cover}
 .stage-full{position:absolute;inset:0}
@@ -424,18 +426,18 @@ main{position:relative;z-index:1}
   .tg-hero{grid-template-columns:minmax(0,1fr) 40%;column-gap:14px;align-items:start;align-content:start;min-height:0;padding-bottom:64px}
   .tg-hero-txt{display:contents}
   .tg-hero .meta{grid-column:1/-1;grid-row:1}
-  .tg-title{grid-column:1;grid-row:2}
-  .tg-lead{grid-column:1;grid-row:3;font-size:18px}
+  .tg-title{grid-column:1/-1;grid-row:2;font-size:clamp(48px,20.5vw,110px)}
+  .tg-lead{grid-column:1;grid-row:3;font-size:18px;margin-top:22px}
   .tg-facts{grid-column:1;grid-row:4;row-gap:18px}
-  .slot-start{grid-column:2;grid-row:2/span 2;height:auto;width:100%;align-self:start;margin-top:clamp(12px,2vw,28px)}
+  .slot-start{grid-column:2;grid-row:3/span 2;height:auto;width:100%;align-self:start;margin-top:22px}
   .tg-scroll{display:none}
   .tg-travel{padding-right:calc(var(--pad) + 12.3vh + 22px);grid-template-columns:minmax(0,1fr)}
-  .tv-block{grid-column:1/-1;min-height:70vh;gap:18px}
+  .tv-block{grid-column:1/-1;min-height:56vh;gap:18px}
   .tv-p{font-size:18px}
   .tv-block .wp{font-size:40px}
   .tv-claim .lines{font-size:28px}
-  .tg-land-head{padding-right:calc(12.3vh + 22px);grid-template-columns:minmax(0,1fr)}
-  .stage{--cx:620;--cy:160;--cw:1360;--ch:1130;margin-top:24vh}
+  .tg-land-head{grid-template-columns:minmax(0,1fr)}
+  .stage{--cx:620;--cy:160;--cw:1360;--ch:1130}
   .st-cap{font-size:11px}.st-cap b{font-size:13px}
   .st-a{left:32%}.st-p{left:68.9%}
   .bc-row{grid-template-columns:minmax(0,1fr)}
@@ -470,10 +472,10 @@ main{position:relative;z-index:1}
 <canvas id="pack3d" aria-hidden="true"></canvas>
 <main>
   <svg class="tg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="tgLogo" viewBox="905 348 604 592"><path d="M 1476.82 366 C 1476.82 358.26 1482.82 352.5 1490.82 352.5 C 1498.80 352.5 1504.81 358.26 1504.81 366 C 1504.81 373.73 1498.80 379.49 1490.82 379.49 C 1482.82 379.49 1476.82 373.73 1476.82 366 M 1502.28 366 C 1502.28 359.34 1497.61 354.78 1490.82 354.78 C 1484.07 354.78 1479.35 359.34 1479.35 366 C 1479.35 372.64 1484.07 377.21 1490.82 377.21 C 1497.61 377.21 1502.28 372.64 1502.28 366 M 1485.25 359.00 L 1491.16 359.00 C 1494.93 359.00 1496.96 360.28 1496.96 362.77 C 1496.96 364.70 1495.73 365.89 1493.49 366.19 L 1493.49 366.29 C 1495.98 366.44 1496.57 367.53 1496.57 369.66 L 1496.57 370.66 C 1496.57 371.35 1496.72 372.44 1497.21 372.99 L 1494.04 372.99 C 1493.64 372.54 1493.49 371.45 1493.49 370.81 L 1493.49 369.86 C 1493.44 367.88 1493.10 367.28 1491.66 367.28 L 1488.28 367.28 L 1488.28 372.99 L 1485.25 372.99 Z M 1488.28 361.18 L 1488.28 365.25 L 1491.11 365.25 C 1492.85 365.25 1493.79 364.55 1493.79 363.07 C 1493.79 361.72 1493.04 361.18 1491.06 361.18 Z M 922.94 377.67 L 909.46 377.67 L 909.41 369.21 L 945.57 369.21 L 945.57 377.67 L 932.10 377.67 L 932.10 411.61 L 922.94 411.61 Z M 1004.75 411.61 L 988.49 393.86 L 988.49 411.61 L 979.17 411.61 L 979.17 369.21 L 999.37 369.21 C 1009.19 369.21 1015.38 374.20 1015.38 382.71 C 1015.38 391 1010.37 395.34 1001.19 395.65 L 1017.14 411.61 Z M 988.49 387.93 L 1000.12 387.93 C 1003.64 387.93 1005.88 386.19 1005.88 382.71 C 1005.88 379.30 1003.64 377.53 1000.12 377.53 L 988.49 377.53 Z M 1051.40 369.21 L 1060.71 369.21 L 1060.71 411.61 L 1051.40 411.61 Z M 1116.98 367.38 L 1141.29 411.60 L 1131.32 411.60 L 1127.02 403.61 L 1106.78 403.61 L 1102.52 411.60 L 1092.35 411.60 Z M 1122.89 395.91 L 1116.87 384.71 L 1110.89 395.91 Z M 1172.91 369.21 L 1182.13 369.21 L 1203.64 397.88 L 1203.64 369.21 L 1212.90 369.21 L 1212.90 411.61 L 1203.78 411.61 L 1182.23 382.98 L 1182.23 411.61 L 1172.91 411.61 Z M 1248.51 390.46 C 1248.51 378.09 1258.39 368.40 1271.28 368.40 C 1278.59 368.40 1284.92 371.51 1289.05 376.46 L 1281.90 382.05 C 1279.43 378.97 1275.58 377.10 1271.25 377.10 C 1263.80 377.10 1257.76 382.64 1257.76 390.44 C 1257.76 398.25 1263.80 403.78 1271.25 403.78 C 1275.64 403.78 1279.53 401.60 1281.54 398.97 L 1281.54 390.44 L 1290.85 390.44 L 1290.85 401.95 C 1286.64 408.09 1279.41 412.46 1271.28 412.46 C 1258.39 412.46 1248.51 402.83 1248.51 390.46 M 1326.76 369.21 L 1336.08 369.21 L 1336.08 411.61 L 1326.76 411.61 Z M 1399.71 411.61 L 1383.45 393.86 L 1383.45 411.61 L 1374.14 411.61 L 1374.14 369.21 L 1394.33 369.21 C 1404.15 369.21 1410.34 374.20 1410.34 382.71 C 1410.34 391 1405.33 395.34 1396.15 395.65 L 1412.11 411.61 Z M 1383.45 387.93 L 1395.08 387.93 C 1398.60 387.93 1400.84 386.19 1400.84 382.71 C 1400.84 379.30 1398.60 377.53 1395.08 377.53 L 1383.45 377.53 Z M 1446.35 369.21 L 1455.67 369.21 L 1455.62 403.15 L 1477.08 403.15 L 1477.08 411.61 L 1446.35 411.61 Z M 1446.35 369.21 "/><path d="M 1205.24 935.39 L 1476.29 441.53 L 1422.15 441.53 L 1205.37 840.98 L 1205.10 840.98 L 964.87 441.53 L 910.73 441.53 Z M 1205.24 935.39 "/></symbol></defs></svg>
-  <section class="tg-hero" aria-label="Triangirl">
+  <section class="tg-hero" aria-label="Triangirl" data-bg="base">
     <div class="tg-hero-txt">
       <p class="meta"><span>Laboratorios Ordesa</span><span>Branding: naming, logo y packaging</span><span>2025</span></p>
-      <h1 class="p-title tg-title" id="ptitle">Trian<br><span class="mark">girl</span>.</h1>
+      <h1 class="p-title tg-title" id="ptitle">Trian<span class="mark">girl</span>.</h1>
       <p class="tg-lead" data-reveal>Una marca nueva, de la primera palabra al último pack. Un triángulo que se convierte en V y tres productos, cada uno con su color.</p>
       <dl class="facts tg-facts" data-reveal>
         <div><dt>Cliente</dt><dd>Laboratorios Ordesa</dd></div>
@@ -487,16 +489,16 @@ main{position:relative;z-index:1}
   </section>
 
   <section class="tg-travel" aria-label="El proyecto">
-    <div class="tv-block" data-reveal>
+    <div class="tv-block" data-reveal data-bg="#FED16D">
       <h2 class="small">El reto</h2>
       <p class="tv-p">Crear desde cero una marca para Laboratorios Ordesa: productos de origen natural, testados científicamente, para que las chicas vivan su vida sin que la menstruación les marque el ritmo.</p>
     </div>
-    <div class="tv-block" data-reveal>
+    <div class="tv-block" data-reveal data-bg="#F9B5C3">
       <h2 class="small">El naming</h2>
       <p class="wp"><span class="wp-old">Triang<s>le</s></span><span class="wp-new">Trian<span class="mark">girl</span></span></p>
       <p class="tv-p">El triángulo siempre ha sido una forma vinculada a la mujer. Y “triangle” en inglés nos dejaba jugar con el sonido para meter dentro del nombre a quien nos dirigimos: girl. Así nació Triangirl, con la V del triángulo como símbolo.</p>
     </div>
-  <div class="tv-block tv-claim" aria-label="El claim">
+  <div class="tv-block tv-claim" aria-label="El claim" data-bg="#A5E5D9">
     <h2 class="small">El claim</h2>
     <div class="lines" id="lines">
       <p>Hasta ahora, eran ellas</p>
@@ -508,11 +510,7 @@ main{position:relative;z-index:1}
   </div>
   </section>
 
-  <section class="tg-land" aria-label="Packaging">
-    <div class="tg-land-head">
-      <h2 class="small">Packaging</h2>
-      <p class="copy-s" data-reveal>Un pack icónico en forma de triángulo, en sinergia con el nombre. La jerarquía deja ver de un vistazo la marca, el producto y su beneficio, y los iconos ayudan a entender la composición y los ingredientes.</p>
-    </div>
+  <section class="tg-land" aria-label="Packaging" data-bg="#FBD4A0">
     <div class="stage">
       <div class="stage-in">
         <img class="stage-img" src="../assets/triangirl/stage-empty.webp" alt="" loading="lazy">
@@ -523,9 +521,13 @@ main{position:relative;z-index:1}
         <p class="st-cap st-p"><b>Feel Positive</b><span>Estabilidad emocional</span></p>
       </div>
     </div>
+    <div class="tg-land-head">
+      <h2 class="small">Packaging</h2>
+      <p class="copy-s" data-reveal>Un pack icónico en forma de triángulo, en sinergia con el nombre. La jerarquía deja ver de un vistazo la marca, el producto y su beneficio, y los iconos ayudan a entender la composición y los ingredientes.</p>
+    </div>
   </section>
 
-  <section class="film" aria-label="Vídeo de marca">
+  <section class="film" aria-label="Vídeo de marca" data-bg="base">
     <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el vídeo de marca de Triangirl">
       <img class="film-poster" alt="" src="../assets/triangirl/video30-poster.webp">
       <video class="film-video" src="../assets/triangirl/video30.mp4" playsinline preload="none" title="Vídeo de marca Triangirl"></video>
@@ -1067,6 +1069,41 @@ main{position:relative;z-index:1}
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+// Fondo que cambia de color con el scroll: blanco → amarillo → rosa → cian → el melocotón del plató
+(function(){
+  var els = [].slice.call(document.querySelectorAll('[data-bg]'));
+  if (!els.length) return;
+  var body = document.body;
+  function base(){ body.style.backgroundColor = ''; return getComputedStyle(body).backgroundColor; }
+  function parse(c){
+    if (c.charAt(0) === '#'){ var n = parseInt(c.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+    var m = c.match(/[\d.]+/g) || [255, 255, 255]; return [+m[0], +m[1], +m[2]];
+  }
+  var baseRGB = parse(base());
+  function col(el){ var v = el.getAttribute('data-bg'); return v === 'base' ? baseRGB : parse(v); }
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq.addEventListener) mq.addEventListener('change', function(){ baseRGB = parse(base()); tick(); });
+  var ticking = false, last = '';
+  function tick(){
+    ticking = false;
+    var vh = window.innerHeight, probe = vh * 0.5, band = vh * 0.32, i = 0;
+    for (var k = 0; k < els.length; k++){ if (els[k].getBoundingClientRect().top <= probe) i = k; }
+    var a = col(els[i]), out = a;
+    if (i + 1 < els.length){
+      var t = Math.max(0, Math.min(1, (probe + band - els[i + 1].getBoundingClientRect().top) / band));
+      t = t * t * (3 - 2 * t);
+      var b = col(els[i + 1]);
+      out = [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
+    }
+    var c = 'rgb(' + Math.round(out[0]) + ',' + Math.round(out[1]) + ',' + Math.round(out[2]) + ')';
+    if (c !== last){ body.style.backgroundColor = c; last = c; }
+  }
+  function req(){ if (!ticking){ ticking = true; requestAnimationFrame(tick); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  tick();
 })();
 
 </script>
