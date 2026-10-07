@@ -413,6 +413,15 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
 .tg-foto .e8{grid-column:8/span 5}
 .e9{grid-column:5/span 3;margin:24% 0 0}
 .bb-head{align-items:flex-end}
+/* aparición de imágenes */
+.js .ph img{scale:1.22;transition:scale 1.9s var(--ease)}
+.js .ph.in img{scale:1}
+.js .ph{transition:clip-path 1.4s var(--ease)}
+.tr2 .ph,.e2 .ph,.e5 .ph,.e9 .ph{transition-delay:.14s}.tr2 .ph img,.e2 .ph img,.e5 .ph img,.e9 .ph img{transition-delay:.14s}
+.tr3 .ph,.e3 .ph,.e6 .ph{transition-delay:.28s}.tr3 .ph img,.e3 .ph img,.e6 .ph img{transition-delay:.28s}
+.js .bb[data-reveal]{transform:translateX(10vw)}
+.js .bb[data-reveal].in{transform:none}
+@media (prefers-reduced-motion: reduce){.js .ph img{scale:1!important;transition:none!important}}
 .tg-h-bb{margin:clamp(14px,2vw,24px) 0 0}
 
 /* Construcción de marca */
@@ -582,7 +591,7 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
   </section>
 
   <section class="film" aria-label="Vídeo de marca" data-bg="#F9B5C3">
-    <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el vídeo de marca de Triangirl">
+    <div class="film-box ph" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el vídeo de marca de Triangirl">
       <img class="film-poster" alt="" src="../assets/triangirl/video30-poster.webp">
       <video class="film-video" src="../assets/triangirl/video30.mp4" playsinline preload="none" title="Vídeo de marca Triangirl"></video>
       <p class="film-title">Triangirl. <span>Vídeo de marca</span></p>
@@ -639,9 +648,9 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
 
   <section class="tg-sec tg-trio" aria-label="Los tres productos: Feel Good, Feel Active y Feel Positive" data-bg="#A5E5D9">
     <p class="tg-h tr-h" data-reveal>Ingredientes de<br>origen natural.</p>
-    <figure class="tr tr1"><div class="pi r-ph"><img src="../assets/triangirl/ph-feelgood-jengibre.webp" alt="Pack Triangirl Feel Good Doble acción con jengibre sobre fondo rosa." loading="lazy" data-speed="-6"></div></figure>
-    <figure class="tr tr2"><div class="pi r-ph"><img src="../assets/triangirl/ph-active-limon.webp" alt="Pack Triangirl Feel Active abierto entre rodajas de limón sobre fondo amarillo." loading="lazy" data-speed="10"></div></figure>
-    <figure class="tr tr3"><div class="pi r-ph"><img src="../assets/triangirl/ph-positive-frutos.webp" alt="Pack Triangirl Feel Positive entre frambuesas y arándanos sobre fondo verde." loading="lazy" data-speed="-12"></div></figure>
+    <figure class="tr tr1"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-feelgood-jengibre.webp" alt="Pack Triangirl Feel Good Doble acción con jengibre sobre fondo rosa." loading="lazy" data-speed="-6"></div></figure>
+    <figure class="tr tr2"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-active-limon.webp" alt="Pack Triangirl Feel Active abierto entre rodajas de limón sobre fondo amarillo." loading="lazy" data-speed="10"></div></figure>
+    <figure class="tr tr3"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-positive-frutos.webp" alt="Pack Triangirl Feel Positive entre frambuesas y arándanos sobre fondo verde." loading="lazy" data-speed="-12"></div></figure>
   </section>
 
   <section class="tg-sec tg-color2" aria-label="Color" data-bg="#FBD4A0">
@@ -668,24 +677,24 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
     <h2 class="small">Fotografía</h2>
     <p class="tg-h" data-reveal>Color, actitud<br>y cero drama.</p>
     <div class="ed">
-      <figure class="e1"><div class="pi r-ph"><img src="../assets/triangirl/ph-chica-naranja.webp" alt="Chica de pelo rizado con jersey naranja se sirve un comprimido de Feel Active." loading="lazy" data-speed="6"></div></figure>
-      <figure class="e2"><div class="pi r-ph"><img src="../assets/triangirl/ph-beso.webp" alt="Chica lanzando un beso con el pack Feel Good en la mano sobre fondo rojo." loading="lazy" data-speed="-10"></div></figure>
-      <figure class="e3"><div class="pi r-ph"><img src="../assets/triangirl/ph-active-tulipanes.webp" alt="Pack Feel Active sobre una peana lila con dos tulipanes rosas." loading="lazy" data-speed="14"></div></figure>
+      <figure class="e1"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-chica-naranja.webp" alt="Chica de pelo rizado con jersey naranja se sirve un comprimido de Feel Active." loading="lazy" data-speed="6"></div></figure>
+      <figure class="e2"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-beso.webp" alt="Chica lanzando un beso con el pack Feel Good en la mano sobre fondo rojo." loading="lazy" data-speed="-10"></div></figure>
+      <figure class="e3"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-active-tulipanes.webp" alt="Pack Feel Active sobre una peana lila con dos tulipanes rosas." loading="lazy" data-speed="14"></div></figure>
     </div>
     <div class="ed">
-      <figure class="e4"><div class="pi r-ph"><img src="../assets/triangirl/ph-active-escritorio.webp" alt="Pack Feel Active sobre un escritorio rosa con libretas, clips y un bloque triangular amarillo." loading="lazy" data-speed="12"></div></figure>
-      <figure class="e5"><div class="pi r-ph"><img src="../assets/triangirl/ph-tres-rosa.webp" alt="Tres amigas asomadas una sobre otra, riendo, sobre fondo rosa." loading="lazy" data-speed="-6"></div></figure>
-      <figure class="e6"><div class="pi r-ph"><img src="../assets/triangirl/ph-mariposas.webp" alt="Chica rubia con pinzas de mariposa en el pelo sonríe sobre fondo rosa." loading="lazy" data-speed="16"></div></figure>
+      <figure class="e4"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-active-escritorio.webp" alt="Pack Feel Active sobre un escritorio rosa con libretas, clips y un bloque triangular amarillo." loading="lazy" data-speed="12"></div></figure>
+      <figure class="e5"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-tres-rosa.webp" alt="Tres amigas asomadas una sobre otra, riendo, sobre fondo rosa." loading="lazy" data-speed="-6"></div></figure>
+      <figure class="e6"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-mariposas.webp" alt="Chica rubia con pinzas de mariposa en el pelo sonríe sobre fondo rosa." loading="lazy" data-speed="16"></div></figure>
     </div>
     <div class="ed ed-end">
-      <figure class="e7"><div class="pi r-ph"><img src="../assets/triangirl/ph-chica-rojo.webp" alt="Chica con diadema rosa sonríe con las manos en la cintura sobre fondo rojo." loading="lazy" data-speed="8"></div></figure>
-      <figure class="e9"><div class="pi r-ph"><img src="../assets/triangirl/ph-tres-lila.webp" alt="Tres amigas sonríen juntas sobre fondo lila." loading="lazy" data-speed="-8"></div></figure>
+      <figure class="e7"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-chica-rojo.webp" alt="Chica con diadema rosa sonríe con las manos en la cintura sobre fondo rojo." loading="lazy" data-speed="8"></div></figure>
+      <figure class="e9"><div class="pi r-ph ph"><img src="../assets/triangirl/ph-tres-lila.webp" alt="Tres amigas sonríen juntas sobre fondo lila." loading="lazy" data-speed="-8"></div></figure>
       <p class="lf-quote e8" data-reveal>Naturales, sinceras y sin <span class="mark">dramatizar</span>.</p>
     </div>
   </section>
 
   <div class="bb-head" data-bg="#FED16D"><div><h2 class="small">Brand book</h2><p class="tg-h tg-h-bb">El manual,<br>página a página.</p></div><p class="cap" style="margin:0">Arrastra para verlo</p></div>
-  <div class="bb" id="bb" data-cursor="Arrastra" aria-label="Páginas del brand book de Triangirl">
+  <div class="bb" id="bb" data-reveal data-cursor="Arrastra" aria-label="Páginas del brand book de Triangirl">
       <img src="../assets/triangirl/bb-03.webp" alt="Brand book Triangirl, página 3" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-04.webp" alt="Brand book Triangirl, página 4" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-05.webp" alt="Brand book Triangirl, página 5" loading="lazy" draggable="false">
