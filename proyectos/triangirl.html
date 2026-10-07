@@ -337,6 +337,73 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .pt .f14{font-family:'Cinzel',serif;font-weight:700;letter-spacing:0}
 .pt .f15{font-family:'MedievalSharp',serif;font-weight:400;letter-spacing:0}
 /*/pt*/
+
+/* Triangirl: hero + pack 3D */
+.tg-hero{position:relative;min-height:100vh;min-height:100svh;padding:clamp(110px,11vw,150px) var(--pad) clamp(40px,5vw,72px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center}
+.tg-hero-txt{grid-column:1/span 7;position:relative;z-index:2}
+.tg-title{font-size:clamp(84px,15vw,250px);line-height:.84;letter-spacing:-0.055em;margin-top:clamp(12px,2vw,28px)}
+.tg-lead{margin-top:clamp(28px,3vw,44px);max-width:30em;font-size:clamp(19px,1.7vw,24px);line-height:1.3;letter-spacing:-0.01em}
+.tg-facts{margin:clamp(32px,4vw,56px) 0 0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.pack-slot{position:relative;aspect-ratio:1024/2000}
+.pack-slot .pack-fb{display:block;width:100%;height:100%;object-fit:contain}
+.gl-on .pack-slot .pack-fb{visibility:hidden}
+.slot-start{grid-column:9/span 3;height:min(74vh,720px,62vw);width:auto;justify-self:center;align-self:center}
+.tg-scroll{position:absolute;right:var(--pad);bottom:24px;font-size:14px;color:var(--muted)}
+main{position:relative;z-index:1}
+#pack3d{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block}
+.tg-travel{padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.tv-block{grid-column:1/span 6;min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:8vh 0}
+.tv-p{font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-0.01em}
+.tv-claim .lines{font-size:clamp(30px,4.2vw,64px)}
+.tv-claim .spot-note{margin-top:8px}
+.tv-block .wp{font-size:clamp(48px,6.5vw,104px)}
+.tg-land{padding:clamp(40px,6vw,96px) var(--pad) 0}
+.tg-land-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:16px}
+.tg-land-head .small{grid-column:1/-1}
+.tg-land-head .copy-s{grid-column:1/span 6}
+.land{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(12px,3vw,56px);max-width:1000px;margin:max(26vh,96px) auto 0;align-items:end}
+.land-item{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px}
+.land .pack-slot{width:min(100%,270px)}
+.land figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:15px;text-align:center}
+.land figcaption b{font-weight:500;font-size:17px}
+.land figcaption span{color:var(--muted)}
+.film-box{aspect-ratio:1600/722}
+.tg-build .ooh-intro{margin-bottom:clamp(32px,4vw,56px)}
+.tg-build .small{margin-bottom:clamp(16px,2vw,24px)}
+.bd-img{overflow:hidden;background:#F4FFFF}
+.bd-img img{display:block;width:100%;height:auto;transition:transform 1.2s var(--ease)}
+figure:hover > .bd-img img{transform:scale(1.03)}
+.bd-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;margin-bottom:24px}
+.bd-a .bd-logo{grid-column:1/span 7}.bd-a .bd-uso{grid-column:8/span 5;align-self:end}
+.bd-b .bd-icons{grid-column:1/span 5}.bd-b .bd-label{grid-column:6/span 7;align-self:end}
+.bd-type{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:24px}
+.tg-build figure{margin:0}
+.tg-build + .trio{margin-top:clamp(64px,7vw,110px)}
+.bd-fondos{margin:clamp(48px,6vw,88px) 0 0}
+
+@media (max-width: 900px){
+  .bd-a .bd-logo,.bd-a .bd-uso,.bd-b .bd-icons,.bd-b .bd-label{grid-column:1/-1}
+  .land figcaption{font-size:13px}.land figcaption b{font-size:15px}
+}
+@media (max-width: 640px){
+  .tg-hero{grid-template-columns:minmax(0,1fr) 40%;column-gap:14px;align-items:start;align-content:start;min-height:0;padding-bottom:64px}
+  .tg-hero-txt{display:contents}
+  .tg-hero .meta{grid-column:1/-1;grid-row:1}
+  .tg-title{grid-column:1;grid-row:2}
+  .tg-lead{grid-column:1;grid-row:3;font-size:18px}
+  .tg-facts{grid-column:1;grid-row:4;row-gap:18px}
+  .slot-start{grid-column:2;grid-row:2/span 2;height:auto;width:100%;align-self:start;margin-top:clamp(12px,2vw,28px)}
+  .tg-scroll{display:none}
+  .tg-travel{padding-right:calc(var(--pad) + 12.3vh + 22px);grid-template-columns:minmax(0,1fr)}
+  .tv-block{grid-column:1/-1;min-height:70vh;gap:18px}
+  .tv-p{font-size:18px}
+  .tv-block .wp{font-size:40px}
+  .tv-claim .lines{font-size:28px}
+  .tg-land-head{padding-right:calc(12.3vh + 22px);grid-template-columns:minmax(0,1fr)}
+  .land{column-gap:10px;margin-top:28vh}
+  .land figcaption{font-size:12px}.land figcaption b{font-size:14px}
+  .bd-type{grid-template-columns:minmax(0,1fr)}
+}
 </style>
 </head>
 <body>
@@ -356,55 +423,35 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   </div>
 </header>
 
+<canvas id="pack3d" aria-hidden="true"></canvas>
 <main>
-  <section class="p-hero">
-    <p class="meta"><span>Laboratorios Ordesa</span><span>Branding: naming, logo y packaging</span><span>2025</span></p>
-    <h1 class="p-title" id="ptitle">Trian<span class="mark">girl</span>.</h1>
-  </section>
-
-  <section class="film" aria-label="Vídeo de marca">
-    <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el vídeo de marca de Triangirl">
-      <img class="film-poster" alt="" src="../assets/triangirl/video-poster.webp">
-      <video class="film-video" src="../assets/triangirl/video.mp4" playsinline preload="none" title="Vídeo de marca Triangirl"></video>
-      <p class="film-title">Triangirl. <span>Vídeo de marca</span></p>
-      <span class="play">
-        <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>
-        Play
-      </span>
-      <span class="dur">0:34</span>
-      <button class="sound" type="button">Activar sonido</button>
+  <section class="tg-hero" aria-label="Triangirl">
+    <div class="tg-hero-txt">
+      <p class="meta"><span>Laboratorios Ordesa</span><span>Branding: naming, logo y packaging</span><span>2025</span></p>
+      <h1 class="p-title tg-title" id="ptitle">Trian<br><span class="mark">girl</span>.</h1>
+      <p class="tg-lead" data-reveal>Una marca nueva, de la primera palabra al último pack. Un triángulo que se convierte en V y tres productos, cada uno con su color.</p>
+      <dl class="facts tg-facts" data-reveal>
+        <div><dt>Cliente</dt><dd>Laboratorios Ordesa</dd></div>
+        <div><dt>Agencia</dt><dd>Actimundi</dd></div>
+        <div><dt>Mi rol</dt><dd>Dirección de arte</dd></div>
+        <div><dt>Soportes</dt><dd>Naming, logo, identidad visual, packaging y brand book</dd></div>
+      </dl>
     </div>
+    <div class="pack-slot slot-start" id="slotStart" aria-hidden="true"><img class="pack-fb" src="../assets/triangirl/pack-good-front.webp" alt=""></div>
+    <p class="tg-scroll" aria-hidden="true">Scroll</p>
   </section>
 
-  <dl class="facts" data-reveal>
-    <div><dt>Cliente</dt><dd>Laboratorios Ordesa</dd></div>
-    <div><dt>Agencia</dt><dd>Actimundi</dd></div>
-    <div><dt>Mi rol</dt><dd>Dirección de arte</dd></div>
-    <div><dt>Soportes</dt><dd>Naming, logo, identidad visual, packaging y brand book</dd></div>
-  </dl>
-
-  <section class="story grid">
-    <div class="story-block" data-reveal>
+  <section class="tg-travel" aria-label="El proyecto">
+    <div class="tv-block" data-reveal>
       <h2 class="small">El reto</h2>
-      <p>Crear desde cero una marca para Laboratorios Ordesa: productos de origen natural, testados científicamente, para que las chicas vivan su vida sin que la menstruación les marque el ritmo.</p>
+      <p class="tv-p">Crear desde cero una marca para Laboratorios Ordesa: productos de origen natural, testados científicamente, para que las chicas vivan su vida sin que la menstruación les marque el ritmo.</p>
     </div>
-    <div class="story-block" data-reveal>
+    <div class="tv-block" data-reveal>
       <h2 class="small">El naming</h2>
-      <p>El triángulo siempre ha sido una forma vinculada a la mujer. Y “triangle” en inglés nos dejaba jugar con el sonido para meter dentro del nombre a quien nos dirigimos: girl. Así nació Triangirl, con la V del triángulo como símbolo.</p>
+      <p class="wp"><span class="wp-old">Triang<s>le</s></span><span class="wp-new">Trian<span class="mark">girl</span></span></p>
+      <p class="tv-p">El triángulo siempre ha sido una forma vinculada a la mujer. Y “triangle” en inglés nos dejaba jugar con el sonido para meter dentro del nombre a quien nos dirigimos: girl. Así nació Triangirl, con la V del triángulo como símbolo.</p>
     </div>
-  </section>
-
-  <section class="tg-sec" aria-label="Naming y logo">
-    <div class="grid g-row">
-      <figure class="g-tall5"><div class="pi r-ph"><img src="../assets/triangirl/ph-mano-positive.webp" alt="Una mano con las uñas pintadas sostiene el pack Triangirl Feel Positive sobre fondo azul." loading="lazy" data-speed="6"></div></figure>
-      <div class="g-side6 word" data-reveal>
-        <p class="wp"><span class="wp-old">Triang<s>le</s></span><span class="wp-new">Trian<span class="mark">girl</span></span></p>
-        <p class="copy-s">Un triángulo que se convierte en V, y una V que acompaña a cada producto con su propio color.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="spot" aria-label="El claim">
+  <div class="tv-block tv-claim" aria-label="El claim">
     <h2 class="small">El claim</h2>
     <div class="lines" id="lines">
       <p>Hasta ahora, eran ellas</p>
@@ -413,18 +460,48 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <p class="last">A partir de ahora, <span class="mark">#MisReglas</span>.</p>
     </div>
     <p class="spot-note" data-reveal>Ellas cambian las reglas y deciden qué hacer en cada momento. Un claim pensado para empoderar, dicho con naturalidad y sin dramatizar.</p>
+  </div>
+  </section>
+
+  <section class="tg-land" aria-label="Packaging">
+    <div class="tg-land-head">
+      <h2 class="small">Packaging</h2>
+      <p class="copy-s" data-reveal>Un pack icónico en forma de triángulo, en sinergia con el nombre. La jerarquía deja ver de un vistazo la marca, el producto y su beneficio, y los iconos ayudan a entender la composición y los ingredientes.</p>
+    </div>
+    <div class="land">
+      <figure class="land-item"><div class="pack-slot slot-side" id="slotActive"><img class="pack-fb" src="../assets/triangirl/pack-active-front.webp" alt="Pack Triangirl Feel Active, amarillo."></div><figcaption><b>Feel Active</b><span>Energía</span></figcaption></figure>
+      <figure class="land-item"><div class="pack-slot slot-end" id="slotEnd"><img class="pack-fb" src="../assets/triangirl/pack-good-front.webp" alt="Pack Triangirl Feel Good Doble acción, rosa."></div><figcaption><b>Feel Good</b><span>Doble acción</span></figcaption></figure>
+      <figure class="land-item"><div class="pack-slot slot-side" id="slotPositive"><img class="pack-fb" src="../assets/triangirl/pack-positive-front.webp" alt="Pack Triangirl Feel Positive, verde."></div><figcaption><b>Feel Positive</b><span>Estabilidad emocional</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="film" aria-label="Vídeo de marca">
+    <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el vídeo de marca de Triangirl">
+      <img class="film-poster" alt="" src="../assets/triangirl/video30-poster.webp">
+      <video class="film-video" src="../assets/triangirl/video30.mp4" playsinline preload="none" title="Vídeo de marca Triangirl"></video>
+      <p class="film-title">Triangirl. <span>Vídeo de marca</span></p>
+      <span class="play">
+        <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>
+        Play
+      </span>
+      <span class="dur">0:30</span>
+      <button class="sound" type="button">Activar sonido</button>
+    </div>
   </section>
 
   <div class="marquee-tg" aria-label="Personalidad de marca: joven, alegre, natural, honesta, atrevida, creativa, optimista y plural">
     <div class="track" aria-hidden="true"><span>Joven<i class="tri" style="background:#F5333F"></i></span><span>Alegre<i class="tri" style="background:#ED6C24"></i></span><span>Natural<i class="tri" style="background:#FED16D"></i></span><span>Honesta<i class="tri" style="background:#A5E5D9"></i></span><span>Atrevida<i class="tri" style="background:#00953B"></i></span><span>Creativa<i class="tri" style="background:#F9B5C3"></i></span><span>Optimista<i class="tri" style="background:#F5333F"></i></span><span>Plural<i class="tri" style="background:#00953B"></i></span><span>Joven<i class="tri" style="background:#F5333F"></i></span><span>Alegre<i class="tri" style="background:#ED6C24"></i></span><span>Natural<i class="tri" style="background:#FED16D"></i></span><span>Honesta<i class="tri" style="background:#A5E5D9"></i></span><span>Atrevida<i class="tri" style="background:#00953B"></i></span><span>Creativa<i class="tri" style="background:#F9B5C3"></i></span><span>Optimista<i class="tri" style="background:#F5333F"></i></span><span>Plural<i class="tri" style="background:#00953B"></i></span></div>
   </div>
 
-  <section class="tg-sec" aria-label="Packaging">
-    <h2 class="small">Packaging</h2>
-    <div class="pack-copy" data-reveal>
-      <p class="copy-s">Un pack icónico en forma de triángulo, en sinergia con el nombre. La jerarquía deja ver de un vistazo la marca, el producto y su beneficio, y los iconos ayudan a entender la composición y los ingredientes.</p>
+  <section class="tg-sec tg-build" aria-label="Construcción de marca">
+    <h2 class="small">Construcción de marca</h2>
+    <p class="ooh-intro" data-reveal>Un sistema sencillo y reconocible: una V que firma cada pieza, una paleta que diferencia cada producto y una voz que habla claro.</p>
+    <div class="bd-row bd-a">
+      <figure class="bd-logo" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-logo.webp" alt="Logotipo vertical de Triangirl: la palabra Triangirl sobre una gran V, con su retícula de construcción." loading="lazy"></div><figcaption class="cap">Logotipo y retícula</figcaption></figure>
+      <figure class="bd-uso" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-uso.webp" alt="Versiones de color del logotipo: naranja, rojo y verde sobre fondos de color, y negro, blanco y gris." loading="lazy"></div><figcaption class="cap">Versiones de color</figcaption></figure>
     </div>
   </section>
+
   <div class="trio" aria-label="Los tres productos: Feel Good, Feel Active y Feel Positive">
     <figure><img src="../assets/triangirl/ph-feelgood-jengibre.webp" alt="Pack Triangirl Feel Good Doble acción con jengibre sobre fondo rosa." loading="lazy"><figcaption>Feel Good</figcaption></figure>
     <figure><img src="../assets/triangirl/ph-active-limon.webp" alt="Pack Triangirl Feel Active abierto entre rodajas de limón sobre fondo amarillo." loading="lazy"><figcaption>Feel Active</figcaption></figure>
@@ -441,10 +518,21 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <div class="sw dark" style="--c:#00953B"><b>Verde <span style="font-weight:400">Positive</span></b><small>#00953B · Pantone 355C</small></div>
     </div>
     <p class="cap">El color es protagonista y se lleva a cada producto: un reflejo de la diversidad y la versatilidad de la marca.</p>
+    <figure class="bd-full bd-fondos" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-fondos.webp" alt="El logotipo sobre los tres fondos de marca: verde sobre cian, naranja sobre amarillo y rojo sobre rosa." loading="lazy"></div><figcaption class="cap">Un color para cada producto</figcaption></figure>
   </section>
 
-
-
+  <section class="tg-sec tg-build" aria-label="Tipografía e iconos">
+    <h2 class="small">Tipografía</h2>
+    <div class="bd-type">
+      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo1.webp" alt="Tipografía corporativa Gravesend Sans." loading="lazy"></div><figcaption class="cap">Gravesend Sans · Corporativa</figcaption></figure>
+      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo2.webp" alt="Tipografía secundaria Montserrat, en bold y regular." loading="lazy"></div><figcaption class="cap">Montserrat · Secundaria</figcaption></figure>
+      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo3.webp" alt="Tipografía del claim, Manus, manuscrita." loading="lazy"></div><figcaption class="cap">Manus · Claim</figcaption></figure>
+    </div>
+    <div class="bd-row bd-b">
+      <figure class="bd-icons" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-iconos.webp" alt="Iconografía de Triangirl sobre retícula: caras, gota, rayo, cápsula e ingredientes como jengibre, hinojo y hojas." loading="lazy"></div><figcaption class="cap">Iconografía</figcaption></figure>
+      <figure class="bd-label" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-etiqueta.webp" alt="Etiqueta desplegada del pack Feel Good Doble acción." loading="lazy"></div><figcaption class="cap">Etiqueta desplegada</figcaption></figure>
+    </div>
+  </section>
 
   <section class="tg-sec" aria-label="Fotografía">
     <h2 class="small">Fotografía</h2>
@@ -482,7 +570,6 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <img src="../assets/triangirl/bb-23.webp" alt="Brand book Triangirl, página 23" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-24.webp" alt="Brand book Triangirl, página 24" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-25.webp" alt="Brand book Triangirl, página 25" loading="lazy" draggable="false">
-      <img src="../assets/triangirl/bb-26.webp" alt="Brand book Triangirl, página 26" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-29.webp" alt="Brand book Triangirl, página 29" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-30.webp" alt="Brand book Triangirl, página 30" loading="lazy" draggable="false">
       <img src="../assets/triangirl/bb-32.webp" alt="Brand book Triangirl, página 32" loading="lazy" draggable="false">
@@ -513,6 +600,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   <span class="c-label"><span class="c-pre">Ver</span><span class="c-text"></span></span>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
@@ -645,8 +733,9 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       var insets = function(){
         var W = filmSec.clientWidth, H = filmSec.clientHeight;
         var pad = Math.min(Math.max(20, W * 0.028), 40);
-        var w = W - pad * 2, h = w * 9 / 16;
-        if (h > H * 0.86){ h = H * 0.86; w = h * 16 / 9; }
+        var R = 1600 / 722;
+        var w = W - pad * 2, h = w / R;
+        if (h > H * 0.86){ h = H * 0.86; w = h * R; }
         return { ix: (W - w) / 2, iy: (H - h) / 2 };
       };
       var tl = gsap.timeline({
@@ -718,6 +807,187 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 </script>
 
 
+<script>
+// Pack 3D: el Feel Good baja contigo girando al hacer scroll y aterriza junto a los otros dos packs
+(function(){
+  var canvas = document.getElementById('pack3d');
+  var slotStart = document.getElementById('slotStart');
+  var slotEnd = document.getElementById('slotEnd');
+  var slotA = document.getElementById('slotActive');
+  var slotP = document.getElementById('slotPositive');
+  if (!canvas || !slotStart || !slotEnd || !window.THREE) { if (canvas) canvas.style.display = 'none'; return; }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var THREE = window.THREE, renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  } catch (e) { canvas.style.display = 'none'; return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.setClearColor(0x000000, 0);
+  renderer.autoClear = false;
+
+  var scene = new THREE.Scene();
+  var FOV = 18, camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 100);
+  camera.position.set(0, 0, 20);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
+  var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(-3, 4, 8); scene.add(key);
+  var fill = new THREE.DirectionalLight(0xfff1f1, 0.28); fill.position.set(6, 1, 4); scene.add(fill);
+  var rim = new THREE.DirectionalLight(0xffffff, 0.35); rim.position.set(0, 3, -6); scene.add(rim);
+
+  // Geometría: prisma de sección "squircle" con esquinas redondeadas arriba y abajo
+  var PW = 0.512, PD = 0.33, RT = 0.07, RB = 0.045, NA = 96, NY = 90;
+  function spow(v, e){ return Math.sign(v) * Math.pow(Math.abs(v), e); }
+  function inset(y){
+    var t;
+    if (y > 0.5 - RT){ t = (y - (0.5 - RT)) / RT; return RT * (1 - Math.sqrt(Math.max(0, 1 - t * t))); }
+    if (y < -0.5 + RB){ t = ((-0.5 + RB) - y) / RB; return RB * (1 - Math.sqrt(Math.max(0, 1 - t * t))); }
+    return 0;
+  }
+  function buildGeo(){
+    var pos = [], uv = [], idx = [], ys = [];
+    for (var j = 0; j <= NY; j++){
+      var t = j / NY, y;
+      // más filas cerca de los extremos
+      y = -0.5 + (t < 0.15 ? (t / 0.15) * RB * 1.2 : t > 0.85 ? 1 - ((1 - t) / 0.15) * RT * 1.2 : RB * 1.2 + (t - 0.15) / 0.7 * (1 - RB * 1.2 - RT * 1.2));
+      ys.push(y);
+    }
+    for (var j2 = 0; j2 <= NY; j2++){
+      var y2 = ys[j2], i2 = inset(y2), a = PW / 2 - i2, b = PD / 2 - i2;
+      for (var k = 0; k <= NA; k++){
+        var ph = (k / NA) * Math.PI * 2;
+        var x = -a * spow(Math.cos(ph), 0.5), z = b * spow(Math.sin(ph), 0.5);
+        pos.push(x, y2, z);
+        var xf = (x / (PW / 2) + 1) / 2, u;
+        if (ph <= Math.PI) u = xf * 0.5; else u = 0.5 + (1 - xf) * 0.5;
+        if (k === NA) u = 1;
+        uv.push(u, y2 + 0.5);
+      }
+    }
+    var row = NA + 1;
+    for (var j3 = 0; j3 < NY; j3++) for (var k3 = 0; k3 < NA; k3++){
+      var p0 = j3 * row + k3, p1 = p0 + 1, p2 = p0 + row, p3 = p2 + 1;
+      idx.push(p0, p1, p2, p1, p3, p2);
+    }
+    // tapas
+    [0, NY].forEach(function(j4){
+      var c = pos.length / 3, y4 = ys[j4];
+      pos.push(0, y4, 0); uv.push(0.25, j4 ? 0.985 : 0.015);
+      for (var k4 = 0; k4 < NA; k4++){
+        var a4 = j4 * row + k4, b4 = a4 + 1;
+        if (j4) idx.push(c, b4, a4); else idx.push(c, a4, b4);
+      }
+    });
+    var g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    g.setIndex(idx); g.computeVertexNormals();
+    return g;
+  }
+  var geo = buildGeo();
+  var loader = new THREE.TextureLoader();
+  var maxAniso = renderer.capabilities.getMaxAnisotropy();
+  function mat(src){
+    var tx = loader.load(src, function(){ need = true; });
+    tx.encoding = THREE.sRGBEncoding; tx.anisotropy = maxAniso;
+    return new THREE.MeshStandardMaterial({ map: tx, roughness: 0.5, metalness: 0 });
+  }
+  var base = slotStart.querySelector('img').getAttribute('src').replace(/pack-good-front\.webp$/, '');
+  function makeShadow(){
+    var c = document.createElement('canvas'); c.width = c.height = 128;
+    var g2 = c.getContext('2d'), gr = g2.createRadialGradient(64, 64, 2, 64, 64, 62);
+    gr.addColorStop(0, 'rgba(0,0,0,0.30)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    g2.fillStyle = gr; g2.fillRect(0, 0, 128, 128);
+    var m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
+    m.rotation.x = -Math.PI / 2; m.scale.set(0.95, 0.42, 1); m.position.y = -0.505;
+    return m;
+  }
+  function makePack(tex){
+    var g = new THREE.Group(), body = new THREE.Mesh(geo, mat(tex));
+    var sh = makeShadow(); g.add(body); g.add(sh); g.userData.shadow = sh;
+    scene.add(g); return g;
+  }
+  var good = makePack(base + 'pack-good-tex.jpg');
+  var active = slotA ? makePack(base + 'pack-active-tex.jpg') : null;
+  var positive = slotP ? makePack(base + 'pack-positive-tex.jpg') : null;
+  document.documentElement.classList.add('gl-on');
+
+  var vw = 0, vh = 0, wpp = 1, need = true;
+  function resize(){
+    vw = window.innerWidth; vh = window.innerHeight;
+    renderer.setSize(vw, vh, false);
+    camera.aspect = vw / vh; camera.updateProjectionMatrix();
+    wpp = (2 * Math.tan(FOV * Math.PI / 360) * camera.position.z) / vh;
+    need = true;
+  }
+  window.addEventListener('resize', resize); resize();
+
+  function center(el){ var r = el.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width, h: r.height, top: r.top, bottom: r.bottom }; }
+  function place(g, x, y, h){
+    g.position.set((x - vw / 2) * wpp, -(y - vh / 2) * wpp, 0);
+    g.scale.setScalar(h * wpp);
+  }
+  function ease(t){ return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function clamp(v){ return Math.max(0, Math.min(1, v)); }
+
+  var t0 = performance.now();
+  function frame(now){
+    var y = window.scrollY || window.pageYOffset;
+    var s = center(slotStart), e = center(slotEnd);
+    var endScroll = y + e.y - vh / 2;            // scroll en el que el hueco final queda centrado
+    var startY0 = s.y + y;                        // posición del hueco inicial en la página
+    var p = endScroll > 0 ? clamp(y / endScroll) : 1;
+    var q = ease(p);
+    var gx, gy, gh;
+    if (p < 1){
+      // en móvil el pack encoge al empezar y viaja por el carril derecho, sin tapar el texto
+      var mob = vw <= 640;
+      var tH = mob ? Math.min(s.h, vh * 0.24) : s.h;
+      var tX = mob ? (s.x + s.w / 2 - tH * PW / 2) : s.x;
+      var qs = mob ? ease(clamp(p / 0.14)) : 0;
+      var hx = s.x + (tX - s.x) * qs, hh = s.h + (tH - s.h) * qs;
+      var l0 = 0.86;                              // el pack se desplaza al centro solo al final, ya por debajo del texto
+      var ql = ease(clamp((p - l0) / (1 - l0)));
+      gx = hx + (e.x - hx) * ql;
+      gy = startY0 + (vh / 2 - startY0) * q;
+      gh = hh + (e.h - hh) * ql;
+      if (y === 0 || p === 0){ gx = s.x; gy = s.y; gh = s.h; }
+    } else { gx = e.x; gy = e.y; gh = e.h; }
+    place(good, gx, gy, gh);
+    var idle = reduce ? 0 : Math.sin((now - t0) / 1600) * (1 - q) * 0.18;
+    good.rotation.y = (reduce ? 0 : q * Math.PI * 4) + idle - 0.12 * (1 - q);
+    var tilt = reduce ? 0 : (vw <= 640 ? 0.35 : 1) * Math.sin(p * Math.PI);
+    good.rotation.z = tilt * 0.22;
+    good.rotation.x = tilt * 0.18;
+    good.userData.shadow.material.opacity = clamp((p - 0.82) / 0.18);
+    var vis = e.bottom > -50;
+    good.visible = vis;
+    [[active, slotA, -1], [positive, slotP, 1]].forEach(function(o){
+      if (!o[0]) return;
+      var c = center(o[1]), k = reduce ? 1 : ease(clamp((p - 0.55) / 0.45));
+      place(o[0], c.x, c.y + (1 - k) * 60, c.h * (0.9 + 0.1 * k));
+      o[0].rotation.y = o[2] * (0.32 + (1 - k) * 0.9);
+      o[0].visible = c.bottom > -50 && c.top < vh + 50;
+      o[0].children[0].material.opacity = 1;
+      o[0].userData.shadow.material.opacity = k;
+    });
+    canvas.style.visibility = vis ? 'visible' : 'hidden';
+    if (vis || need){
+      // dos pasadas: los packs laterales primero y el rosa siempre por delante
+      var gv = good.visible, av = active && active.visible, pv = positive && positive.visible;
+      renderer.clear();
+      good.visible = false; renderer.render(scene, camera);
+      renderer.clearDepth();
+      good.visible = gv; if (active) active.visible = false; if (positive) positive.visible = false;
+      renderer.render(scene, camera);
+      if (active) active.visible = av; if (positive) positive.visible = pv;
+      need = false;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+
+</script>
 <!--pt-js--><script>
 // Transición entre páginas: VAF cambia de tipografía mientras carga la siguiente
 (function(){
