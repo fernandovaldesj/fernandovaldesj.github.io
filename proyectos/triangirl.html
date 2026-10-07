@@ -350,7 +350,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .slot-start{grid-column:9/span 3;height:min(74vh,720px,62vw);width:auto;justify-self:center;align-self:center}
 .tg-scroll{position:absolute;right:var(--pad);bottom:24px;font-size:14px;color:var(--muted)}
 main{position:relative;z-index:1}
-#pack3d{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block}
+#pack3d{position:fixed;inset:0;width:100vw;height:100vh;z-index:2;pointer-events:none;display:block}
 .tg-travel{padding:0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .tv-block{grid-column:1/span 6;min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:8vh 0}
 .tv-p{font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-0.01em}
@@ -361,29 +361,64 @@ main{position:relative;z-index:1}
 .tg-land-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:16px}
 .tg-land-head .small{grid-column:1/-1}
 .tg-land-head .copy-s{grid-column:1/span 6}
-.land{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(12px,3vw,56px);max-width:1000px;margin:max(26vh,96px) auto 0;align-items:end}
-.land-item{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px}
-.land .pack-slot{width:min(100%,270px)}
-.land figcaption{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:15px;text-align:center}
-.land figcaption b{font-weight:500;font-size:17px}
-.land figcaption span{color:var(--muted)}
+.stage{--cx:0;--cy:120;--cw:2576;--ch:1210;position:relative;overflow:hidden;aspect-ratio:var(--cw)/var(--ch);margin:max(22vh,96px) calc(var(--pad) * -1) 0;background:#FBD6A4}
+.stage-in{position:absolute;width:calc(2576 / var(--cw) * 100%);left:calc(var(--cx) / var(--cw) * -100%);top:calc(var(--cy) / var(--ch) * -100%);aspect-ratio:2576/1449}
+.stage-img{display:block;width:100%;height:100%;object-fit:cover}
+.stage-full{position:absolute;inset:0}
+.gl-on .stage-full{opacity:0}
+.stage-slot{position:absolute;left:calc(1150 / 2576 * 100%);top:calc(258 / 1449 * 100%);width:calc(345 / 2576 * 100%);height:calc(673 / 1449 * 100%)}
+.st-cap{position:absolute;top:calc(1112 / 1449 * 100%);transform:translateX(-50%);margin:0;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;font-size:15px;line-height:1.25;color:#1d1410;white-space:nowrap}
+.st-cap b{font-weight:500;font-size:17px}
+.st-cap span{color:rgba(29,20,16,.58)}
+.st-a{left:calc(715 / 2576 * 100%)}.st-g{left:calc(1322 / 2576 * 100%)}.st-p{left:calc(1880 / 2576 * 100%)}
 .film-box{aspect-ratio:1600/722}
-.tg-build .ooh-intro{margin-bottom:clamp(32px,4vw,56px)}
-.tg-build .small{margin-bottom:clamp(16px,2vw,24px)}
-.bd-img{overflow:hidden;background:#F4FFFF}
-.bd-img img{display:block;width:100%;height:auto;transition:transform 1.2s var(--ease)}
-figure:hover > .bd-img img{transform:scale(1.03)}
-.bd-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;margin-bottom:24px}
-.bd-a .bd-logo{grid-column:1/span 7}.bd-a .bd-uso{grid-column:8/span 5;align-self:end}
-.bd-b .bd-icons{grid-column:1/span 5}.bd-b .bd-label{grid-column:6/span 7;align-self:end}
-.bd-type{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:24px}
-.tg-build figure{margin:0}
 .tg-build + .trio{margin-top:clamp(64px,7vw,110px)}
-.bd-fondos{margin:clamp(48px,6vw,88px) 0 0}
+
+/* Construcción de marca */
+.tg-defs{position:absolute;width:0;height:0;overflow:hidden}
+.tg-build .ooh-intro{margin-bottom:clamp(48px,6vw,96px)}
+.tg-build .small{margin-bottom:clamp(16px,2vw,24px)}
+.tg-build figure{margin:0}
+.bc-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:32px;align-items:center}
+.bc-row + .bc-row{margin-top:clamp(72px,9vw,150px)}
+.bc-logo .bc-fig{grid-column:1/span 7}
+.bc-logo .bc-txt{grid-column:9/span 4}
+.bc-icons .bc-txt{grid-column:1/span 4}
+.bc-icons .ic-board{grid-column:6/span 7}
+.bc-k{font-size:15px;font-weight:500;color:var(--muted);margin:0 0 18px}
+.bc-h{font-size:clamp(30px,3.2vw,48px);line-height:1.04;letter-spacing:-0.03em;font-weight:500;margin:0 0 22px}
+.bc-p{font-size:clamp(17px,1.35vw,19px);line-height:1.45;margin:0}
+.bc-list{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.bc-list li{display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.35}
+.bc-list b{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#F5333F;color:#fff;font-size:12px;font-weight:500;transform:translateY(-1px)}
+.ar-fig{background:#F6F2F0;padding:clamp(20px,3vw,48px)}
+.arch{display:block;width:100%;height:auto;overflow:visible;font-family:inherit}
+.ar-frame rect{fill:none;stroke:#BDB3B0;stroke-width:1.4;stroke-dasharray:6 6}
+.ar-sq rect{fill:rgba(189,179,176,.18);stroke:#BDB3B0;stroke-width:1.2}
+.ar-x text{font-size:17px;fill:#8F8583;text-anchor:middle;font-style:italic}
+.ar-tri{fill:rgba(245,51,63,.07);stroke:#F5333F;stroke-width:1.6;stroke-dasharray:8 6}
+.ar-logo{fill:#1A1A1A}
+.ar-dim path{fill:none;stroke:#F5333F;stroke-width:1.6}
+.ar-guide path{fill:none;stroke:#F5333F;stroke-width:1;stroke-dasharray:3 5;opacity:.55}
+.mk circle{fill:#F5333F}
+.mk text{fill:#fff;font-size:17px;font-weight:500;text-anchor:middle}
+.ic-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,14px)}
+.ic-col{background:var(--t);padding:clamp(16px,1.8vw,26px) clamp(12px,1.4vw,22px) clamp(18px,2vw,28px)}
+.ic-h{display:flex;align-items:center;gap:9px;margin:0 0 clamp(18px,2vw,28px);font-size:15px;font-weight:500;color:#1A1A1A}
+.ic-h i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.ic-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2vw,30px) clamp(8px,1vw,14px)}
+.ic-grid li{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;font-size:13px;line-height:1.25;color:#3A3A3A}
+.ico{width:clamp(48px,4.6vw,72px);height:clamp(48px,4.6vw,72px);fill:var(--c);transition:transform .6s var(--ease)}
+.ic-grid li:hover .ico{transform:translateY(-4px) scale(1.06)}
+.logo-tri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(48px,6vw,88px)}
+.logo-tri div{background:var(--t);aspect-ratio:1/1;display:grid;place-items:center}
+.logo-tri svg{width:46%;height:auto;fill:var(--c);overflow:visible}
 
 @media (max-width: 900px){
-  .bd-a .bd-logo,.bd-a .bd-uso,.bd-b .bd-icons,.bd-b .bd-label{grid-column:1/-1}
-  .land figcaption{font-size:13px}.land figcaption b{font-size:15px}
+  .bc-logo .bc-fig,.bc-logo .bc-txt,.bc-icons .bc-txt,.bc-icons .ic-board{grid-column:1/-1}
+  .bc-logo .bc-txt{order:-1}
+  .bc-txt{max-width:600px}
+  .st-cap{font-size:13px}.st-cap b{font-size:15px}
 }
 @media (max-width: 640px){
   .tg-hero{grid-template-columns:minmax(0,1fr) 40%;column-gap:14px;align-items:start;align-content:start;min-height:0;padding-bottom:64px}
@@ -400,9 +435,18 @@ figure:hover > .bd-img img{transform:scale(1.03)}
   .tv-block .wp{font-size:40px}
   .tv-claim .lines{font-size:28px}
   .tg-land-head{padding-right:calc(12.3vh + 22px);grid-template-columns:minmax(0,1fr)}
-  .land{column-gap:10px;margin-top:28vh}
-  .land figcaption{font-size:12px}.land figcaption b{font-size:14px}
-  .bd-type{grid-template-columns:minmax(0,1fr)}
+  .stage{--cx:620;--cy:160;--cw:1360;--ch:1130;margin-top:24vh}
+  .st-cap{font-size:11px}.st-cap b{font-size:13px}
+  .st-a{left:32%}.st-p{left:68.9%}
+  .bc-row{grid-template-columns:minmax(0,1fr)}
+  .ic-board{gap:6px}
+  .ic-col{padding:14px 8px 18px}
+  .ic-h{font-size:12px;gap:6px;justify-content:center}
+  .ic-h i{width:8px;height:8px}
+  .ic-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+  .ic-grid li{font-size:11px;gap:6px}
+  .ico{width:44px;height:44px}
+  .logo-tri div{aspect-ratio:4/5}
 }
 </style>
 </head>
@@ -425,6 +469,7 @@ figure:hover > .bd-img img{transform:scale(1.03)}
 
 <canvas id="pack3d" aria-hidden="true"></canvas>
 <main>
+  <svg class="tg-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><symbol id="tgLogo" viewBox="905 348 604 592"><path d="M 1476.82 366 C 1476.82 358.26 1482.82 352.5 1490.82 352.5 C 1498.80 352.5 1504.81 358.26 1504.81 366 C 1504.81 373.73 1498.80 379.49 1490.82 379.49 C 1482.82 379.49 1476.82 373.73 1476.82 366 M 1502.28 366 C 1502.28 359.34 1497.61 354.78 1490.82 354.78 C 1484.07 354.78 1479.35 359.34 1479.35 366 C 1479.35 372.64 1484.07 377.21 1490.82 377.21 C 1497.61 377.21 1502.28 372.64 1502.28 366 M 1485.25 359.00 L 1491.16 359.00 C 1494.93 359.00 1496.96 360.28 1496.96 362.77 C 1496.96 364.70 1495.73 365.89 1493.49 366.19 L 1493.49 366.29 C 1495.98 366.44 1496.57 367.53 1496.57 369.66 L 1496.57 370.66 C 1496.57 371.35 1496.72 372.44 1497.21 372.99 L 1494.04 372.99 C 1493.64 372.54 1493.49 371.45 1493.49 370.81 L 1493.49 369.86 C 1493.44 367.88 1493.10 367.28 1491.66 367.28 L 1488.28 367.28 L 1488.28 372.99 L 1485.25 372.99 Z M 1488.28 361.18 L 1488.28 365.25 L 1491.11 365.25 C 1492.85 365.25 1493.79 364.55 1493.79 363.07 C 1493.79 361.72 1493.04 361.18 1491.06 361.18 Z M 922.94 377.67 L 909.46 377.67 L 909.41 369.21 L 945.57 369.21 L 945.57 377.67 L 932.10 377.67 L 932.10 411.61 L 922.94 411.61 Z M 1004.75 411.61 L 988.49 393.86 L 988.49 411.61 L 979.17 411.61 L 979.17 369.21 L 999.37 369.21 C 1009.19 369.21 1015.38 374.20 1015.38 382.71 C 1015.38 391 1010.37 395.34 1001.19 395.65 L 1017.14 411.61 Z M 988.49 387.93 L 1000.12 387.93 C 1003.64 387.93 1005.88 386.19 1005.88 382.71 C 1005.88 379.30 1003.64 377.53 1000.12 377.53 L 988.49 377.53 Z M 1051.40 369.21 L 1060.71 369.21 L 1060.71 411.61 L 1051.40 411.61 Z M 1116.98 367.38 L 1141.29 411.60 L 1131.32 411.60 L 1127.02 403.61 L 1106.78 403.61 L 1102.52 411.60 L 1092.35 411.60 Z M 1122.89 395.91 L 1116.87 384.71 L 1110.89 395.91 Z M 1172.91 369.21 L 1182.13 369.21 L 1203.64 397.88 L 1203.64 369.21 L 1212.90 369.21 L 1212.90 411.61 L 1203.78 411.61 L 1182.23 382.98 L 1182.23 411.61 L 1172.91 411.61 Z M 1248.51 390.46 C 1248.51 378.09 1258.39 368.40 1271.28 368.40 C 1278.59 368.40 1284.92 371.51 1289.05 376.46 L 1281.90 382.05 C 1279.43 378.97 1275.58 377.10 1271.25 377.10 C 1263.80 377.10 1257.76 382.64 1257.76 390.44 C 1257.76 398.25 1263.80 403.78 1271.25 403.78 C 1275.64 403.78 1279.53 401.60 1281.54 398.97 L 1281.54 390.44 L 1290.85 390.44 L 1290.85 401.95 C 1286.64 408.09 1279.41 412.46 1271.28 412.46 C 1258.39 412.46 1248.51 402.83 1248.51 390.46 M 1326.76 369.21 L 1336.08 369.21 L 1336.08 411.61 L 1326.76 411.61 Z M 1399.71 411.61 L 1383.45 393.86 L 1383.45 411.61 L 1374.14 411.61 L 1374.14 369.21 L 1394.33 369.21 C 1404.15 369.21 1410.34 374.20 1410.34 382.71 C 1410.34 391 1405.33 395.34 1396.15 395.65 L 1412.11 411.61 Z M 1383.45 387.93 L 1395.08 387.93 C 1398.60 387.93 1400.84 386.19 1400.84 382.71 C 1400.84 379.30 1398.60 377.53 1395.08 377.53 L 1383.45 377.53 Z M 1446.35 369.21 L 1455.67 369.21 L 1455.62 403.15 L 1477.08 403.15 L 1477.08 411.61 L 1446.35 411.61 Z M 1446.35 369.21 "/><path d="M 1205.24 935.39 L 1476.29 441.53 L 1422.15 441.53 L 1205.37 840.98 L 1205.10 840.98 L 964.87 441.53 L 910.73 441.53 Z M 1205.24 935.39 "/></symbol></defs></svg>
   <section class="tg-hero" aria-label="Triangirl">
     <div class="tg-hero-txt">
       <p class="meta"><span>Laboratorios Ordesa</span><span>Branding: naming, logo y packaging</span><span>2025</span></p>
@@ -468,10 +513,15 @@ figure:hover > .bd-img img{transform:scale(1.03)}
       <h2 class="small">Packaging</h2>
       <p class="copy-s" data-reveal>Un pack icónico en forma de triángulo, en sinergia con el nombre. La jerarquía deja ver de un vistazo la marca, el producto y su beneficio, y los iconos ayudan a entender la composición y los ingredientes.</p>
     </div>
-    <div class="land">
-      <figure class="land-item"><div class="pack-slot slot-side" id="slotActive"><img class="pack-fb" src="../assets/triangirl/pack-active-front.webp" alt="Pack Triangirl Feel Active, amarillo."></div><figcaption><b>Feel Active</b><span>Energía</span></figcaption></figure>
-      <figure class="land-item"><div class="pack-slot slot-end" id="slotEnd"><img class="pack-fb" src="../assets/triangirl/pack-good-front.webp" alt="Pack Triangirl Feel Good Doble acción, rosa."></div><figcaption><b>Feel Good</b><span>Doble acción</span></figcaption></figure>
-      <figure class="land-item"><div class="pack-slot slot-side" id="slotPositive"><img class="pack-fb" src="../assets/triangirl/pack-positive-front.webp" alt="Pack Triangirl Feel Positive, verde."></div><figcaption><b>Feel Positive</b><span>Estabilidad emocional</span></figcaption></figure>
+    <div class="stage">
+      <div class="stage-in">
+        <img class="stage-img" src="../assets/triangirl/stage-empty.webp" alt="" loading="lazy">
+        <img class="stage-img stage-full" id="stageFull" src="../assets/triangirl/stage-full.webp" alt="Los tres packs de Triangirl en el plató: Feel Active, Feel Good sobre una peana rosa y Feel Positive." loading="lazy">
+        <div class="stage-slot" id="slotEnd" aria-hidden="true"></div>
+        <p class="st-cap st-a"><b>Feel Active</b><span>Energía</span></p>
+        <p class="st-cap st-g"><b>Feel Good</b><span>Doble acción</span></p>
+        <p class="st-cap st-p"><b>Feel Positive</b><span>Estabilidad emocional</span></p>
+      </div>
     </div>
   </section>
 
@@ -496,9 +546,43 @@ figure:hover > .bd-img img{transform:scale(1.03)}
   <section class="tg-sec tg-build" aria-label="Construcción de marca">
     <h2 class="small">Construcción de marca</h2>
     <p class="ooh-intro" data-reveal>Un sistema sencillo y reconocible: una V que firma cada pieza, una paleta que diferencia cada producto y una voz que habla claro.</p>
-    <div class="bd-row bd-a">
-      <figure class="bd-logo" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-logo.webp" alt="Logotipo vertical de Triangirl: la palabra Triangirl sobre una gran V, con su retícula de construcción." loading="lazy"></div><figcaption class="cap">Logotipo y retícula</figcaption></figure>
-      <figure class="bd-uso" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-uso.webp" alt="Versiones de color del logotipo: naranja, rojo y verde sobre fondos de color, y negro, blanco y gris." loading="lazy"></div><figcaption class="cap">Versiones de color</figcaption></figure>
+
+    <div class="bc-row bc-logo">
+      <figure class="bc-fig ar-fig" data-reveal>
+        <svg class="arch" viewBox="832 268 728 756" role="img" aria-label="Arquitectura del logotipo de Triangirl: la V nace de un triángulo sin base, el nombre y el símbolo comparten el mismo ancho y la separación x entre ambos marca el área de respeto.">
+          <g class="ar-frame"><rect x="879" y="339" width="628" height="627"/></g>
+          <g class="ar-sq"><rect x="879" y="339" width="30" height="30"/><rect x="1477" y="339" width="30" height="30"/><rect x="879" y="411" width="30" height="30"/><rect x="1477" y="411" width="30" height="30"/><rect x="879" y="935" width="30" height="30"/><rect x="1477" y="935" width="30" height="30"/></g>
+          <g class="ar-x"><text x="894" y="359.5">x</text><text x="1492" y="359.5">x</text><text x="894" y="431.5">x</text><text x="1492" y="431.5">x</text><text x="894" y="955.5">x</text><text x="1492" y="955.5">x</text></g>
+          <path class="ar-tri" d="M910.74 441.53H1476.29L1205.24 935.39Z"/>
+          <use href="#tgLogo" x="905" y="348" width="604" height="592" class="ar-logo"/>
+          <g class="ar-dim"><path d="M909 300H1477M909 289V311M1477 289V311M910.7 996H1476.3M910.7 985V1007M1476.3 985V1007"/></g>
+          <g class="ar-guide"><path d="M909 311V1007M1477 311V985"/></g>
+          <g class="mk"><circle cx="1193" cy="486" r="15"/><text x="1193" y="491.5">1</text></g><g class="mk"><circle cx="1193" cy="300" r="15"/><text x="1193" y="305.5">2</text></g><g class="mk"><circle cx="1193" cy="996" r="15"/><text x="1193" y="1001.5">2</text></g><g class="mk"><circle cx="852" cy="426" r="15"/><text x="852" y="431.5">3</text></g>
+        </svg>
+      </figure>
+      <div class="bc-txt" data-reveal>
+        <p class="bc-k">01 · Logotipo</p>
+        <h3 class="bc-h">Un triángulo que se abre en V.</h3>
+        <p class="bc-p">Partimos del triángulo, la forma que da nombre a la marca, y le quitamos la base: así nace la V que firma cada pieza. Encima va el nombre, en mayúsculas y con aire entre letras, con el mismo ancho que el símbolo para que los dos funcionen como un solo bloque.</p>
+        <ol class="bc-list">
+          <li><b>1</b><span>La V es un triángulo abierto por arriba.</span></li>
+          <li><b>2</b><span>Nombre y símbolo comparten el mismo ancho.</span></li>
+          <li><b>3</b><span>La separación entre ambos, x, marca también el área de respeto.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="bc-row bc-icons">
+      <div class="bc-txt" data-reveal>
+        <p class="bc-k">02 · Iconografía</p>
+        <h3 class="bc-h">Cada producto, sus iconos.</h3>
+        <p class="bc-p">Una familia de iconos de línea fina, dibujados sobre la misma retícula. Cuentan de un vistazo para qué sirve cada producto y de qué está hecho, y cada uno toma el color de su pack.</p>
+      </div>
+      <div class="ic-board" data-reveal>
+        <div class="ic-col" style="--c:#F5333F;--t:#FDE8EC"><p class="ic-h"><i></i>Feel Good</p><ul class="ic-grid"><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-gota"/></svg><span>Ciclo cómodo</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-capsula"/></svg><span>Cápsulas</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-hinojo"/></svg><span>Hinojo</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-jengibre"/></svg><span>Jengibre</span></li></ul></div>
+        <div class="ic-col" style="--c:#ED6C24;--t:#FFF2D3"><p class="ic-h"><i></i>Feel Active</p><ul class="ic-grid"><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-rayo"/></svg><span>Energía</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-ginseng"/></svg><span>Ginseng siberiano</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-magnesio"/></svg><span>Magnesio</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-b6"/></svg><span>Vitamina B6</span></li></ul></div>
+        <div class="ic-col" style="--c:#00953B;--t:#E2F5EF"><p class="ic-h"><i></i>Feel Positive</p><ul class="ic-grid"><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-calma"/></svg><span>Calma</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-ashwagandha"/></svg><span>Ashwagandha</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-melisa"/></svg><span>Melisa</span></li><li><svg class="ico" aria-hidden="true"><use href="../assets/triangirl/icons.svg#i-valeriana"/></svg><span>Valeriana</span></li></ul></div>
+      </div>
     </div>
   </section>
 
@@ -518,20 +602,12 @@ figure:hover > .bd-img img{transform:scale(1.03)}
       <div class="sw dark" style="--c:#00953B"><b>Verde <span style="font-weight:400">Positive</span></b><small>#00953B · Pantone 355C</small></div>
     </div>
     <p class="cap">El color es protagonista y se lleva a cada producto: un reflejo de la diversidad y la versatilidad de la marca.</p>
-    <figure class="bd-full bd-fondos" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-fondos.webp" alt="El logotipo sobre los tres fondos de marca: verde sobre cian, naranja sobre amarillo y rojo sobre rosa." loading="lazy"></div><figcaption class="cap">Un color para cada producto</figcaption></figure>
-  </section>
-
-  <section class="tg-sec tg-build" aria-label="Tipografía e iconos">
-    <h2 class="small">Tipografía</h2>
-    <div class="bd-type">
-      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo1.webp" alt="Tipografía corporativa Gravesend Sans." loading="lazy"></div><figcaption class="cap">Gravesend Sans · Corporativa</figcaption></figure>
-      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo2.webp" alt="Tipografía secundaria Montserrat, en bold y regular." loading="lazy"></div><figcaption class="cap">Montserrat · Secundaria</figcaption></figure>
-      <figure data-reveal><div class="bd-img"><img src="../assets/triangirl/c-tipo3.webp" alt="Tipografía del claim, Manus, manuscrita." loading="lazy"></div><figcaption class="cap">Manus · Claim</figcaption></figure>
+    <div class="logo-tri" data-reveal role="img" aria-label="El logotipo sobre los tres fondos de marca: verde sobre cian, naranja sobre amarillo y rojo sobre rosa.">
+      <div style="--t:#A5E5D9;--c:#00953B"><svg viewBox="905 348 604 592" aria-hidden="true"><use href="#tgLogo" x="905" y="348" width="604" height="592"/></svg></div>
+      <div style="--t:#FED16D;--c:#ED6C24"><svg viewBox="905 348 604 592" aria-hidden="true"><use href="#tgLogo" x="905" y="348" width="604" height="592"/></svg></div>
+      <div style="--t:#F9B5C3;--c:#F5333F"><svg viewBox="905 348 604 592" aria-hidden="true"><use href="#tgLogo" x="905" y="348" width="604" height="592"/></svg></div>
     </div>
-    <div class="bd-row bd-b">
-      <figure class="bd-icons" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-iconos.webp" alt="Iconografía de Triangirl sobre retícula: caras, gota, rayo, cápsula e ingredientes como jengibre, hinojo y hojas." loading="lazy"></div><figcaption class="cap">Iconografía</figcaption></figure>
-      <figure class="bd-label" data-reveal><div class="bd-img"><img src="../assets/triangirl/c-etiqueta.webp" alt="Etiqueta desplegada del pack Feel Good Doble acción." loading="lazy"></div><figcaption class="cap">Etiqueta desplegada</figcaption></figure>
-    </div>
+    <p class="cap">Un color para cada producto</p>
   </section>
 
   <section class="tg-sec" aria-label="Fotografía">
@@ -808,110 +884,126 @@ figure:hover > .bd-img img{transform:scale(1.03)}
 
 
 <script>
-// Pack 3D: el Feel Good baja contigo girando al hacer scroll y aterriza junto a los otros dos packs
+// Pack 3D: el Feel Good baja contigo girando al hacer scroll y se posa en la peana de la foto final
 (function(){
   var canvas = document.getElementById('pack3d');
   var slotStart = document.getElementById('slotStart');
   var slotEnd = document.getElementById('slotEnd');
-  var slotA = document.getElementById('slotActive');
-  var slotP = document.getElementById('slotPositive');
+  var stageFull = document.getElementById('stageFull');
   if (!canvas || !slotStart || !slotEnd || !window.THREE) { if (canvas) canvas.style.display = 'none'; return; }
+  var CFG = Object.assign({ tone: 'none', exp: 1, expEnd: 0.56, env: 0.7, key: 0.45, rough: 0.45, cc: 0.15, refl: 0.35, sky: 0.8 }, window.TG3D || {});
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var THREE = window.THREE, renderer;
   try {
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   } catch (e) { canvas.style.display = 'none'; return; }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = CFG.tone === 'aces' ? THREE.ACESFilmicToneMapping : CFG.tone === 'reinhard' ? THREE.ReinhardToneMapping : THREE.LinearToneMapping;
   renderer.setClearColor(0x000000, 0);
-  renderer.autoClear = false;
 
   var scene = new THREE.Scene();
   var FOV = 18, camera = new THREE.PerspectiveCamera(FOV, 1, 0.1, 100);
   camera.position.set(0, 0, 20);
-  scene.add(new THREE.AmbientLight(0xffffff, 0.62));
-  var key = new THREE.DirectionalLight(0xffffff, 0.62); key.position.set(-3, 4, 8); scene.add(key);
-  var fill = new THREE.DirectionalLight(0xfff1f1, 0.28); fill.position.set(6, 1, 4); scene.add(fill);
-  var rim = new THREE.DirectionalLight(0xffffff, 0.35); rim.position.set(0, 3, -6); scene.add(rim);
 
-  // Geometría: prisma de sección "squircle" con esquinas redondeadas arriba y abajo
-  var PW = 0.512, PD = 0.33, RT = 0.07, RB = 0.045, NA = 96, NY = 90;
+  // Estudio: cúpula en degradado y softboxes, convertido en mapa de entorno (reflejos y luz suave)
+  (function(){
+    var env = new THREE.Scene();
+    var g = new THREE.SphereGeometry(10, 48, 24), pos = g.attributes.position, col = [];
+    for (var i = 0; i < pos.count; i++){
+      var h = pos.getY(i) / 10, v = (h > 0 ? 0.62 + 0.18 * h : 0.62 + 0.34 * h) * CFG.sky;
+      col.push(v, v * 0.985, v * 0.97);
+    }
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    env.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+    function box(w, h, x, y, z, k){
+      var m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(k, k, k), side: THREE.DoubleSide }));
+      m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m);
+    }
+    box(5.5, 4.2, -4.6, 2.6, 6.2, 3.4);   // softbox principal, delante a la izquierda
+    box(1.4, 9, 7.5, 0.5, 1.5, 2.6);      // tira derecha: brillo en el canto
+    box(1.4, 9, -7.5, 0.5, -1.5, 1.5);    // tira de contra, izquierda
+    box(9, 2.4, 0, 8.6, 1, 0.8);          // cenital, suave para que la tapa no se queme
+    var pm = new THREE.PMREMGenerator(renderer);
+    scene.environment = pm.fromScene(env, 0.035).texture;
+    pm.dispose();
+  })();
+  var key = new THREE.DirectionalLight(0xffffff, CFG.key); key.position.set(-4, 5, 9); scene.add(key);
+
+  // Geometría fiel al pack: sección superelíptica, cantos redondeados y la junta de la tapa
+  var A = 0.2562, B = 0.15, E = 2 / 3.4, NA = 160;
+  var rxT = 0.085, ryT = 0.072, rzT = 0.07, rxB = 0.085, ryB = 0.045, rzB = 0.06;
+  var YS = 0.5 - 0.2246, GD = 0.0026, GW = 0.0019;
   function spow(v, e){ return Math.sign(v) * Math.pow(Math.abs(v), e); }
-  function inset(y){
-    var t;
-    if (y > 0.5 - RT){ t = (y - (0.5 - RT)) / RT; return RT * (1 - Math.sqrt(Math.max(0, 1 - t * t))); }
-    if (y < -0.5 + RB){ t = ((-0.5 + RB) - y) / RB; return RB * (1 - Math.sqrt(Math.max(0, 1 - t * t))); }
-    return 0;
+  function rows(){
+    var r = [], i, t;
+    for (i = 0; i <= 20; i++){ t = i / 20 * Math.PI / 2; r.push({ y: -0.5 + ryB * (1 - Math.cos(t)), ix: rxB * (1 - Math.sin(t)), iz: rzB * (1 - Math.sin(t)) }); }
+    var y0 = -0.5 + ryB, y1 = 0.5 - ryT, body = [];
+    for (i = 1; i < 40; i++) body.push(y0 + (y1 - y0) * i / 40);
+    [-0.009, -0.0055, -0.0032, -0.0019, -0.0009, 0, 0.0009, 0.0019, 0.0032, 0.0055, 0.009].forEach(function(d){ body.push(YS + d); });
+    body.sort(function(a, b){ return a - b; });
+    body.forEach(function(y){ r.push({ y: y, ix: 0, iz: 0 }); });
+    for (i = 0; i <= 22; i++){ t = i / 22 * Math.PI / 2; r.push({ y: 0.5 - ryT + ryT * Math.sin(t), ix: rxT * (1 - Math.cos(t)), iz: rzT * (1 - Math.cos(t)) }); }
+    return r;
   }
   function buildGeo(){
-    var pos = [], uv = [], idx = [], ys = [];
-    for (var j = 0; j <= NY; j++){
-      var t = j / NY, y;
-      // más filas cerca de los extremos
-      y = -0.5 + (t < 0.15 ? (t / 0.15) * RB * 1.2 : t > 0.85 ? 1 - ((1 - t) / 0.15) * RT * 1.2 : RB * 1.2 + (t - 0.15) / 0.7 * (1 - RB * 1.2 - RT * 1.2));
-      ys.push(y);
-    }
-    for (var j2 = 0; j2 <= NY; j2++){
-      var y2 = ys[j2], i2 = inset(y2), a = PW / 2 - i2, b = PD / 2 - i2;
+    var R = rows(), pos = [], uv = [], idx = [], row = NA + 1;
+    R.forEach(function(r){
+      var g = GD * Math.exp(-Math.pow((r.y - YS) / GW, 2)), a = A - r.ix - g, b = B - r.iz - g;
       for (var k = 0; k <= NA; k++){
-        var ph = (k / NA) * Math.PI * 2;
-        var x = -a * spow(Math.cos(ph), 0.5), z = b * spow(Math.sin(ph), 0.5);
-        pos.push(x, y2, z);
-        var xf = (x / (PW / 2) + 1) / 2, u;
-        if (ph <= Math.PI) u = xf * 0.5; else u = 0.5 + (1 - xf) * 0.5;
-        if (k === NA) u = 1;
-        uv.push(u, y2 + 0.5);
-      }
-    }
-    var row = NA + 1;
-    for (var j3 = 0; j3 < NY; j3++) for (var k3 = 0; k3 < NA; k3++){
-      var p0 = j3 * row + k3, p1 = p0 + 1, p2 = p0 + row, p3 = p2 + 1;
-      idx.push(p0, p1, p2, p1, p3, p2);
-    }
-    // tapas
-    [0, NY].forEach(function(j4){
-      var c = pos.length / 3, y4 = ys[j4];
-      pos.push(0, y4, 0); uv.push(0.25, j4 ? 0.985 : 0.015);
-      for (var k4 = 0; k4 < NA; k4++){
-        var a4 = j4 * row + k4, b4 = a4 + 1;
-        if (j4) idx.push(c, b4, a4); else idx.push(c, a4, b4);
+        var ph = k / NA * Math.PI * 2;
+        var x = -a * spow(Math.cos(ph), E), z = b * spow(Math.sin(ph), E);
+        pos.push(x, r.y, z);
+        var u = k <= NA / 2 ? (x / A + 1) * 0.25 : 0.5 + (1 - x / A) * 0.25;
+        uv.push(u, r.y + 0.5);
       }
     });
-    var g = new THREE.BufferGeometry();
-    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
-    g.setIndex(idx); g.computeVertexNormals();
-    return g;
+    var NY = R.length - 1;
+    for (var j = 0; j < NY; j++) for (var k2 = 0; k2 < NA; k2++){
+      var p0 = j * row + k2, p1 = p0 + 1, p2 = p0 + row, p3 = p2 + 1;
+      idx.push(p0, p1, p2, p1, p3, p2);
+    }
+    [0, NY].forEach(function(j4){
+      var c = pos.length / 3;
+      pos.push(0, R[j4].y, 0); uv.push(0.25, j4 ? 0.985 : 0.015);
+      for (var k4 = 0; k4 < NA; k4++){
+        var a4 = j4 * row + k4, b4 = a4 + 1;
+        if (j4) idx.push(c, a4, b4); else idx.push(c, b4, a4);
+      }
+    });
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    geo.setIndex(idx); geo.computeVertexNormals();
+    // la costura de la textura comparte normal: sin línea visible en el lateral
+    var n = geo.attributes.normal;
+    for (var j5 = 0; j5 <= NY; j5++){
+      var i0 = j5 * row, i1 = i0 + NA;
+      var nx = n.getX(i0) + n.getX(i1), ny = n.getY(i0) + n.getY(i1), nz = n.getZ(i0) + n.getZ(i1), l = Math.hypot(nx, ny, nz) || 1;
+      n.setXYZ(i0, nx / l, ny / l, nz / l); n.setXYZ(i1, nx / l, ny / l, nz / l);
+    }
+    return geo;
   }
-  var geo = buildGeo();
-  var loader = new THREE.TextureLoader();
-  var maxAniso = renderer.capabilities.getMaxAnisotropy();
-  function mat(src){
-    var tx = loader.load(src, function(){ need = true; });
-    tx.encoding = THREE.sRGBEncoding; tx.anisotropy = maxAniso;
-    return new THREE.MeshStandardMaterial({ map: tx, roughness: 0.5, metalness: 0 });
-  }
+
+  var need = true;
   var base = slotStart.querySelector('img').getAttribute('src').replace(/pack-good-front\.webp$/, '');
-  function makeShadow(){
-    var c = document.createElement('canvas'); c.width = c.height = 128;
-    var g2 = c.getContext('2d'), gr = g2.createRadialGradient(64, 64, 2, 64, 64, 62);
-    gr.addColorStop(0, 'rgba(0,0,0,0.30)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
-    g2.fillStyle = gr; g2.fillRect(0, 0, 128, 128);
-    var m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
-    m.rotation.x = -Math.PI / 2; m.scale.set(0.95, 0.42, 1); m.position.y = -0.505;
-    return m;
-  }
-  function makePack(tex){
-    var g = new THREE.Group(), body = new THREE.Mesh(geo, mat(tex));
-    var sh = makeShadow(); g.add(body); g.add(sh); g.userData.shadow = sh;
-    scene.add(g); return g;
-  }
-  var good = makePack(base + 'pack-good-tex.jpg');
-  var active = slotA ? makePack(base + 'pack-active-tex.jpg') : null;
-  var positive = slotP ? makePack(base + 'pack-positive-tex.jpg') : null;
+  var tx = new THREE.TextureLoader().load(base + 'pack-good-tex.jpg', function(){ need = true; });
+  tx.encoding = THREE.sRGBEncoding; tx.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  var mat = new THREE.MeshPhysicalMaterial({ map: tx, roughness: CFG.rough, metalness: 0, clearcoat: CFG.cc, clearcoatRoughness: 0.4, reflectivity: CFG.refl, envMapIntensity: CFG.env });
+  var good = new THREE.Group(), body = new THREE.Mesh(buildGeo(), mat);
+  good.add(body);
+  // sombra de contacto suave
+  var sc = document.createElement('canvas'); sc.width = sc.height = 128;
+  var sg = sc.getContext('2d'), gr = sg.createRadialGradient(64, 64, 2, 64, 64, 62);
+  gr.addColorStop(0, 'rgba(60,20,20,0.38)'); gr.addColorStop(0.55, 'rgba(60,20,20,0.12)'); gr.addColorStop(1, 'rgba(60,20,20,0)');
+  sg.fillStyle = gr; sg.fillRect(0, 0, 128, 128);
+  var shadow = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false, toneMapped: false }));
+  shadow.rotation.x = -Math.PI / 2; shadow.scale.set(0.78, 0.4, 1); shadow.position.y = -0.502;
+  good.add(shadow);
+  scene.add(good);
   document.documentElement.classList.add('gl-on');
 
-  var vw = 0, vh = 0, wpp = 1, need = true;
+  var vw = 0, vh = 0, wpp = 1;
   function resize(){
     vw = window.innerWidth; vh = window.innerHeight;
     renderer.setSize(vw, vh, false);
@@ -923,65 +1015,55 @@ figure:hover > .bd-img img{transform:scale(1.03)}
 
   function center(el){ var r = el.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width, h: r.height, top: r.top, bottom: r.bottom }; }
   function place(g, x, y, h){
-    g.position.set((x - vw / 2) * wpp, -(y - vh / 2) * wpp, 0);
-    g.scale.setScalar(h * wpp);
+    // compenso la perspectiva: la cara frontal (más cerca de la cámara) debe medir exactamente h
+    var hw = h * wpp, k = (camera.position.z - B * hw) / camera.position.z;
+    g.position.set((x - vw / 2) * wpp * k, -(y - vh / 2) * wpp * k, 0);
+    g.scale.setScalar(hw * k);
   }
   function ease(t){ return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
   function clamp(v){ return Math.max(0, Math.min(1, v)); }
 
-  var t0 = performance.now();
+  var t0 = performance.now(), lastFade = -1;
   function frame(now){
     var y = window.scrollY || window.pageYOffset;
     var s = center(slotStart), e = center(slotEnd);
-    var endScroll = y + e.y - vh / 2;            // scroll en el que el hueco final queda centrado
-    var startY0 = s.y + y;                        // posición del hueco inicial en la página
+    var endScroll = y + e.y - vh / 2;            // scroll en el que la peana queda centrada
+    var startY0 = s.y + y;
     var p = endScroll > 0 ? clamp(y / endScroll) : 1;
-    var q = ease(p);
-    var gx, gy, gh;
+    var q = ease(p), ql = 0, gx, gy, gh;
     if (p < 1){
       // en móvil el pack encoge al empezar y viaja por el carril derecho, sin tapar el texto
       var mob = vw <= 640;
       var tH = mob ? Math.min(s.h, vh * 0.24) : s.h;
-      var tX = mob ? (s.x + s.w / 2 - tH * PW / 2) : s.x;
+      var tX = mob ? (s.x + s.w / 2 - tH * A) : s.x;
       var qs = mob ? ease(clamp(p / 0.14)) : 0;
       var hx = s.x + (tX - s.x) * qs, hh = s.h + (tH - s.h) * qs;
-      var l0 = 0.86;                              // el pack se desplaza al centro solo al final, ya por debajo del texto
-      var ql = ease(clamp((p - l0) / (1 - l0)));
+      ql = ease(clamp((p - 0.86) / 0.14));        // se desplaza a la peana solo al final, ya por debajo del texto
       gx = hx + (e.x - hx) * ql;
       gy = startY0 + (vh / 2 - startY0) * q;
+      gy += (e.y - gy) * ease(clamp((p - 0.9) / 0.075));   // se posa en la peana y ya viaja con ella
       gh = hh + (e.h - hh) * ql;
       if (y === 0 || p === 0){ gx = s.x; gy = s.y; gh = s.h; }
-    } else { gx = e.x; gy = e.y; gh = e.h; }
+    } else { gx = e.x; gy = e.y; gh = e.h; ql = 1; }
     place(good, gx, gy, gh);
-    var idle = reduce ? 0 : Math.sin((now - t0) / 1600) * (1 - q) * 0.18;
-    good.rotation.y = (reduce ? 0 : q * Math.PI * 4) + idle - 0.12 * (1 - q);
+    var idle = reduce ? 0 : Math.sin((now - t0) / 1700) * (1 - q) * 0.16;
+    good.rotation.y = (reduce ? 0 : q * Math.PI * 4) + idle - 0.34 * (1 - q);
     var tilt = reduce ? 0 : (vw <= 640 ? 0.35 : 1) * Math.sin(p * Math.PI);
-    good.rotation.z = tilt * 0.22;
-    good.rotation.x = tilt * 0.18;
-    good.userData.shadow.material.opacity = clamp((p - 0.82) / 0.18);
-    var vis = e.bottom > -50;
-    good.visible = vis;
-    [[active, slotA, -1], [positive, slotP, 1]].forEach(function(o){
-      if (!o[0]) return;
-      var c = center(o[1]), k = reduce ? 1 : ease(clamp((p - 0.55) / 0.45));
-      place(o[0], c.x, c.y + (1 - k) * 60, c.h * (0.9 + 0.1 * k));
-      o[0].rotation.y = o[2] * (0.32 + (1 - k) * 0.9);
-      o[0].visible = c.bottom > -50 && c.top < vh + 50;
-      o[0].children[0].material.opacity = 1;
-      o[0].userData.shadow.material.opacity = k;
-    });
-    canvas.style.visibility = vis ? 'visible' : 'hidden';
-    if (vis || need){
-      // dos pasadas: los packs laterales primero y el rosa siempre por delante
-      var gv = good.visible, av = active && active.visible, pv = positive && positive.visible;
-      renderer.clear();
-      good.visible = false; renderer.render(scene, camera);
-      renderer.clearDepth();
-      good.visible = gv; if (active) active.visible = false; if (positive) positive.visible = false;
-      renderer.render(scene, camera);
-      if (active) active.visible = av; if (positive) positive.visible = pv;
-      need = false;
+    good.rotation.z = tilt * 0.2;
+    good.rotation.x = tilt * 0.16 + 0.05 * (1 - q);
+    // al entrar en la foto, la luz se iguala a la del plató
+    renderer.toneMappingExposure = CFG.exp + CFG.expEnd * ql;
+    shadow.material.opacity = clamp((p - 0.9) / 0.1);
+    // relevo: el 3D se funde con la foto real del pack sobre la peana
+    var fade = clamp((p - 0.978) / 0.017);
+    if (fade !== lastFade){
+      canvas.style.opacity = 1 - fade;
+      if (stageFull) stageFull.style.opacity = fade;
+      lastFade = fade;
     }
+    var vis = fade < 1 && e.bottom > -50;
+    canvas.style.visibility = vis ? 'visible' : 'hidden';
+    if (vis || need){ renderer.render(scene, camera); need = false; }
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
