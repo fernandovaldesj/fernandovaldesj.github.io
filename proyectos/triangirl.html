@@ -422,28 +422,40 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
 .tg-build figure{margin:0}
 .bc-row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:32px;align-items:center}
 .bc-row + .bc-row{margin-top:clamp(72px,9vw,150px)}
-.bc-logo .bc-fig{grid-column:1/span 7}
-.bc-logo .bc-txt{grid-column:9/span 4}
+.bc-logo .bc-fig{grid-column:2/span 5;width:100%;max-width:580px;justify-self:end}
+.bc-logo .bc-txt{grid-column:8/span 4}
 .bc-k{font-size:15px;font-weight:500;color:var(--muted);margin:0 0 18px}
 .bc-h{font-size:clamp(30px,3.2vw,48px);line-height:1.04;letter-spacing:-0.03em;font-weight:500;margin:0 0 22px}
 .bc-p{font-size:clamp(17px,1.35vw,19px);line-height:1.45;margin:0}
 .bc-list{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
 .bc-list li{display:flex;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.35}
 .bc-list b{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#00953B;color:#fff;font-size:12px;font-weight:500;transform:translateY(-1px)}
-.ar-fig{background:rgba(255,255,255,.45);padding:clamp(20px,3vw,48px)}
+.ar-fig{background:rgba(255,255,255,.45);padding:clamp(20px,2.6vw,40px)}
 .arch{display:block;width:100%;height:auto;overflow:visible;font-family:inherit}
-.ar-frame rect{fill:none;stroke:#BDB3B0;stroke-width:1.4;stroke-dasharray:6 6}
-.ar-sq rect{fill:rgba(189,179,176,.18);stroke:#BDB3B0;stroke-width:1.2}
+.arch mask path{fill:none;stroke:#fff;stroke-width:9}
+.ar-frame{fill:none;stroke:#A99F9C;stroke-width:1.4;stroke-dasharray:6 6}
+.ar-sq rect{fill:rgba(169,159,156,.16);stroke:none}
+.ar-sq path{fill:none;stroke:#A99F9C;stroke-width:1.2}
 .ar-x text{font-size:17px;fill:#8F8583;text-anchor:middle;font-style:italic}
-.ar-tri{fill:rgba(0,149,59,.08);stroke:#00953B;stroke-width:1.6;stroke-dasharray:8 6}
+.ar-tri-fill{fill:rgba(255,255,255,.4)}
+.ar-tri{fill:none;stroke:#00953B;stroke-width:1.6;stroke-dasharray:8 6}
 .ar-logo{fill:#1A1A1A}
 .ar-dim path{fill:none;stroke:#00953B;stroke-width:1.6}
-.ar-guide path{fill:none;stroke:#00953B;stroke-width:1;stroke-dasharray:3 5;opacity:.55}
+.ar-guide path{fill:none;stroke:#00953B;stroke-width:1;stroke-dasharray:3 5;opacity:.6}
 .mk circle{fill:#00953B}
 .mk text{fill:#fff;font-size:17px;font-weight:500;text-anchor:middle}
+/* las líneas se completan al entrar en pantalla */
+.arch .dr,.arch .dr2{stroke-dasharray:1 1;stroke-dashoffset:0;transition:stroke-dashoffset var(--t,1.2s) cubic-bezier(.65,0,.35,1) var(--d,0s)}
+.js .ar-fig:not(.in) .arch .dr,.js .ar-fig:not(.in) .arch .dr2{stroke-dashoffset:1}
+.arch .fd{transition:opacity .8s ease var(--d,0s)}
+.js .ar-fig:not(.in) .arch .fd{opacity:0}
+.arch .mk{transform-box:fill-box;transform-origin:center;transition:transform .6s cubic-bezier(.34,1.56,.64,1) var(--d,0s)}
+.js .ar-fig:not(.in) .arch .mk{transform:scale(0)}
+@media (prefers-reduced-motion: reduce){.arch .dr,.arch .dr2,.arch .fd,.arch .mk{transition:none!important;stroke-dashoffset:0!important;opacity:1!important;transform:none!important}}
 
 @media (max-width: 900px){
   .bc-logo .bc-fig,.bc-logo .bc-txt{grid-column:1/-1}
+  .bc-logo .bc-fig{justify-self:center;max-width:560px}
   .bc-logo .bc-txt{order:-1}
   .bc-txt{max-width:600px}
   .st-cap{font-size:13px}.st-cap b{font-size:15px}
@@ -593,14 +605,24 @@ main > :not(.tg-hero),.site-footer{--ink:#000000;--muted:rgba(0,0,0,.6);--line:r
     <div class="bc-row bc-logo">
       <figure class="bc-fig ar-fig" data-reveal>
         <svg class="arch" viewBox="832 268 728 756" role="img" aria-label="Arquitectura del logotipo de Triangirl: la V nace de un triángulo sin base, el nombre y el símbolo comparten el mismo ancho y la separación x entre ambos marca el área de respeto.">
-          <g class="ar-frame"><rect x="879" y="339" width="628" height="627"/></g>
-          <g class="ar-sq"><rect x="879" y="339" width="30" height="30"/><rect x="1477" y="339" width="30" height="30"/><rect x="879" y="411" width="30" height="30"/><rect x="1477" y="411" width="30" height="30"/><rect x="879" y="935" width="30" height="30"/><rect x="1477" y="935" width="30" height="30"/></g>
-          <g class="ar-x"><text x="894" y="359.5">x</text><text x="1492" y="359.5">x</text><text x="894" y="431.5">x</text><text x="1492" y="431.5">x</text><text x="894" y="955.5">x</text><text x="1492" y="955.5">x</text></g>
-          <path class="ar-tri" d="M910.74 441.53H1476.29L1205.24 935.39Z"/>
+          <defs>
+            <mask id="arM1" maskUnits="userSpaceOnUse" x="820" y="260" width="760" height="780"><path class="dr" pathLength="1" style="--d:0s;--t:1.6s" d="M879 339H1507V966H879Z"/></mask>
+            <mask id="arM2" maskUnits="userSpaceOnUse" x="820" y="260" width="760" height="780"><path class="dr" pathLength="1" style="--d:.45s;--t:1.5s" d="M910.74 441.53H1476.29L1205.24 935.39Z"/></mask>
+            <mask id="arM3" maskUnits="userSpaceOnUse" x="820" y="260" width="760" height="780"><path class="dr" pathLength="1" style="--d:.8s;--t:1.2s" d="M909 311V1007"/><path class="dr" pathLength="1" style="--d:.9s;--t:1.2s" d="M1477 311V985"/></mask>
+          </defs>
+          <path class="ar-frame" mask="url(#arM1)" d="M879 339H1507V966H879Z"/>
+          <path class="ar-tri-fill fd" style="--d:1.3s" d="M910.74 441.53H1476.29L1205.24 935.39Z"/>
+          <path class="ar-tri" mask="url(#arM2)" d="M910.74 441.53H1476.29L1205.24 935.39Z"/>
+          <g class="ar-sq"><g class="fd" style="--d:1.5s"><rect x="879" y="339" width="30" height="30"/><rect x="1477" y="339" width="30" height="30"/><rect x="879" y="411" width="30" height="30"/><rect x="1477" y="411" width="30" height="30"/><rect x="879" y="935" width="30" height="30"/><rect x="1477" y="935" width="30" height="30"/></g><path class="dr2" pathLength="1" style="--d:1.10s;--t:.7s" d="M879 339h30v30h-30z"/><path class="dr2" pathLength="1" style="--d:1.18s;--t:.7s" d="M1477 339h30v30h-30z"/><path class="dr2" pathLength="1" style="--d:1.26s;--t:.7s" d="M879 411h30v30h-30z"/><path class="dr2" pathLength="1" style="--d:1.34s;--t:.7s" d="M1477 411h30v30h-30z"/><path class="dr2" pathLength="1" style="--d:1.42s;--t:.7s" d="M879 935h30v30h-30z"/><path class="dr2" pathLength="1" style="--d:1.50s;--t:.7s" d="M1477 935h30v30h-30z"/></g>
+          <g class="ar-x fd" style="--d:1.7s"><text x="894" y="359.5">x</text><text x="1492" y="359.5">x</text><text x="894" y="431.5">x</text><text x="1492" y="431.5">x</text><text x="894" y="955.5">x</text><text x="1492" y="955.5">x</text></g>
           <use href="#tgLogo" x="905" y="348" width="604" height="592" class="ar-logo"/>
-          <g class="ar-dim"><path d="M909 300H1477M909 289V311M1477 289V311M910.7 996H1476.3M910.7 985V1007M1476.3 985V1007"/></g>
-          <g class="ar-guide"><path d="M909 311V1007M1477 311V985"/></g>
-          <g class="mk"><circle cx="1193" cy="486" r="15"/><text x="1193" y="491.5">1</text></g><g class="mk"><circle cx="1193" cy="300" r="15"/><text x="1193" y="305.5">2</text></g><g class="mk"><circle cx="1193" cy="996" r="15"/><text x="1193" y="1001.5">2</text></g><g class="mk"><circle cx="852" cy="426" r="15"/><text x="852" y="431.5">3</text></g>
+          <g class="ar-guide" mask="url(#arM3)"><path d="M909 311V1007M1477 311V985"/></g>
+          <g class="ar-dim">
+            <path class="dr2" pathLength="1" style="--d:1.4s;--t:.9s" d="M1193 300H909"/><path class="dr2" pathLength="1" style="--d:1.4s;--t:.9s" d="M1193 300H1477"/>
+            <path class="dr2" pathLength="1" style="--d:1.55s;--t:.9s" d="M1193.5 996H910.7"/><path class="dr2" pathLength="1" style="--d:1.55s;--t:.9s" d="M1193.5 996H1476.3"/>
+            <path class="fd" style="--d:2.1s" d="M909 289V311M1477 289V311M910.7 985V1007M1476.3 985V1007"/>
+          </g>
+          <g class="mk" style="--d:2.0s"><circle cx="1193" cy="486" r="15"/><text x="1193" y="491.5">1</text></g><g class="mk" style="--d:2.15s"><circle cx="1193" cy="300" r="15"/><text x="1193" y="305.5">2</text></g><g class="mk" style="--d:2.25s"><circle cx="1193" cy="996" r="15"/><text x="1193" y="1001.5">2</text></g><g class="mk" style="--d:2.35s"><circle cx="852" cy="426" r="15"/><text x="852" y="431.5">3</text></g>
         </svg>
       </figure>
       <div class="bc-txt" data-reveal>
