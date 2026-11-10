@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A la nostra taula hi cap tothom, Ferrer. VAF</title>
+<meta name="description" content="Salses de tomàquet Ferrer: spot de 30 segundos, piezas de 10 y campaña digital, con el nuevo claim de marca «Una manera de fer les coses». Portfolio de Fernando Valdés (VAF).">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Cinzel:wght@700&family=DM+Serif+Display&family=MedievalSharp&family=Playfair+Display:ital,wght@1,900&family=Rubik+Mono+One&family=Space+Mono:wght@700&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=Unbounded:wght@800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script><!--pt-head--><script>(function(){try{history.scrollRestoration='manual';if(sessionStorage.getItem('vaf-pt')){document.documentElement.classList.add('pt-in');}}catch(e){}})();</script><!--/pt-head-->
+<style>
+:root{
+  --bg:#FFFFFF; --ink:#000000; --muted:#595959; --line:#000000;
+  --reel:#111111; --ph1:#E4E4E1; --ph2:#D3D3CF; --ph3:#DCDCD8; --ph4:#C9C9C5; --ph5:#BEBEBA; --ph6:#D8D8D4;
+  --accent:#00E5FF; --on-accent:#000000;
+  --pad:clamp(20px,2.8vw,40px);
+  --ease:cubic-bezier(.2,.7,0,1);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF;
+    --reel:#1C1C1C; --ph1:#1E1E1E; --ph2:#2C2C2C; --ph3:#242424; --ph4:#333333; --ph5:#3A3A3A; --ph6:#282828;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --ink:#FFFFFF; --muted:#A6A6A6; --line:#FFFFFF;
+  --reel:#1C1C1C; --ph1:#1E1E1E; --ph2:#2C2C2C; --ph3:#242424; --ph4:#333333; --ph5:#3A3A3A; --ph6:#282828;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk','Helvetica Neue',Arial,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+p,h1,h2,h3,dl,dd{margin:0}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 26px) var(--pad) 16px;display:flex;justify-content:space-between;align-items:baseline;color:#FFFFFF;mix-blend-mode:difference;transition:transform .6s var(--ease)}
+.site-header.hide{transform:translateY(-120%)}
+.logo{font-size:26px;font-weight:700;line-height:1;letter-spacing:-0.02em}
+.nav-wrap{display:flex;align-items:baseline;gap:clamp(24px,6vw,96px);font-size:17px;font-weight:500}
+.nav{display:flex;gap:clamp(18px,2.8vw,40px)}
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.lang span{opacity:.5}
+.lang a{opacity:.5;transition:opacity .3s ease}.lang a:hover{opacity:1}.lang b{font-weight:inherit}
+
+/* Common */
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.small{font-size:15px;font-weight:500;color:var(--muted)}
+.label{display:inline-block;padding:4px 6px 2px;background:var(--accent);color:var(--on-accent);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0}
+.mark{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 0/100% 100%;color:var(--on-accent);padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.js [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity 1s ease,transform 1.2s var(--ease)}
+.js [data-reveal].in{opacity:1;transform:none}
+.ph{position:relative;overflow:hidden}
+.ph-in{position:absolute;left:0;right:0;top:-7%;height:114%}
+.js .ph{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--ease)}
+.js .ph.in{clip-path:inset(0 0 0 0)}
+.ph .tag{position:absolute;left:20px;bottom:18px;font-size:14px;font-weight:500;text-transform:uppercase;color:var(--ink);z-index:1}
+.cap{margin-top:14px;font-size:15px;color:var(--muted)}
+
+/* Hero del proyecto */
+.p-hero{padding:clamp(120px,12vw,170px) var(--pad) 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 32px;font-size:17px;font-weight:500;margin-bottom:clamp(24px,3vw,40px)}
+.meta span:not(:first-child){color:var(--muted)}
+.p-title{font-size:clamp(56px,12vw,190px);font-weight:500;line-height:.9;letter-spacing:-0.045em}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.wi{display:inline-block}
+.js .p-title .wi{transform:translateY(110%)}
+.p-title.go .wi{transform:none;transition:transform 1.1s var(--ease);transition-delay:calc(var(--i) * 60ms)}
+.js .p-title .mark{background-size:0% 100%;color:inherit;transition:background-size 1s var(--ease),color .3s ease}
+.js .p-title .mark.selected{background-size:100% 100%;color:var(--on-accent)}
+
+/* Vídeo */
+.film{padding:clamp(40px,5vw,72px) var(--pad) 0}
+.film-box{aspect-ratio:16/9;background:var(--reel);position:relative;overflow:hidden;transform-origin:50% 100%}
+.play{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;background:var(--accent);border:0;border-radius:0;font:inherit;font-size:17px;font-weight:500;color:var(--on-accent);cursor:pointer}
+.film-box{display:block;color:#FFFFFF}
+.film-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:3;display:none}
+.film-box.playing .film-video{display:block}
+.sound{display:none;position:absolute;right:calc(var(--ix,0px) + 24px);top:calc(var(--iy,0px) + 22px);z-index:4;min-height:40px;padding:0 16px;align-items:center;background:var(--accent);color:var(--on-accent);border:0;border-radius:0;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.film-box.playing.is-muted .sound{display:flex}
+.film-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3;background:#000}
+.film-box.playing .play,.film-box.playing .dur,.film-box.playing .film-title{display:none}
+.film-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s ease}
+.film-box:hover .film-poster{transform:scale(1.03);opacity:.85}
+.film-box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(0,0,0,.5) 100%);pointer-events:none}
+.film-box .film-title,.film-box .play,.film-box .dur{z-index:1}
+.film-box .dur{position:absolute;right:24px;bottom:30px;font-size:14px;color:#FFFFFF}
+.film-box .film-title{position:absolute;left:24px;top:22px;right:24px;font-size:clamp(18px,1.6vw,24px);font-weight:500;letter-spacing:-0.01em;color:#FFFFFF}
+.film-box .film-title span{color:#A6A6A6;font-weight:400}
+.film-box:hover .play{transform:translateX(4px)}
+.play{transition:transform .4s var(--ease)}
+
+.film-box{--ix:0px;--iy:0px}
+.film.immersive{padding:0;height:100vh;height:100svh}
+.film.immersive .film-box{aspect-ratio:auto;width:100%;height:100%;clip-path:inset(var(--iy) var(--ix))}
+.film.immersive .film-title{left:calc(var(--ix) + 24px);right:calc(var(--ix) + 24px);top:calc(var(--iy) + 22px)}
+.film.immersive .play{left:calc(var(--ix) + 24px);bottom:calc(var(--iy) + 24px)}
+.film.immersive .dur{right:calc(var(--ix) + 24px);bottom:calc(var(--iy) + 30px)}
+.film.immersive + .facts{margin-top:clamp(40px,5vw,64px)}
+
+/* Ficha */
+.facts{margin:clamp(40px,5vw,64px) var(--pad) 0;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:20px;font-size:17px;line-height:1.35}
+.facts dt{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:6px}
+
+/* Reto e idea */
+.story{padding:clamp(88px,9vw,140px) var(--pad) 0;row-gap:48px}
+.story-block{grid-column:span 6;display:flex;flex-direction:column;gap:18px;padding-right:clamp(0px,3vw,48px)}
+.story-block p:last-child{font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-0.01em}
+
+/* El spot: líneas "nuevo" */
+.spot{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.spot .small{margin-bottom:28px}
+.lines{display:flex;flex-direction:column;gap:.1em;font-size:clamp(30px,5vw,72px);font-weight:500;line-height:1.05;letter-spacing:-0.035em}
+.lines .last{margin-top:.35em}
+.spot-note{margin-top:clamp(36px,4vw,56px);max-width:720px;font-size:clamp(19px,1.7vw,24px);line-height:1.35}
+
+/* Exterior y digital */
+figure{margin:0}
+.ooh,.digital{padding:clamp(88px,9vw,140px) var(--pad) 0;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)}
+.ooh-intro{max-width:720px;font-size:clamp(21px,2vw,28px);line-height:1.3;letter-spacing:-0.01em}
+.g-row{align-items:end}
+.g-tall{grid-column:1/span 7}
+.g-side{grid-column:9/span 4;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px);padding-bottom:36px}
+.copy{font-size:clamp(24px,2.4vw,36px);line-height:1.15;letter-spacing:-0.02em;text-wrap:balance}
+.copy-s{font-size:clamp(19px,1.7vw,24px);line-height:1.3;letter-spacing:-0.01em}
+.num{font-size:clamp(72px,10vw,150px);font-weight:500;line-height:.85;letter-spacing:-0.05em}
+.num small{font-size:.4em;letter-spacing:-0.02em}
+.num-cap{margin-top:14px;font-size:clamp(19px,1.7vw,24px);line-height:1.35}
+.r-34{aspect-ratio:3/4}
+.r-wide{aspect-ratio:1417/984}
+.r-916{aspect-ratio:9/16}
+img.ph-in{display:block;width:100%;object-fit:cover}
+.cap-row{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap}
+.cap-row .cap{margin-top:0}
+.frames{padding:clamp(88px,9vw,140px) var(--pad) 0;display:flex;flex-direction:column;gap:24px}
+.frames .small{margin-bottom:clamp(16px,2vw,24px)}
+.frame-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.r-cine{aspect-ratio:2.2/1}
+.r-169{aspect-ratio:16/9}
+.loop-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b0f14}
+.r-32{aspect-ratio:3/2}
+.r-23{aspect-ratio:2/3}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.g-tall5{grid-column:1/span 5}
+.hero-img{padding:clamp(40px,5vw,72px) var(--pad) 0}
+.pillars{margin-top:clamp(28px,3vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:28px;border-top:1px solid var(--line);padding-top:16px}
+.pillars dt{font-size:15px;font-weight:500;margin-bottom:8px}
+.pillars dd{font-size:clamp(19px,1.7vw,24px);line-height:1.3;letter-spacing:-0.01em}
+.pillars-sec{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.spaces-sec{padding:clamp(56px,6vw,96px) var(--pad) 0;display:flex;flex-direction:column;gap:12px}
+.spaces-sec .small{margin-bottom:clamp(16px,2vw,24px)}
+.sp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);align-items:start;margin-top:clamp(24px,4vw,64px)}
+.sp-panel{aspect-ratio:1/1.05;padding:clamp(16px,1.8vw,26px);display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
+.sp-n{font-size:14px;font-weight:500;opacity:.8}
+.sp-panel h3{margin:auto 0 0;font-size:clamp(26px,3.2vw,48px);font-weight:700;line-height:.92;letter-spacing:-0.035em;text-transform:uppercase}
+.sp-panel p{font-size:clamp(14px,1.2vw,17px);line-height:1.35;max-width:22em}
+.sp-i{margin:0;overflow:hidden}
+.sp-i img{display:block;width:100%;height:118%;object-fit:cover;margin-top:-9%;will-change:transform}
+.sp-i1{aspect-ratio:3/4}.sp-i2{aspect-ratio:4/5}.sp-i3{aspect-ratio:2/3}
+.sp-a .sp-panel{grid-column:1/span 4;grid-row:1}
+.sp-a .sp-i1{grid-column:5/span 3;grid-row:1;margin-top:22%}
+.sp-a .sp-i2{grid-column:8/span 3;grid-row:1;margin-top:4%}
+.sp-a .sp-i3{grid-column:11/span 2;grid-row:1;margin-top:38%}
+.sp-b .sp-panel{grid-column:9/span 4;grid-row:1;margin-top:10%}
+.sp-b .sp-i1{grid-column:1/span 2;grid-row:1;margin-top:30%}
+.sp-b .sp-i2{grid-column:3/span 3;grid-row:1}
+.sp-b .sp-i3{grid-column:6/span 3;grid-row:1;margin-top:18%}
+.sp .sp-i[data-reveal]:nth-of-type(2){transition-delay:.08s}.sp .sp-i[data-reveal]:nth-of-type(3){transition-delay:.16s}.sp .sp-i[data-reveal]:nth-of-type(4){transition-delay:.24s}
+.r-logo{aspect-ratio:1930/1262}
+/* Triangirl */
+.pi{overflow:hidden}
+.pi img{display:block;width:100%;height:116%;object-fit:cover;margin-top:-8%;will-change:transform}
+.r-ph{aspect-ratio:1100/1491}
+.word{align-self:center;padding-bottom:0}
+.wp{display:flex;flex-direction:column;gap:.1em;font-size:clamp(48px,7.5vw,120px);font-weight:500;line-height:.95;letter-spacing:-0.045em}
+.wp-old{color:var(--muted)}
+.wp-old s{text-decoration-thickness:.06em}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(28px,3vw,40px)}
+.trio figure{margin:0;position:relative;overflow:hidden}
+.trio img{display:block;width:100%;aspect-ratio:1100/1491;object-fit:cover;transition:transform 1.2s var(--ease)}
+.trio figure:hover img{transform:scale(1.04)}
+.trio figcaption{position:absolute;left:clamp(12px,1.4vw,20px);bottom:clamp(10px,1.2vw,18px);padding:4px 8px 3px;background:#fff;color:#000;font-size:14px;font-weight:500;text-transform:uppercase}
+.tg-color{padding-top:clamp(40px,5vw,72px)}
+.r-land{aspect-ratio:2/1}
+.wide-bleed{margin:0 calc(var(--pad) * -1)}
+.ed{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);align-items:start;margin-top:clamp(24px,4vw,64px)}
+.e1{grid-column:1/span 6}.e2{grid-column:8/span 3;margin-top:28%}.e3{grid-column:11/span 2;margin-top:6%}
+.e4{grid-column:2/span 3;margin-top:34%}.e5{grid-column:6/span 4}.e6{grid-column:11/span 2;margin-top:62%}
+.ed-end{align-items:center}.e7{grid-column:1/span 4}
+.e8{grid-column:6/span 7;margin:0;text-align:left}
+.duo2{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-top:clamp(40px,5vw,72px)}
+.duo2 figure:first-child{grid-column:2/span 5}
+.duo2 figure:last-child{grid-column:8/span 4;margin-top:22%}
+.lf{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,24px);align-items:start}
+.l1{grid-column:1/span 4}.l2{grid-column:6/span 3;margin-top:22%}.l3{grid-column:10/span 3;margin-top:6%}
+.l4{grid-column:2/span 3;margin-top:8%}.l5{grid-column:6/span 4}.l6{grid-column:11/span 2;margin-top:30%}
+.lf-quote{margin:clamp(56px,7vw,110px) 0;font-size:clamp(34px,5vw,76px);font-weight:500;line-height:1;letter-spacing:-0.04em;text-align:center}
+.tg-sec{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.tg-sec .small{margin-bottom:clamp(20px,2.5vw,32px)}
+.marquee-tg{margin-top:clamp(88px,9vw,140px);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(14px,1.6vw,22px) 0}
+.marquee-tg .track{display:flex;width:max-content;animation:tgm 38s linear infinite}
+.marquee-tg span{display:inline-flex;align-items:center;gap:clamp(18px,2vw,32px);padding-right:clamp(18px,2vw,32px);font-size:clamp(34px,5vw,76px);font-weight:500;letter-spacing:-0.035em;line-height:1;white-space:nowrap}
+.tri{width:.55em;height:.48em;flex:none;clip-path:polygon(0 0,100% 0,50% 100%)}
+@keyframes tgm{to{transform:translateX(-50%)}}
+.palette{display:flex;flex-direction:column}
+.sw{--c:#ccc;position:relative;height:clamp(64px,7vw,104px);display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:0 clamp(14px,1.6vw,24px) 12px;color:#000;transition:height .6s var(--ease)}
+.sw::before{content:"";position:absolute;inset:0;background:var(--c);transform-origin:0 50%;transform:scaleX(var(--sx,1));transition:transform 1.1s var(--ease);z-index:-1}
+.palette{position:relative;z-index:0}
+.js .palette:not(.in) .sw{--sx:0}
+.palette.in .sw:nth-child(2)::before{transition-delay:.07s}.palette.in .sw:nth-child(3)::before{transition-delay:.14s}.palette.in .sw:nth-child(4)::before{transition-delay:.21s}.palette.in .sw:nth-child(5)::before{transition-delay:.28s}.palette.in .sw:nth-child(6)::before{transition-delay:.35s}
+.sw:hover{height:clamp(96px,11vw,160px)}
+.sw b{font-size:clamp(18px,2vw,30px);font-weight:600;letter-spacing:-0.02em;text-transform:uppercase}
+.sw small{font-size:13px;font-weight:500;opacity:.8}
+.sw.dark{color:#fff}
+.packs{position:relative;overflow:hidden;background:#F3F1EC;height:clamp(420px,52vw,760px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center;column-gap:24px;padding:0 var(--pad)}
+.packs figure{margin:0;position:relative}
+.packs img{display:block;width:100%;height:auto;will-change:transform;filter:drop-shadow(0 30px 40px rgba(0,0,0,.12))}
+.pk1{grid-column:2/span 3;align-self:end;margin-bottom:6%}
+.pk2{grid-column:5/span 3;align-self:start;margin-top:-2px}
+.pk3{grid-column:9/span 3;align-self:center;margin-top:8%}
+.pack-copy{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-top:clamp(24px,3vw,40px)}
+.pack-copy p{grid-column:1/span 7}
+.bb{margin-top:clamp(20px,2.5vw,32px);display:flex;gap:clamp(12px,1.4vw,20px);overflow-x:auto;scroll-snap-type:x proximity;padding:0 var(--pad) 18px;cursor:grab;scrollbar-width:thin;overscroll-behavior-x:contain}
+.bb.drag{cursor:grabbing;scroll-snap-type:none}
+.bb img{flex:none;width:min(62vw,860px);aspect-ratio:16/9;object-fit:cover;scroll-snap-align:center;user-select:none;-webkit-user-drag:none;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.bb-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:clamp(88px,9vw,140px) var(--pad) 0}
+.alma-logo{margin-bottom:clamp(40px,5vw,72px)}
+.ipad{max-width:900px;width:100%;margin:0 auto;border:1.5px solid var(--ink);border-radius:clamp(22px,3vw,40px);padding:clamp(14px,2.2vw,26px);position:relative}
+.ipad::before{content:"";position:absolute;left:50%;top:clamp(5px,1vw,11px);width:6px;height:6px;border:1px solid var(--ink);border-radius:50%;transform:translateX(-50%)}
+.ipad-screen{aspect-ratio:4/3;border:1px solid var(--ink);border-radius:clamp(6px,.8vw,10px);overflow-y:auto;overscroll-behavior:contain;background:#fff;scrollbar-width:thin}
+.ipad-screen img{display:block;width:100%;height:auto}
+.ipad-cap{margin-top:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.spaces{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:36px;border-top:1px solid var(--line);padding-top:16px}
+.spaces dt{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:500;margin-bottom:8px}
+.chip{width:12px;height:12px;flex:none;border:1px solid rgba(0,0,0,.15)}
+.spaces dd{font-size:17px;line-height:1.4;color:var(--ink)}
+.g-land{grid-column:2/span 3}
+.g-land-side{grid-column:6/span 6;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);align-self:center}
+.g-side6{grid-column:7/span 6;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px);padding-bottom:36px}
+.pack-lead{grid-column:1/span 7}
+.pack-lead .copy{max-width:14em}
+.quote{grid-column:1/span 9;font-size:clamp(24px,2.4vw,36px);line-height:1.2;letter-spacing:-0.02em;text-wrap:balance}
+.quote-by{grid-column:1/span 9;margin-top:18px;font-size:15px;color:var(--muted)}
+.g-wide8{grid-column:1/span 8}
+.g-side4{grid-column:10/span 3;display:flex;flex-direction:column;gap:14px;padding-bottom:8px}
+.g-side4 .cap{margin-top:0}
+.mock{display:block;width:100%;height:auto}
+.laptop{grid-column:2/span 10}
+.phones{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr);column-gap:clamp(14px,3.6vw,56px);align-items:center;max-width:1240px;width:100%;margin:0 auto}
+.phones figure{margin:0;position:relative}
+.phones .ph-l{top:1%}
+.phones .ph-r{top:-2.5%}
+
+/* Créditos */
+.credits{margin:clamp(88px,9vw,140px) var(--pad) 0;border-top:1px solid var(--line);padding-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:20px;font-size:17px;line-height:1.35}
+.credits dt{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:6px}
+
+/* Siguiente proyecto */
+.next{margin:clamp(88px,9vw,140px) var(--pad) 0;border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:14px}
+.next-link{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 24px}
+.next-title{font-size:clamp(48px,8vw,120px);font-weight:500;line-height:.9;letter-spacing:-0.04em;transition:transform .6s var(--ease)}
+.next-link:hover .next-title{transform:translateX(12px)}
+.next-client{font-size:clamp(19px,1.7vw,24px);color:var(--muted)}
+
+/* Footer */
+.site-footer{margin:clamp(88px,9vw,140px) var(--pad) 0;border-top:1px solid var(--line);padding-top:36px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 28px)}
+.say{font-size:clamp(40px,3.9vw,56px);line-height:1.08;letter-spacing:-0.02em}
+.email{display:inline-block;margin-top:28px;padding:0 .08em;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 100%/100% 0%,var(--accent);color:var(--on-accent);font-size:clamp(28px,5vw,72px);font-weight:500;line-height:1.05;letter-spacing:-0.03em;overflow-wrap:anywhere;transition:background-size .6s var(--ease),color .4s ease}
+.email:hover{background-size:100% 100%,auto;color:var(--bg)}
+.legal{margin-top:clamp(56px,6vw,96px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+
+/* Cursor */
+.cursor{position:fixed;left:0;top:0;z-index:100;pointer-events:none;opacity:0;transition:opacity .25s ease}
+.cursor.on{opacity:1}
+.c-dot{position:absolute;width:12px;height:12px;background:var(--accent);transform:translate(-50%,-50%) scale(1);transition:transform .35s var(--ease)}
+.cursor.label .c-dot{transform:translate(-50%,-50%) scale(0)}
+.c-label{position:absolute;left:18px;top:18px;display:flex;align-items:baseline;gap:10px;white-space:nowrap;background:var(--accent);color:var(--on-accent);padding:8px 12px 6px;font-size:16px;font-weight:500;transform:scale(.6);transform-origin:0 0;opacity:0;transition:transform .4s var(--ease),opacity .2s ease}
+.cursor.label .c-label{transform:scale(1);opacity:1}
+.c-pre{font-size:13px;text-transform:uppercase}
+
+@media (max-width: 900px){
+  .facts,.credits{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .story-block{grid-column:1/-1;padding-right:0}
+  .g-tall,.g-side,.laptop,.g-wide8,.g-side4,.pack-lead,.quote,.quote-by,.g-tall5,.g-side6,.g-land-side{grid-column:1/-1}
+  .g-land{grid-column:1/-1;max-width:380px;width:100%;margin:0 auto}
+  .g-land-side{margin-top:32px}
+  .trio{column-gap:8px}
+  .duo2 figure:first-child{grid-column:1/span 7}.duo2 figure:last-child{grid-column:8/span 5;margin-top:30%}
+  .trio figcaption{font-size:11px;padding:3px 5px 2px}
+  .r-land{aspect-ratio:4/3}
+  .e1{grid-column:1/span 8}.e2{grid-column:9/span 4;margin-top:40%}.e3{grid-column:4/span 6;margin-top:6%}
+  .e4{grid-column:1/span 5;margin-top:20%}.e5{grid-column:6/span 7}.e6{grid-column:3/span 5;margin-top:6%}
+  .e7{grid-column:1/span 6}.e8{grid-column:7/span 6;font-size:clamp(26px,7vw,40px)}
+  .wp{font-size:clamp(44px,13vw,72px)}
+  .pack-copy p{grid-column:1/-1}
+  .bb img{width:82vw}
+  .sp{column-gap:10px;row-gap:10px}
+  .sp .sp-panel{grid-column:1/-1;grid-row:1;aspect-ratio:auto;min-height:190px;margin-top:0}
+  .sp .sp-i1,.sp .sp-i2,.sp .sp-i3{grid-row:2}
+  .sp .sp-i1{grid-column:1/span 4;margin-top:14%}
+  .sp .sp-i2{grid-column:5/span 4;margin-top:0}
+  .sp .sp-i3{grid-column:9/span 4;margin-top:22%}
+  .pillars,.spaces{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g-side6{margin-top:32px;padding-bottom:0}
+  .g-side4{margin-top:16px}
+  .frame-row{grid-template-columns:minmax(0,1fr)}
+  .g-side{margin-top:32px;padding-bottom:0}
+  .phones{column-gap:10px}
+}
+@media (max-width: 600px){
+  .nav-wrap{gap:18px;font-size:15px}
+  .lang{font-size:14px}
+  .phones{column-gap:8px}
+  .spaces{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion: reduce){
+  .js [data-reveal],.js .ph,.js .p-title .wi{transform:none!important;opacity:1!important;clip-path:none!important;transition:none!important}
+  .js .p-title .mark{background-size:100% 100%;color:var(--on-accent)}
+}
+/*pt*/
+.pt{position:fixed;inset:0;z-index:300;background:var(--bg);color:var(--ink);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility 0s linear .3s}
+.pt.on,.pt-in .pt{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .18s ease}
+.pt-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-0.04em}
+.pt .f1{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;letter-spacing:-0.02em}
+.pt .f3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:0}
+.pt .f4{font-family:'DM Serif Display',serif;font-weight:400;letter-spacing:-0.02em}
+.pt .f6{font-family:'Unbounded',sans-serif;font-weight:800;letter-spacing:-0.04em}
+.pt .f7{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:-0.04em}
+.pt .f9{font-family:'Abril Fatface',serif;font-weight:400;letter-spacing:-0.02em}
+.pt .f10{font-family:'Rubik Mono One',sans-serif;font-weight:400;letter-spacing:-0.06em}
+.pt .f12{font-family:'Uncial Antiqua',serif;font-weight:400;letter-spacing:0}
+.pt .f13{font-family:'UnifrakturMaguntia',serif;font-weight:400;letter-spacing:0}
+.pt .f14{font-family:'Cinzel',serif;font-weight:700;letter-spacing:0}
+.pt .f15{font-family:'MedievalSharp',serif;font-weight:400;letter-spacing:0}
+/*/pt*/
+
+/* Ferrer */
+.cuts{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.cuts-intro{max-width:30em;margin:0 0 clamp(32px,4vw,56px)}
+.cut-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:clamp(32px,4vw,56px);align-items:start}
+.cut-f{margin:0}
+.cf1{grid-column:1/span 6}
+.cf2{grid-column:8/span 5;margin-top:clamp(60px,9vw,150px)}
+.cf3{grid-column:2/span 5}
+.cf4{grid-column:7/span 6;margin-top:clamp(40px,6vw,96px)}
+.cut{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0b0c;cursor:pointer}
+.cut img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s ease}
+.cut:hover img{transform:scale(1.04)}
+.cut video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:none}
+.cut.playing video{display:block}
+.cut.playing img,.cut.playing .cut-play,.cut.playing .cut-dur{display:none}
+.cut-play{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:10px;min-height:40px;padding:0 16px;background:var(--accent);color:var(--on-accent);font-size:16px;font-weight:500;transition:transform .4s var(--ease)}
+.cut:hover .cut-play{transform:translateX(4px)}
+.cut-dur{position:absolute;right:16px;bottom:16px;font-size:14px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.cut:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.fg-sec{padding:clamp(88px,9vw,140px) var(--pad) 0}
+.fg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:clamp(40px,6vw,96px);align-items:start}
+.fg figure{margin:0}
+.fg1{grid-column:1/span 8}
+.fg2{grid-column:10/span 3;margin-top:28%!important}
+.fg3{grid-column:2/span 4}
+.fg-q{grid-column:7/span 6;align-self:center;font-size:clamp(28px,3.4vw,52px);font-weight:500;line-height:1.05;letter-spacing:-0.035em;margin:0}
+.fg4{grid-column:6/span 7;margin-top:calc(clamp(40px,6vw,96px) * -1.6)!important}
+.fg5{grid-column:1/-1}
+.r-45{aspect-ratio:4/5}
+.r-1{aspect-ratio:1/1}
+.dig{margin-top:clamp(88px,9vw,140px);padding:clamp(72px,8vw,120px) var(--pad);background:#F7ECE1;--ink:#000;--muted:rgba(0,0,0,.6);--line:#000;color:#000}
+.dig-intro{max-width:30em;margin:0 0 clamp(40px,5vw,72px)}
+.dig figure{margin:0}
+.dg-lb{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:end}
+.dg-tv{grid-column:1/span 8}
+.dg-side{grid-column:10/span 3;display:flex;flex-direction:column;gap:12px}
+.bn{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:start;margin-top:clamp(72px,9vw,140px)}
+.bn .cap,.bn .cap-row{margin-top:12px}
+.bn-600{grid-column:2/span 3;grid-row:1/span 2}
+.bn-250{grid-column:6/span 4;grid-row:1}
+.bn-100{grid-column:10/span 3;grid-row:1;align-self:center}
+.bn-980{grid-column:6/span 7;grid-row:2;align-self:end}
+.bn img{box-shadow:0 18px 40px -24px rgba(80,30,10,.45)}
+.dg-skin{margin-top:clamp(72px,9vw,140px)!important}
+@media (max-width: 900px){
+  .dg-tv{grid-column:1/-1}
+  .dg-side{grid-column:1/span 10}
+}
+@media (max-width: 640px){
+  .cut-grid,.fg{column-gap:12px}
+  .cf1{grid-column:1/-1}
+  .cf2{grid-column:3/-1;margin-top:0}
+  .cf3{grid-column:1/span 10}
+  .cf4{grid-column:3/-1;margin-top:0}
+  .cut-play{left:10px;bottom:10px;min-height:34px;padding:0 12px;font-size:14px}
+  .fg1{grid-column:1/-1}
+  .fg2{grid-column:6/-1;margin-top:0!important}
+  .fg3{grid-column:1/span 7;margin-top:-30%!important}
+  .fg-q{grid-column:1/-1;font-size:28px}
+  .fg4{grid-column:3/-1;margin-top:0!important}
+  .dg-side{grid-column:1/-1}
+  .bn{column-gap:12px;row-gap:28px}
+  .bn-600{grid-column:1/span 5;grid-row:1/span 2}
+  .bn-250{grid-column:6/-1;grid-row:1}
+  .bn-100{grid-column:6/-1;grid-row:2;align-self:start}
+  .bn-980{grid-column:1/-1;grid-row:3}
+}
+</style>
+</head>
+<body>
+<!--pt--><div class="pt" aria-hidden="true"><span class="pt-logo">VAF</span></div><!--/pt-->
+
+
+
+<header class="site-header" id="top">
+  <a class="logo" href="../" aria-label="VAF, volver a la home">VAF</a>
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Principal">
+      <a href="../#work">Work</a>
+      <a href="../#about">About</a>
+      <a href="../#contact">Say hi</a>
+    </nav>
+    <p class="lang"><b>ES</b> <a href="../en/proyectos/ferrer.html" hreflang="en" lang="en">/ EN</a></p>
+  </div>
+</header>
+
+<main>
+  <section class="p-hero">
+    <p class="meta"><span>Ferrer</span><span>Salsas de tomate</span><span>2026</span></p>
+    <h1 class="p-title" id="ptitle">A la nostra taula hi cap <span class="mark">tothom</span>.</h1>
+  </section>
+
+  <section class="film" aria-label="Spot">
+    <div class="film-box" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir el spot de Salses de tomàquet Ferrer">
+      <img class="film-poster" alt="" src="../assets/ferrer/spot-poster.webp">
+      <video class="film-video" src="../assets/ferrer/spot.mp4" playsinline preload="none" title="Salses de tomàquet Ferrer"></video>
+      <p class="film-title">Salses de tomàquet Ferrer. <span>Spot de 30"</span></p>
+      <span class="play">
+        <svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>
+        Play
+      </span>
+      <span class="dur">0:30</span>
+      <button class="sound" type="button">Activar sonido</button>
+    </div>
+  </section>
+
+  <dl class="facts" data-reveal>
+    <div><dt>Cliente</dt><dd>Ferrer</dd></div>
+    <div><dt>Agencia</dt><dd>Actimundi</dd></div>
+    <div><dt>Mi rol</dt><dd>Dirección de arte</dd></div>
+    <div><dt>Soportes</dt><dd>Spot de 30", cuatro piezas de 10", banners, L-banner en TV3 y skin en 3Cat</dd></div>
+  </dl>
+
+  <section class="story grid">
+    <div class="story-block" data-reveal>
+      <h2 class="small">El reto</h2>
+      <p>Presentar la gama de salsas de tomate de Ferrer y, de paso, estrenar el nuevo claim de marca: el cierre que firma a partir de ahora todo lo que hace Ferrer.</p>
+    </div>
+    <div class="story-block" data-reveal>
+      <h2 class="small">La idea</h2>
+      <p>Una abuela, una cocina de las de siempre y una familia que le pide la comida por audio de WhatsApp: uno quiere bacallà, otro macarrons y la nieta, patatas con quètxup. Ella tiene una salsa Ferrer para cada plato, porque a su mesa cabe todo el mundo.</p>
+    </div>
+  </section>
+
+  <section class="cuts" aria-label="Piezas de 10 segundos">
+    <h2 class="small">Piezas de 10"</h2>
+    <p class="copy-s cuts-intro" data-reveal>Cuatro piezas de 10 segundos, una por plato, para redes y vídeo online.</p>
+    <div class="cut-grid">
+      <figure class="cut-f cf1">
+        <div class="cut" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir la pieza de 10 segundos: Bacallà">
+          <img src="../assets/ferrer/sofregit.webp" alt="La abuela vierte tomate sofregit Ferrer en una cazuela al fuego." loading="lazy">
+          <video src="../assets/ferrer/s10-bacalla.mp4" playsinline preload="none" title="Bacallà"></video>
+          <span class="cut-play"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>Play</span>
+          <span class="cut-dur">0:10</span>
+        </div>
+        <figcaption class="cap-row"><span class="copy-s">Bacallà</span><span class="cap">Tomàquet sofregit</span></figcaption>
+      </figure>
+      <figure class="cut-f cf2">
+        <div class="cut" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir la pieza de 10 segundos: Macarrons">
+          <img src="../assets/ferrer/fregit.webp" alt="Tomate frito Ferrer cayendo sobre la carne picada en la sartén." loading="lazy">
+          <video src="../assets/ferrer/s10-macarrons.mp4" playsinline preload="none" title="Macarrons"></video>
+          <span class="cut-play"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>Play</span>
+          <span class="cut-dur">0:10</span>
+        </div>
+        <figcaption class="cap-row"><span class="copy-s">Macarrons</span><span class="cap">Tomàquet fregit</span></figcaption>
+      </figure>
+      <figure class="cut-f cf3">
+        <div class="cut" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir la pieza de 10 segundos: Pizza">
+          <img src="../assets/ferrer/pizza-bote.webp" alt="Una mano coge un bote de tomate para pizza Ferrer de la estantería." loading="lazy">
+          <video src="../assets/ferrer/s10-pizza.mp4" playsinline preload="none" title="Pizza"></video>
+          <span class="cut-play"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>Play</span>
+          <span class="cut-dur">0:10</span>
+        </div>
+        <figcaption class="cap-row"><span class="copy-s">Pizza</span><span class="cap">Tomàquet per a pizza</span></figcaption>
+      </figure>
+      <figure class="cut-f cf4">
+        <div class="cut" role="button" tabindex="0" data-cursor="Play" aria-label="Reproducir la pieza de 10 segundos: Quètxup">
+          <img src="../assets/ferrer/quetxup.webp" alt="Una niña moja una patata frita directamente en el bote de quètxup Ferrer." loading="lazy">
+          <video src="../assets/ferrer/s10-quetxup.mp4" playsinline preload="none" title="Quètxup"></video>
+          <span class="cut-play"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0 L10 6 L0 12 Z" fill="currentColor"></path></svg>Play</span>
+          <span class="cut-dur">0:10</span>
+        </div>
+        <figcaption class="cap-row"><span class="copy-s">Quètxup</span><span class="cap">Quètxup premium</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="spot" aria-label="Claim de marca">
+    <h2 class="small">Claim de marca</h2>
+    <div class="lines" id="lines">
+      <p>Ferrer.</p>
+      <p>Una manera</p>
+      <p class="last">de <span class="mark">fer</span> les coses.</p>
+    </div>
+    <p class="spot-note" data-reveal>El cierre nuevo para toda la marca, no solo para la gama de tomates.</p>
+  </section>
+
+  <section class="fg-sec" aria-label="Fotogramas del spot">
+    <h2 class="small">Fotogramas</h2>
+    <div class="fg">
+      <figure class="fg1"><div class="ph r-32"><img class="ph-in" src="../assets/ferrer/cocina.webp" alt="La abuela y el abuelo en la cocina, con la mesa de madera y los botes de Ferrer." loading="lazy"></div></figure>
+      <figure class="fg2"><div class="ph r-45"><img class="ph-in" src="../assets/ferrer/abuela.webp" alt="La abuela remueve los macarrones con tomate frito Ferrer." loading="lazy"></div></figure>
+      <figure class="fg3"><div class="ph r-1"><img class="ph-in" src="../assets/ferrer/macarrons-cenital.webp" alt="Vista cenital: la abuela sostiene la olla de macarrones junto al bote de Ferrer y un móvil." loading="lazy"></div></figure>
+      <p class="fg-q" data-reveal>Un plato para cada uno<br>y una salsa para cada plato.</p>
+      <figure class="fg4"><div class="ph r-32"><img class="ph-in" src="../assets/ferrer/pizza-cenital.webp" alt="Vista cenital: la abuela extiende tomate sobre la masa de pizza rodeada de ingredientes." loading="lazy"></div></figure>
+      <figure class="fg5"><div class="ph r-169"><img class="ph-in" src="../assets/ferrer/gama.webp" alt="Bodegón final: toda la gama de salsas de tomate Ferrer sobre la mesa de la cocina." loading="lazy"></div><figcaption class="cap-row"><span class="copy-s">Toda la gama</span><span class="cap">Bodegón de cierre</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="dig" aria-label="Digital">
+    <h2 class="small">Digital</h2>
+    <p class="copy-s dig-intro" data-reveal>La campaña sigue en digital con el mismo bodegón: toda la gama sobre la mesa de la cocina.</p>
+    <div class="dg-lb">
+      <figure class="dg-tv"><img class="mock" src="../assets/ferrer/lbanner-tv.webp" alt="L-banner de Ferrer durante la emisión de TV3, con la gama de salsas y un código QR." loading="lazy" data-reveal></figure>
+      <div class="dg-side" data-reveal>
+        <p class="copy">L-banner en TV3</p>
+        <p class="copy-s">Un marco con la gama alrededor de la emisión y un QR para descubrirla.</p>
+      </div>
+    </div>
+    <div class="bn">
+      <figure class="bn-600"><img class="mock" src="../assets/ferrer/b-300x600.webp" alt="Banner de 300x600 de Ferrer: Una manera de fer les coses, con la gama de salsas." loading="lazy" data-reveal><figcaption class="cap">300x600</figcaption></figure>
+      <figure class="bn-250"><img class="mock" src="../assets/ferrer/b-300x250.webp" alt="Banner de 300x250 de Ferrer: Una manera de fer les coses. Descobreix les nostres salses." loading="lazy" data-reveal><figcaption class="cap">300x250</figcaption></figure>
+      <figure class="bn-100"><img class="mock" src="../assets/ferrer/b-300x100.webp" alt="Banner de 300x100 de Ferrer con la gama de salsas." loading="lazy" data-reveal><figcaption class="cap">300x100</figcaption></figure>
+      <figure class="bn-980"><img class="mock" src="../assets/ferrer/b-980x250.webp" alt="Banner de 980x250 de Ferrer con la gama de salsas y el botón Tasta-les." loading="lazy" data-reveal><figcaption class="cap-row"><span class="cap">980x250</span><span class="cap">Banners para PC y móvil</span></figcaption></figure>
+    </div>
+    <figure class="dg-skin"><img class="mock" src="../assets/ferrer/skin.webp" alt="Skin de Ferrer en la web de 3Cat, con tomates, ajos y botes de la gama a los lados del contenido." loading="lazy" data-reveal><figcaption class="cap">Skin en 3Cat</figcaption></figure>
+  </section>
+
+  <section class="next">
+    <p class="small">Siguiente proyecto</p>
+    <a class="next-link" href="omoda.html" data-cursor="Infinitamente nuevo" data-cursor-pre="1">
+      <span class="next-title">Infinitamente nuevo</span>
+      <span class="next-client">/ Omoda</span>
+    </a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p class="say" data-reveal>Say hi.</p>
+  <a class="email" href="mailto:fenavaldesj@gmail.com" data-reveal>fenavaldesj@gmail.com</a>
+  <div class="legal">
+    <span>© 2026 VAF, Fernando Valdés Jara</span>
+    <span>Dirección de arte para lo que viene.</span>
+  </div>
+</footer>
+
+<div class="cursor" aria-hidden="true" hidden>
+  <span class="c-dot"></span>
+  <span class="c-label"><span class="c-pre">Ver</span><span class="c-text"></span></span>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+
+  // 0. Spot: se reproduce dentro de la página
+  var filmSec = document.querySelector('.film');
+  var film = document.querySelector('.film-box');
+  var canEmbed = film && film.getAttribute('data-embed') !== 'off';
+  var iframe = null, autoPaused = false;
+  var vid = film ? film.querySelector('video') : null;
+  function vimeo(method){
+    if (!iframe) return;
+    if (method === 'play'){ var p = vid.play(); if (p && p.catch) p.catch(function(){}); }
+    else vid.pause();
+  }
+  function updSound(){ if (vid) film.classList.toggle('is-muted', vid.muted); }
+  function startVideo(auto){
+    // Los vídeos solo arrancan con un clic, para que suenen con la música
+    if (auto) return false;
+    if (!vid) return false;
+    if (iframe){ if (!auto){ vid.muted = false; updSound(); } vimeo('play'); return true; }
+    iframe = vid;
+    vid.controls = true;
+    film.classList.add('playing');
+    film.removeAttribute('data-cursor');
+    var cur = document.querySelector('.cursor');
+    if (cur) cur.classList.remove('label');
+    // Intenta con música; si el navegador no deja sonar sin un clic, arranca en silencio y enseña "Activar sonido"
+    vid.muted = false;
+    var p = vid.play();
+    if (p && p.catch) p.catch(function(err){
+      if (!err || err.name !== 'NotAllowedError') return;
+      vid.muted = true; updSound();
+      var q = vid.play(); if (q && q.catch) q.catch(function(){});
+    });
+    updSound();
+    return true;
+  }
+  if (vid){
+    vid.addEventListener('volumechange', updSound);
+    var sb = film.querySelector('.sound');
+    if (sb) sb.addEventListener('click', function(e){ e.stopPropagation(); vid.muted = false; vid.volume = 1; updSound(); });
+  }
+  if (film){
+    film.addEventListener('click', function(e){
+      if (film.classList.contains('playing')) return;
+      if (startVideo(false)) e.preventDefault();
+    });
+    film.addEventListener('keydown', function(e){
+      if ((e.key === 'Enter' || e.key === ' ') && !film.classList.contains('playing')){ e.preventDefault(); startVideo(false); }
+    });
+  }
+  var immersive = !!(film && !reduce && hasGsap && window.matchMedia('(min-width: 901px)').matches);
+  if (film && !reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      var e = entries[0];
+      if (e.intersectionRatio < 0.2){
+        if (iframe && !autoPaused){ vimeo('pause'); autoPaused = true; }
+      } else if (e.intersectionRatio >= 0.6){
+        if (iframe && autoPaused){ vimeo('play'); autoPaused = false; }
+        else if (!iframe && !immersive){ startVideo(true); }
+      }
+    }, { threshold: [0, 0.2, 0.6] }).observe(filmSec);
+  }
+
+  // 1. Título: palabras suben y luego se "selecciona" "nuevo"
+  var title = document.getElementById('ptitle');
+  var tMark = title.querySelector('.mark');
+  if (!reduce){
+    var words = [];
+    (function walk(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(child){
+        if (child.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(function(part){
+            if (!part) return;
+            if (/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            var m = document.createElement('span'); m.className = 'w';
+            var i = document.createElement('span'); i.className = 'wi'; i.textContent = part;
+            m.appendChild(i); frag.appendChild(m); words.push(i);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1){ walk(child); }
+      });
+    })(title);
+    words.forEach(function(w, i){ w.style.setProperty('--i', i); });
+    setTimeout(function(){ title.classList.add('go'); }, 150);
+    setTimeout(function(){ tMark.classList.add('selected'); }, 150 + words.length * 60 + 900);
+  }
+
+  // 2. Revelados al entrar en pantalla
+  if (!reduce && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('[data-reveal], .ph').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Brand book: arrastrar para desplazar
+  var bbEl = document.getElementById('bb');
+  if (bbEl){
+    var down = false, sx = 0, sl = 0, moved = 0;
+    bbEl.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') return; down = true; moved = 0; sx = e.clientX; sl = bbEl.scrollLeft; bbEl.classList.add('drag'); });
+    window.addEventListener('pointermove', function(e){ if (!down) return; var dx = e.clientX - sx; moved = Math.abs(dx); bbEl.scrollLeft = sl - dx; });
+    window.addEventListener('pointerup', function(){ if (!down) return; down = false; bbEl.classList.remove('drag'); });
+  }
+
+  // Vídeos en bucle: se reproducen solos (en silencio) mientras se ven
+  document.querySelectorAll('video[data-loop]').forEach(function(v){
+    v.muted = true;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.intersectionRatio >= 0.35){ var p = v.play(); if (p && p.catch) p.catch(function(){}); } else v.pause();
+      });
+    }, { threshold: [0, 0.35] }).observe(v);
+  });
+
+  // 4. Cabecera que se esconde al bajar
+  var header = document.querySelector('.site-header');
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    header.classList.toggle('hide', y > lastY && y > 160);
+    lastY = y;
+  }, { passive: true });
+
+  // 5. Efectos ligados al scroll
+  if (!reduce && hasGsap){
+    gsap.registerPlugin(ScrollTrigger);
+    if (immersive){
+      // El spot crece hasta ocupar toda la pantalla y empieza a sonar en silencio
+      filmSec.classList.add('immersive');
+      var insets = function(){
+        var W = filmSec.clientWidth, H = filmSec.clientHeight;
+        var pad = Math.min(Math.max(20, W * 0.028), 40);
+        var w = W - pad * 2, h = w * 9 / 16;
+        if (h > H * 0.86){ h = H * 0.86; w = h * 16 / 9; }
+        return { ix: (W - w) / 2, iy: (H - h) / 2 };
+      };
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: filmSec, start: 'top top', end: '+=120%', pin: true, scrub: true, invalidateOnRefresh: true,
+          onUpdate: function(self){ if (self.progress > 0.5 && !iframe) startVideo(true); }
+        }
+      });
+      tl.fromTo(film,
+        { '--ix': function(){ return insets().ix + 'px'; }, '--iy': function(){ return insets().iy + 'px'; } },
+        { '--ix': '0px', '--iy': '0px', ease: 'none', duration: 0.5 })
+        .to({}, { duration: 0.5 });
+    } else if (film) {
+      gsap.fromTo('.film-box', { scale: 0.9 }, {
+        scale: 1, ease: 'none',
+        scrollTrigger: { trigger: '.film', start: 'top 85%', end: 'top 15%', scrub: true }
+      });
+    }
+    gsap.utils.toArray('.ph-in').forEach(function(el){
+      gsap.fromTo(el, { yPercent: -6 }, {
+        yPercent: 6, ease: 'none',
+        scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    // Moodboard de espacios: cada imagen se mueve a su propio ritmo
+    gsap.utils.toArray('[data-speed]').forEach(function(el){
+      var sp = parseFloat(el.getAttribute('data-speed')) || 0;
+      gsap.fromTo(el, { yPercent: sp }, {
+        yPercent: -sp, ease: 'none',
+        scrollTrigger: { trigger: el.parentNode, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    // Las líneas del spot se encienden una a una al hacer scroll
+    var lines = gsap.utils.toArray('#lines p');
+    gsap.fromTo(lines, { opacity: 0.14 }, {
+      opacity: 1, ease: 'none', stagger: 0.5,
+      scrollTrigger: { trigger: '#lines', start: 'top 75%', end: 'bottom 55%', scrub: true }
+    });
+  }
+
+  // 6. Cursor VAF
+  if (!reduce && window.matchMedia('(pointer: fine)').matches){
+    var c = document.querySelector('.cursor');
+    var cText = c.querySelector('.c-text');
+    var cPre = c.querySelector('.c-pre');
+    c.hidden = false;
+    var x = 0, y = 0, cx = 0, cy = 0, shown = false;
+    window.addEventListener('mousemove', function(e){
+      x = e.clientX; y = e.clientY;
+      if (!shown){ cx = x; cy = y; c.classList.add('on'); shown = true; }
+    });
+    document.addEventListener('mouseleave', function(){ c.classList.remove('on'); shown = false; });
+    (function tick(){
+      cx += (x - cx) * 0.2; cy += (y - cy) * 0.2;
+      c.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('[data-cursor]').forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        if (!el.hasAttribute('data-cursor')) return;
+        cText.textContent = el.getAttribute('data-cursor');
+        cPre.hidden = !el.hasAttribute('data-cursor-pre');
+        c.classList.add('label');
+      });
+      el.addEventListener('mouseleave', function(){ c.classList.remove('label'); });
+    });
+  }
+})();
+</script>
+
+
+<script>
+// Piezas de 10": solo con clic y con sonido; solo suena una a la vez
+(function(){
+  var boxes = [].slice.call(document.querySelectorAll('.cut'));
+  var main = document.querySelector('.film-video');
+  function stopAll(except){
+    boxes.forEach(function(o){
+      if (o === except) return;
+      var ov = o.querySelector('video');
+      if (!ov.paused) ov.pause();
+      if (o.classList.contains('playing')){ o.classList.remove('playing'); ov.controls = false; }
+    });
+  }
+  boxes.forEach(function(b){
+    var v = b.querySelector('video');
+    function go(){
+      stopAll(b);
+      if (main && !main.paused) main.pause();
+      b.classList.add('playing'); b.removeAttribute('data-cursor');
+      v.muted = false; v.controls = true;
+      var p = v.play();
+      if (p && p.catch) p.catch(function(){ v.muted = true; v.play(); });
+    }
+    b.addEventListener('click', function(){ if (!b.classList.contains('playing')) go(); });
+    b.addEventListener('keydown', function(e){ if ((e.key === 'Enter' || e.key === ' ') && !b.classList.contains('playing')){ e.preventDefault(); go(); } });
+    v.addEventListener('ended', function(){ b.classList.remove('playing'); v.controls = false; b.setAttribute('data-cursor', 'Play'); });
+  });
+  if (main) main.addEventListener('play', function(){ stopAll(null); });
+})();
+</script>
+<!--pt-js--><script>
+// Transición entre páginas: VAF cambia de tipografía mientras carga la siguiente
+(function(){
+  var html = document.documentElement;
+  var pt = document.querySelector('.pt'), logo = pt && pt.querySelector('.pt-logo');
+  if (!pt) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seq = ['f3','f13','f4','f6','f12','f14','f10','f15','f1','f7','f9'];
+  var timer = null, k = 0;
+  function spin(){
+    if (reduce || timer) return;
+    timer = setInterval(function(){ logo.className = 'pt-logo ' + seq[k++ % seq.length]; }, 80);
+  }
+  function stop(){ clearInterval(timer); timer = null; logo.className = 'pt-logo'; }
+  // Cada página empieza arriba (salvo que el enlace lleve ancla o la persona ya haya hecho scroll)
+  var touched = false;
+  ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){ window.addEventListener(ev, function(){ touched = true; }, { once: true, passive: true }); });
+  function toTop(){ if (!location.hash && !touched) window.scrollTo(0, 0); }
+  toTop();
+  // Llegada: si venimos de una transición, se destapa en cuanto la página está lista
+  if (html.classList.contains('pt-in')){
+    spin();
+    try { sessionStorage.removeItem('vaf-pt'); } catch(e){}
+    var t0 = Date.now(), done = false;
+    var reveal = function(){
+      if (done) return; done = true;
+      var wait = Math.max(0, 350 - (Date.now() - t0));
+      setTimeout(function(){ toTop(); stop(); html.classList.remove('pt-in'); }, wait);
+    };
+    var first = document.querySelector('.film-poster, .ph-in[src], video[poster]');
+    if (first && first.tagName === 'IMG' && !first.complete){
+      first.addEventListener('load', reveal); first.addEventListener('error', reveal);
+      setTimeout(reveal, 1500);
+    } else if (document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', reveal);
+    } else { reveal(); }
+  }
+  window.addEventListener('load', toTop);
+  // Salida: al pinchar un enlace interno, se tapa y cambia de página
+  document.addEventListener('click', function(e){
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+    var href = a.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || /^(mailto|tel):/i.test(href)) return;
+    var url;
+    try { url = new URL(href, location.href); } catch(err){ return; }
+    var internal = url.origin === location.origin || /\/artifact\//.test(url.pathname);
+    if (!internal) return;
+    if (url.origin === location.origin && url.pathname === location.pathname && url.hash) return;
+    e.preventDefault();
+    try { sessionStorage.setItem('vaf-pt', '1'); } catch(err){}
+    pt.classList.add('on'); spin();
+    setTimeout(function(){ location.href = url.href; }, reduce ? 150 : 320);
+  });
+  // Al volver con el botón "atrás", que no se quede tapado
+  window.addEventListener('pageshow', function(ev){
+    if (ev.persisted){ stop(); pt.classList.remove('on'); html.classList.remove('pt-in'); }
+  });
+})();
+</script><!--/pt-js-->
+</body>
+</html>
