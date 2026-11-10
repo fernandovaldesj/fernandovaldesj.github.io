@@ -372,20 +372,20 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .dig{margin-top:clamp(88px,9vw,140px);padding:clamp(72px,8vw,120px) var(--pad);background:#F7ECE1;--ink:#000;--muted:rgba(0,0,0,.6);--line:#000;color:#000}
 .dig-intro{max-width:30em;margin:0 0 clamp(40px,5vw,72px)}
 .dig figure{margin:0}
-.dg-lb{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:end}
+.dig img.mock{display:block;width:100%;height:auto}
+.dg-lb,.dg-sk{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:center}
 .dg-tv{grid-column:1/span 8}
-.dg-side{grid-column:10/span 3;display:flex;flex-direction:column;gap:12px}
-.bn{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:start;margin-top:clamp(72px,9vw,140px)}
-.bn .cap,.bn .cap-row{margin-top:12px}
-.bn-600{grid-column:2/span 3;grid-row:1/span 2}
-.bn-250{grid-column:6/span 4;grid-row:1}
-.bn-100{grid-column:10/span 3;grid-row:1;align-self:center}
-.bn-980{grid-column:6/span 7;grid-row:2;align-self:end}
-.bn img{box-shadow:0 18px 40px -24px rgba(80,30,10,.45)}
-.dg-skin{margin-top:clamp(72px,9vw,140px)!important}
+.dg-lb .dg-side{grid-column:10/span 3}
+.dg-side{display:flex;flex-direction:column;gap:12px}
+.dg-bn{margin:clamp(80px,10vw,160px) auto 0!important;max-width:1180px}
+.dg-bn .cap-row{margin-top:8px}
+.dg-sk{margin-top:clamp(80px,10vw,160px)}
+.dg-sk .dg-side{grid-column:1/span 3}
+.dg-mon{grid-column:5/span 8}
 @media (max-width: 900px){
-  .dg-tv{grid-column:1/-1}
-  .dg-side{grid-column:1/span 10}
+  .dg-tv,.dg-mon{grid-column:1/-1}
+  .dg-lb .dg-side,.dg-sk .dg-side{grid-column:1/span 10}
+  .dg-sk .dg-side{order:2}
 }
 @media (max-width: 640px){
   .cut-grid,.fg{column-gap:12px}
@@ -399,12 +399,9 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   .fg3{grid-column:1/span 7;margin-top:-30%!important}
   .fg-q{grid-column:1/-1;font-size:28px}
   .fg4{grid-column:3/-1;margin-top:0!important}
-  .dg-side{grid-column:1/-1}
-  .bn{column-gap:12px;row-gap:28px}
-  .bn-600{grid-column:1/span 5;grid-row:1/span 2}
-  .bn-250{grid-column:6/-1;grid-row:1}
-  .bn-100{grid-column:6/-1;grid-row:2;align-self:start}
-  .bn-980{grid-column:1/-1;grid-row:3}
+  .dg-lb .dg-side,.dg-sk .dg-side{grid-column:1/-1}
+  .dg-bn .cap-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .dig img.mock{width:calc(100% + var(--pad) * 2);max-width:none;margin-left:calc(var(--pad) * -1)}
 }
 </style>
 </head>
@@ -427,7 +424,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 
 <main>
   <section class="p-hero">
-    <p class="meta"><span>Ferrer</span><span>Tomato sauces</span><span>2026</span></p>
+    <p class="meta"><span>Ferrer</span><span>Tomato sauces</span><span>Shot in Barcelona</span><span>2026</span></p>
     <h1 class="p-title" id="ptitle">A la nostra taula hi cap <span class="mark">tothom</span>.</h1>
   </section>
 
@@ -448,7 +445,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   <dl class="facts" data-reveal>
     <div><dt>Client</dt><dd>Ferrer</dd></div>
     <div><dt>Agency</dt><dd>Actimundi</dd></div>
-    <div><dt>My role</dt><dd>Art direction</dd></div>
+    <div><dt>My role</dt><dd>Head of Art</dd></div>
     <div><dt>Media</dt><dd>30" spot, four 10" cuts, banners, L-banner on TV3 and a 3Cat site skin</dd></div>
   </dl>
 
@@ -459,7 +456,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     </div>
     <div class="story-block" data-reveal>
       <h2 class="small">The idea</h2>
-      <p>A grandmother, a traditional kitchen and a family who order lunch by WhatsApp voice note: one wants salt cod, another macaroni, her granddaughter chips with ketchup. She has a Ferrer sauce for every dish, because there’s room for everyone at her table.</p>
+      <p>The spot is built on a grandmother’s line: «Aiii, fills meus, on en mengen dos, en mengen set!» (“Oh, my children, where two can eat, seven can!”). It plays on the Catalan saying “where two can eat, three can”, and the seven is no accident: it’s the seven sauces in the range. Her family orders lunch by WhatsApp voice note and she has a Ferrer sauce for every dish, because there’s room for everyone at her table.</p>
     </div>
   </section>
 
@@ -522,7 +519,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <figure class="fg1"><div class="ph r-32"><img class="ph-in" src="../../assets/ferrer/cocina.webp" alt="The grandmother and grandfather in the kitchen, with the wooden table and the Ferrer jars." loading="lazy"></div></figure>
       <figure class="fg2"><div class="ph r-45"><img class="ph-in" src="../../assets/ferrer/abuela.webp" alt="The grandmother stirs the macaroni with Ferrer fried tomato." loading="lazy"></div></figure>
       <figure class="fg3"><div class="ph r-1"><img class="ph-in" src="../../assets/ferrer/macarrons-cenital.webp" alt="Top shot: the grandmother holds the pot of macaroni next to the Ferrer jar and a phone." loading="lazy"></div></figure>
-      <p class="fg-q" data-reveal>A dish for everyone<br>and a sauce for every dish.</p>
+      <p class="fg-q" data-reveal>«Aiii, fills meus,<br>on en mengen dos,<br>en mengen set!»</p>
       <figure class="fg4"><div class="ph r-32"><img class="ph-in" src="../../assets/ferrer/pizza-cenital.webp" alt="Top shot: the grandmother spreads tomato over the pizza dough, surrounded by ingredients." loading="lazy"></div></figure>
       <figure class="fg5"><div class="ph r-169"><img class="ph-in" src="../../assets/ferrer/gama.webp" alt="Closing still life: the whole range of Ferrer tomato sauces on the kitchen table." loading="lazy"></div><figcaption class="cap-row"><span class="copy-s">The whole range</span><span class="cap">Closing still life</span></figcaption></figure>
     </div>
@@ -532,19 +529,20 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     <h2 class="small">Digital</h2>
     <p class="copy-s dig-intro" data-reveal>The campaign carries on in digital with the same still life: the whole range on the kitchen table.</p>
     <div class="dg-lb">
-      <figure class="dg-tv"><img class="mock" src="../../assets/ferrer/lbanner-tv.webp" alt="Ferrer L-banner during the TV3 broadcast, with the range of sauces and a QR code." loading="lazy" data-reveal></figure>
+      <figure class="dg-tv"><img class="mock" src="../../assets/ferrer/mk-tv.webp" alt="Mockup of a TV showing the Ferrer L-banner during the TV3 broadcast: the range of sauces, the brand line and a QR code." width="2100" height="1275" loading="lazy" data-reveal></figure>
       <div class="dg-side" data-reveal>
         <p class="copy">L-banner on TV3</p>
         <p class="copy-s">A frame with the range around the broadcast and a QR code to discover it.</p>
       </div>
     </div>
-    <div class="bn">
-      <figure class="bn-600"><img class="mock" src="../../assets/ferrer/b-300x600.webp" alt="Ferrer 300x600 banner: Una manera de fer les coses, with the range of sauces." loading="lazy" data-reveal><figcaption class="cap">300x600</figcaption></figure>
-      <figure class="bn-250"><img class="mock" src="../../assets/ferrer/b-300x250.webp" alt="Ferrer 300x250 banner: Una manera de fer les coses. Discover our sauces." loading="lazy" data-reveal><figcaption class="cap">300x250</figcaption></figure>
-      <figure class="bn-100"><img class="mock" src="../../assets/ferrer/b-300x100.webp" alt="Ferrer 300x100 banner with the range of sauces." loading="lazy" data-reveal><figcaption class="cap">300x100</figcaption></figure>
-      <figure class="bn-980"><img class="mock" src="../../assets/ferrer/b-980x250.webp" alt="Ferrer 980x250 banner with the range of sauces and a Taste them button." loading="lazy" data-reveal><figcaption class="cap-row"><span class="cap">980x250</span><span class="cap">Banners for desktop and mobile</span></figcaption></figure>
+    <figure class="dg-bn"><img class="mock" src="../../assets/ferrer/mk-banners.webp" alt="Mockup of a laptop and a phone with the Ferrer banners on a news site: 980x250 and 300x600 on desktop, 300x100 and 300x250 on mobile." width="2400" height="1515" loading="lazy" data-reveal><figcaption class="cap-row"><span class="copy-s">Banners for desktop and mobile</span><span class="cap">980x250 · 300x600 · 300x100 · 300x250</span></figcaption></figure>
+    <div class="dg-sk">
+      <div class="dg-side" data-reveal>
+        <p class="copy">Site skin on 3Cat</p>
+        <p class="copy-s">The range frames the 3Cat website on both sides of the content.</p>
+      </div>
+      <figure class="dg-mon"><img class="mock" src="../../assets/ferrer/mk-skin.webp" alt="Mockup of a monitor with the Ferrer skin on the 3Cat website: tomatoes, garlic, dishes and jars from the range on both sides of the content." width="2250" height="1395" loading="lazy" data-reveal></figure>
     </div>
-    <figure class="dg-skin"><img class="mock" src="../../assets/ferrer/skin.webp" alt="Ferrer skin on the 3Cat website, with tomatoes, garlic and jars from the range around the content." loading="lazy" data-reveal><figcaption class="cap">Site skin on 3Cat</figcaption></figure>
   </section>
 
   <section class="next">

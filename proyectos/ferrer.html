@@ -372,20 +372,20 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .dig{margin-top:clamp(88px,9vw,140px);padding:clamp(72px,8vw,120px) var(--pad);background:#F7ECE1;--ink:#000;--muted:rgba(0,0,0,.6);--line:#000;color:#000}
 .dig-intro{max-width:30em;margin:0 0 clamp(40px,5vw,72px)}
 .dig figure{margin:0}
-.dg-lb{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:end}
+.dig img.mock{display:block;width:100%;height:auto}
+.dg-lb,.dg-sk{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:center}
 .dg-tv{grid-column:1/span 8}
-.dg-side{grid-column:10/span 3;display:flex;flex-direction:column;gap:12px}
-.bn{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:24px;align-items:start;margin-top:clamp(72px,9vw,140px)}
-.bn .cap,.bn .cap-row{margin-top:12px}
-.bn-600{grid-column:2/span 3;grid-row:1/span 2}
-.bn-250{grid-column:6/span 4;grid-row:1}
-.bn-100{grid-column:10/span 3;grid-row:1;align-self:center}
-.bn-980{grid-column:6/span 7;grid-row:2;align-self:end}
-.bn img{box-shadow:0 18px 40px -24px rgba(80,30,10,.45)}
-.dg-skin{margin-top:clamp(72px,9vw,140px)!important}
+.dg-lb .dg-side{grid-column:10/span 3}
+.dg-side{display:flex;flex-direction:column;gap:12px}
+.dg-bn{margin:clamp(80px,10vw,160px) auto 0!important;max-width:1180px}
+.dg-bn .cap-row{margin-top:8px}
+.dg-sk{margin-top:clamp(80px,10vw,160px)}
+.dg-sk .dg-side{grid-column:1/span 3}
+.dg-mon{grid-column:5/span 8}
 @media (max-width: 900px){
-  .dg-tv{grid-column:1/-1}
-  .dg-side{grid-column:1/span 10}
+  .dg-tv,.dg-mon{grid-column:1/-1}
+  .dg-lb .dg-side,.dg-sk .dg-side{grid-column:1/span 10}
+  .dg-sk .dg-side{order:2}
 }
 @media (max-width: 640px){
   .cut-grid,.fg{column-gap:12px}
@@ -399,12 +399,9 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   .fg3{grid-column:1/span 7;margin-top:-30%!important}
   .fg-q{grid-column:1/-1;font-size:28px}
   .fg4{grid-column:3/-1;margin-top:0!important}
-  .dg-side{grid-column:1/-1}
-  .bn{column-gap:12px;row-gap:28px}
-  .bn-600{grid-column:1/span 5;grid-row:1/span 2}
-  .bn-250{grid-column:6/-1;grid-row:1}
-  .bn-100{grid-column:6/-1;grid-row:2;align-self:start}
-  .bn-980{grid-column:1/-1;grid-row:3}
+  .dg-lb .dg-side,.dg-sk .dg-side{grid-column:1/-1}
+  .dg-bn .cap-row{flex-direction:column;align-items:flex-start;gap:4px}
+  .dig img.mock{width:calc(100% + var(--pad) * 2);max-width:none;margin-left:calc(var(--pad) * -1)}
 }
 </style>
 </head>
@@ -427,7 +424,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 
 <main>
   <section class="p-hero">
-    <p class="meta"><span>Ferrer</span><span>Salsas de tomate</span><span>2026</span></p>
+    <p class="meta"><span>Ferrer</span><span>Salsas de tomate</span><span>Rodaje en Barcelona</span><span>2026</span></p>
     <h1 class="p-title" id="ptitle">A la nostra taula hi cap <span class="mark">tothom</span>.</h1>
   </section>
 
@@ -448,7 +445,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
   <dl class="facts" data-reveal>
     <div><dt>Cliente</dt><dd>Ferrer</dd></div>
     <div><dt>Agencia</dt><dd>Actimundi</dd></div>
-    <div><dt>Mi rol</dt><dd>Dirección de arte</dd></div>
+    <div><dt>Mi rol</dt><dd>Head of Art</dd></div>
     <div><dt>Soportes</dt><dd>Spot de 30", cuatro piezas de 10", banners, L-banner en TV3 y skin en 3Cat</dd></div>
   </dl>
 
@@ -459,7 +456,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     </div>
     <div class="story-block" data-reveal>
       <h2 class="small">La idea</h2>
-      <p>Una abuela, una cocina de las de siempre y una familia que le pide la comida por audio de WhatsApp: uno quiere bacallà, otro macarrons y la nieta, patatas con quètxup. Ella tiene una salsa Ferrer para cada plato, porque a su mesa cabe todo el mundo.</p>
+      <p>El concepto del spot es una frase de abuela: «Aiii, fills meus, on en mengen dos, en mengen set!». Juega con el dicho «on en mengen dos, en mengen tres», y el siete no es casual: son las siete salsas de la gama. La familia le pide la comida por audio de WhatsApp y ella tiene una salsa Ferrer para cada plato, porque a su mesa cabe todo el mundo.</p>
     </div>
   </section>
 
@@ -522,7 +519,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
       <figure class="fg1"><div class="ph r-32"><img class="ph-in" src="../assets/ferrer/cocina.webp" alt="La abuela y el abuelo en la cocina, con la mesa de madera y los botes de Ferrer." loading="lazy"></div></figure>
       <figure class="fg2"><div class="ph r-45"><img class="ph-in" src="../assets/ferrer/abuela.webp" alt="La abuela remueve los macarrones con tomate frito Ferrer." loading="lazy"></div></figure>
       <figure class="fg3"><div class="ph r-1"><img class="ph-in" src="../assets/ferrer/macarrons-cenital.webp" alt="Vista cenital: la abuela sostiene la olla de macarrones junto al bote de Ferrer y un móvil." loading="lazy"></div></figure>
-      <p class="fg-q" data-reveal>Un plato para cada uno<br>y una salsa para cada plato.</p>
+      <p class="fg-q" data-reveal>«Aiii, fills meus,<br>on en mengen dos,<br>en mengen set!»</p>
       <figure class="fg4"><div class="ph r-32"><img class="ph-in" src="../assets/ferrer/pizza-cenital.webp" alt="Vista cenital: la abuela extiende tomate sobre la masa de pizza rodeada de ingredientes." loading="lazy"></div></figure>
       <figure class="fg5"><div class="ph r-169"><img class="ph-in" src="../assets/ferrer/gama.webp" alt="Bodegón final: toda la gama de salsas de tomate Ferrer sobre la mesa de la cocina." loading="lazy"></div><figcaption class="cap-row"><span class="copy-s">Toda la gama</span><span class="cap">Bodegón de cierre</span></figcaption></figure>
     </div>
@@ -532,19 +529,20 @@ img.ph-in{display:block;width:100%;object-fit:cover}
     <h2 class="small">Digital</h2>
     <p class="copy-s dig-intro" data-reveal>La campaña sigue en digital con el mismo bodegón: toda la gama sobre la mesa de la cocina.</p>
     <div class="dg-lb">
-      <figure class="dg-tv"><img class="mock" src="../assets/ferrer/lbanner-tv.webp" alt="L-banner de Ferrer durante la emisión de TV3, con la gama de salsas y un código QR." loading="lazy" data-reveal></figure>
+      <figure class="dg-tv"><img class="mock" src="../assets/ferrer/mk-tv.webp" alt="Mockup de un televisor con el L-banner de Ferrer durante la emisión de TV3: la gama de salsas, el claim y un código QR." width="2100" height="1275" loading="lazy" data-reveal></figure>
       <div class="dg-side" data-reveal>
         <p class="copy">L-banner en TV3</p>
         <p class="copy-s">Un marco con la gama alrededor de la emisión y un QR para descubrirla.</p>
       </div>
     </div>
-    <div class="bn">
-      <figure class="bn-600"><img class="mock" src="../assets/ferrer/b-300x600.webp" alt="Banner de 300x600 de Ferrer: Una manera de fer les coses, con la gama de salsas." loading="lazy" data-reveal><figcaption class="cap">300x600</figcaption></figure>
-      <figure class="bn-250"><img class="mock" src="../assets/ferrer/b-300x250.webp" alt="Banner de 300x250 de Ferrer: Una manera de fer les coses. Descobreix les nostres salses." loading="lazy" data-reveal><figcaption class="cap">300x250</figcaption></figure>
-      <figure class="bn-100"><img class="mock" src="../assets/ferrer/b-300x100.webp" alt="Banner de 300x100 de Ferrer con la gama de salsas." loading="lazy" data-reveal><figcaption class="cap">300x100</figcaption></figure>
-      <figure class="bn-980"><img class="mock" src="../assets/ferrer/b-980x250.webp" alt="Banner de 980x250 de Ferrer con la gama de salsas y el botón Tasta-les." loading="lazy" data-reveal><figcaption class="cap-row"><span class="cap">980x250</span><span class="cap">Banners para PC y móvil</span></figcaption></figure>
+    <figure class="dg-bn"><img class="mock" src="../assets/ferrer/mk-banners.webp" alt="Mockup de un portátil y un móvil con los banners de Ferrer en una web de noticias: 980x250 y 300x600 en el ordenador, 300x100 y 300x250 en el móvil." width="2400" height="1515" loading="lazy" data-reveal><figcaption class="cap-row"><span class="copy-s">Banners para PC y móvil</span><span class="cap">980x250 · 300x600 · 300x100 · 300x250</span></figcaption></figure>
+    <div class="dg-sk">
+      <div class="dg-side" data-reveal>
+        <p class="copy">Skin en 3Cat</p>
+        <p class="copy-s">La gama enmarca la web de 3Cat a los dos lados del contenido.</p>
+      </div>
+      <figure class="dg-mon"><img class="mock" src="../assets/ferrer/mk-skin.webp" alt="Mockup de un monitor con el skin de Ferrer en la web de 3Cat: tomates, ajos, platos y botes de la gama a los dos lados del contenido." width="2250" height="1395" loading="lazy" data-reveal></figure>
     </div>
-    <figure class="dg-skin"><img class="mock" src="../assets/ferrer/skin.webp" alt="Skin de Ferrer en la web de 3Cat, con tomates, ajos y botes de la gama a los lados del contenido." loading="lazy" data-reveal><figcaption class="cap">Skin en 3Cat</figcaption></figure>
   </section>
 
   <section class="next">
