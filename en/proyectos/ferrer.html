@@ -376,13 +376,14 @@ img.ph-in{display:block;width:100%;object-fit:cover}
 .dv{position:relative;border:1.5px solid var(--ink)}
 .dv-scr{border:1px solid var(--ink);overflow:hidden;background:#fff}
 .dv-scr img{display:block;width:100%;height:auto}
-.dv-tv,.dv-mon{border-radius:clamp(8px,1vw,14px);padding:clamp(6px,.8vw,10px)}
-.dv-mon{padding-bottom:clamp(12px,1.6vw,22px)}
-.dv-tv .dv-scr,.dv-mon .dv-scr{border-radius:2px}
+.dv-tv{border-radius:clamp(8px,1vw,14px);padding:clamp(6px,.8vw,10px)}
+.dv-tv .dv-scr{border-radius:2px}
+.dv-tab{border-radius:clamp(22px,3vw,40px);padding:clamp(14px,2.2vw,26px)}
+.dv-tab::before{content:"";position:absolute;left:50%;top:clamp(5px,1vw,11px);width:6px;height:6px;border:1px solid var(--ink);border-radius:50%;transform:translateX(-50%)}
+.dv-tab .dv-scr{border-radius:clamp(6px,.8vw,10px)}
 .dv-stand{display:flex;flex-direction:column;align-items:center}
 .dv-stand i{width:8%;height:clamp(18px,2.6vw,36px);border:solid var(--ink);border-width:0 1.5px}
 .dv-stand b{width:34%;height:clamp(8px,.9vw,12px);border:1.5px solid var(--ink);border-radius:6px 6px 3px 3px}
-.dv-stand.tall i{width:13%;height:clamp(34px,5vw,76px)}
 .dv-lid{margin:0 6%;border-bottom:0;border-radius:clamp(14px,2vw,26px) clamp(14px,2vw,26px) 0 0;padding:clamp(12px,1.6vw,20px) clamp(10px,1.4vw,18px) clamp(12px,1.6vw,20px)}
 .dv-lid::before{content:"";position:absolute;left:50%;top:clamp(4px,.6vw,8px);width:6px;height:6px;border:1px solid var(--ink);border-radius:50%;transform:translateX(-50%)}
 .dv-lid .dv-scr{border-radius:3px}
@@ -575,8 +576,7 @@ img.ph-in{display:block;width:100%;object-fit:cover}
         <p class="copy-s">The range frames the 3Cat website on both sides of the content.</p>
       </div>
       <figure class="dg-mon" data-reveal>
-        <div class="dv dv-mon"><div class="dv-scr"><img src="../../assets/ferrer/scr-skin.webp" alt="Monitor with the Ferrer skin on the 3Cat website: tomatoes, garlic, dishes and jars from the range on both sides of the content." width="1920" height="975" loading="lazy"></div></div>
-        <div class="dv-stand tall" aria-hidden="true"><i></i><b></b></div>
+        <div class="dv dv-tab"><div class="dv-scr"><img src="../../assets/ferrer/scr-tablet.webp" alt="Landscape tablet with the Ferrer skin on the 3Cat website: tomatoes, garlic, dishes and jars from the range on both sides of the content." width="1808" height="1130" loading="lazy"></div></div>
       </figure>
     </div>
   </section>
